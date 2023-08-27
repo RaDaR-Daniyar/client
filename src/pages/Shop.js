@@ -96,7 +96,7 @@ const Shop = observer(() => {
 
     useEffect(() => {
         async function getPrices() {
-            const prices = await axios.get(`https://aksessuary.kz/api/product/price`);
+            const prices = await axios.get(`REACT_APP_API_URLproduct/price`);
             setMaxPrice(prices.data.max);
         }
         getPrices();

@@ -54,7 +54,7 @@ const ProductList = observer(() => {
                     <p className="m-3">По вашему запросу ничего не найдено</p>
                 )}
             </Row>
-            {catalog.pages > 1 && <Pagination style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}>{pages}</Pagination>}
+            {catalog.pages > 1 && <Pagination>{pages}</Pagination>}
         </>
     );
 });
