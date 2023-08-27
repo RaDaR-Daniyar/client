@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.3d4bcfbc.css",
-    "main.js": "/static/js/main.7808d7b3.js",
+    "main.js": "/static/js/main.1f3f2bbd.js",
     "static/media/fon.png": "/static/media/fon.97670f1579221d203065.png",
     "static/media/parker2.jpg": "/static/media/parker2.97f2b0df1dd9e6fc9551.jpg",
     "static/media/waterman.jpg": "/static/media/waterman.78b9e8eb6347ced114fe.jpg",
@@ -74,10 +74,10 @@
     "static/media/victorinox-kitchen.webp": "/static/media/victorinox-kitchen.1eb4ce89325843ce2d85.webp",
     "index.html": "/index.html",
     "main.3d4bcfbc.css.map": "/static/css/main.3d4bcfbc.css.map",
-    "main.7808d7b3.js.map": "/static/js/main.7808d7b3.js.map"
+    "main.1f3f2bbd.js.map": "/static/js/main.1f3f2bbd.js.map"
   },
   "entrypoints": [
     "static/css/main.3d4bcfbc.css",
-    "static/js/main.7808d7b3.js"
+    "static/js/main.1f3f2bbd.js"
   ]
 }
