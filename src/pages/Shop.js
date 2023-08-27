@@ -96,7 +96,7 @@ const Shop = observer(() => {
 
     useEffect(() => {
         async function getPrices() {
-            const prices = await axios.get(`http://aksessuary.kz/api/product/price`);
+            const prices = await axios.get(`https://aksessuary.kz/api/product/price`);
             setMaxPrice(prices.data.max);
         }
         getPrices();
@@ -276,7 +276,6 @@ const Shop = observer(() => {
                     <div className="mt-3">{strapsFetching ? <Spinner animation="border" /> : <StrapBar />}</div>
                     <div className="mt-3">{powersFetching ? <Spinner animation="border" /> : <PowerBar />}</div>
                     <div className="mt-3">{watersFetching ? <Spinner animation="border" /> : <WaterBar />}</div>
-                    <div className="mt-3">{brendsFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
                     <Card className='mt-3' style={{height: '40px'}}>
                         <a href='/shop' style={{fontSize: '18px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
                     </Card>
