@@ -33,7 +33,7 @@ const Footer = () => {
                     </Col>
                     <Col md={2} style={{marginLeft: 10}}>
                         <h4 style={{color: "#1200ba", marginBottom: 20, marginTop: 20}}>Контакты</h4>
-                        <a href='href="tel:+77003069000"' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Телефон: +77003069000</a><br />
+                        <a href='tel:+77003069000' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Телефон: +77003069000</a><br />
                         <a href="mailto:radar-daniyar@mail.ru" style={{textDecoration: "none", fontSize: 14, color: "black"}}>E-mail: radar-daniyar@mail.ru</a><br />
                         <div className='mt-3'>
                             <a href='/'><img  src = { instagram } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>

@@ -10,9 +10,12 @@ import { useContext } from 'react'
 import NavBar from '../components/navigation/NavBar'
 import Top from './top.js'
 import { Col, Nav, Row } from 'react-bootstrap'
+import { observer } from 'mobx-react-lite'
 
-const Header = () => {
-    const { user, basket } = useContext(AppContext)
+
+const Header = observer(() => {
+    const { user, basket } = useContext(AppContext);
+
     return (
         <Container>
             <MobileMenu />
@@ -33,15 +36,15 @@ const Header = () => {
                     )} {user.isAdmin && (
                         <Link to="/admin" className="nav-link" style={{color: 'black',  padding: '0.5rem 0.2rem'}}><img  src = { panel } alt = "Панель управления" style={{marginTop: -5}} /></Link>
                     )}
-                    <Link to="/basket" className="nav-link" style={{color: 'black',  padding: '0.5rem 0.2rem'}}>
+                    <Link to="/basket" className="nav-link basket" style={{color: 'black',  padding: '0.5rem 0.2rem', position: 'relative'}}>
                         <img  src = { cart } alt = "Корзина" style={{marginTop: -5}} />
-                        {!!basket.count && <span>({basket.count})</span>}
+                        {!!basket.count && <span>{basket.count}</span>}
                     </Link>
                 </Nav>
             </Row>
             <NavBar className='mt-4' />
         </Container>
     )
-}
+})
 
 export default Header
