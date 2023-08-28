@@ -1,12 +1,4 @@
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Image,
-  Spinner,
-  Card,
-} from "react-bootstrap";
+import { Container, Row, Col, Button, Image, Spinner, Card, } from "react-bootstrap";
 import { useEffect, useState, useContext, useRef } from "react";
 import { fetchOneProduct, fetchCategoryProducts } from "../http/catalogAPI.js";
 import { useParams } from "react-router-dom";
