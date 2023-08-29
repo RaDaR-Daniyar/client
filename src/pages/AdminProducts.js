@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { fetchAllProducts, deleteProduct } from '../http/adminAPI.js'
-import { Button, Container, Spinner, Table, Pagination } from 'react-bootstrap'
+import { Button, Container, Spinner, Table, Pagination, Row, Col } from 'react-bootstrap'
 import CreateProduct from '../components/CreateProduct.js'
 import UpdateProduct from '../components/UpdateProduct.js'
 import { Link } from 'react-router-dom'
@@ -76,9 +76,16 @@ const AdminProducts = () => {
     }
 
     return (
-        <Container> 
-            <h1>Товары</h1>
-            <Button onClick={() => setCreateShow(true)}>Создать товар</Button>
+        <Container>
+            <Row>
+                <Col md={5}>
+                    <h1>Товары</h1>
+                    <Button onClick={() => setCreateShow(true)}>Создать товар</Button>
+                </Col>
+                <Col md={7}>
+                    <h1>Место для поиска</h1>
+                </Col>
+            </Row>
             <CreateProduct show={createShow} setShow={setCreateShow} setChange={setChange} />
             <UpdateProduct id={product} show={updateShow} setShow={setUpdateShow} setChange={setChange} />
             {products.length > 0 ? (
