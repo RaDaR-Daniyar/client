@@ -5,7 +5,7 @@ import CreateProduct from '../components/CreateProduct.js'
 import UpdateProduct from '../components/UpdateProduct.js'
 import { Link } from 'react-router-dom'
 
-const ADMIN_PER_PAGE = 16
+const ADMIN_PER_PAGE = 30
 
 const AdminProducts = () => {
     const [products, setProducts] = useState([])
