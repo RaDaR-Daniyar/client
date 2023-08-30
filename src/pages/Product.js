@@ -76,137 +76,129 @@ const Product = () => {
 
   return (
     <Container>
-      <Helmet>
-        <title>Купить наручные часы {product.name}</title>
-      </Helmet>
-      <Card className="mt-4" style={{ padding: "2% 8%" }}>
-        <Row>
-          <Col lg={6}>
-            {product.image ? (
-              <Image
-                width={300}
-                src={process.env.REACT_APP_IMG_URL + product.image}
-                style={{ marginTop: 50 }}
-              />
-            ) : (
-              <Image width={300} src="http://via.placeholder.com/300" />
-            )}
-          </Col>
-          <Col lg={6} style={{ textAlign: "left", marginTop: 20 }}>
-            <h3>{product.name}</h3>
-            <h3>{product.price} тг.</h3>
-            <p>
-              <img src={planet} alt="map" style={{ width: "18px" }} />{" "}
-              Международная гарантия
-              <br />
-              <img src={box} alt="map" style={{ width: "18px" }} /> Бесплатная
-              доставка
-            </p>
-            <Button onClick={() => handleClick(product.id)}>
-              Добавить в корзину
-            </Button>
-            <div style={{ marginTop: 40 }}>
-              {propertiesToDisplay.map((property) =>
-                renderProperty(property.label, property.value)
-              )}
-            </div>
-          </Col>
-        </Row>
-      </Card>
-      <Card className="mt-4" style={{ padding: "1%" }}>
-        <div>
-          <h4 className="mb-4">Сопутствующие товары:</h4>
-          <Swiper
-            spaceBetween={20}
-            slidesPerView={1}
-            modules={[Navigation, Scrollbar]}
-            autoplay={{ delay: 3000 }}
-            pagination={{ el: ".swiper-pagination", clickable: true }}
-            navigation={{
-              prevEl: prevBtn.current,
-              nextEl: nextBtn.current,
-            }}
-            onBeforeInit={(swiper) => {
-              swiper.params.navigation.prevEl = prevBtn.current;
-              swiper.params.navigation.nextEl = nextBtn.current;
-              swiper.params.scrollbar.el = scrollbar.current;
-            }}
-            onSwiper={setSwiper}
-            scrollbar={{
-              el: scrollbar.current,
-              draggable: true,
-            }}
-            breakpoints={{
-              600: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                autoplay: false,
-              },
-              1024: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                autoplay: false,
-              },
-              1300: {
-                slidesPerView: 6,
-                spaceBetween: 10,
-                autoplay: false,
-              },
-            }}
-          >
-            {sameCollectionProducts?.map((product) => {
-              return (
-                <div
-                  style={{
-                    display: "block",
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                  }}
+        <Helmet>
+            <title>Купить наручные часы {product.name}</title>
+        </Helmet>
+        <Card className="mt-4" style={{ padding: "2% 8%" }}>
+            <Row>
+                <Col lg={6}>
+                    {product.image ? (
+                    <Image
+                        width={300}
+                        src={process.env.REACT_APP_IMG_URL + product.image}
+                        style={{ marginTop: 50 }}
+                    />
+                    ) : (
+                    <Image width={300} src="http://via.placeholder.com/300" />
+                    )}
+                </Col>
+                <Col lg={6} style={{ textAlign: "left", marginTop: 20 }}>
+                    <h3>{product.name}</h3>
+                    <h3>{product.price} тг.</h3>
+                    <p>
+                        <img src={planet} alt="map" style={{ width: "18px" }} />{" "} Международная гарантия
+                    <br />
+                        <img src={box} alt="map" style={{ width: "18px" }} /> Бесплатная доставка
+                    </p>
+                    <Button onClick={() => handleClick(product.id)}>
+                    Добавить в корзину
+                    </Button>
+                    <div style={{ marginTop: 40 }}>
+                        {propertiesToDisplay.map((property) => renderProperty(property.label, property.value) )}
+                    </div>
+                </Col>
+            </Row>
+        </Card>
+        <Card className="mt-4" style={{ padding: "1%" }}>
+            <div>
+                <h4 className="mb-4">Сопутствующие товары:</h4>
+                <Swiper
+                    spaceBetween={20}
+                    slidesPerView={1}
+                    modules={[Navigation, Scrollbar]}
+                    autoplay={{ delay: 3000 }}
+                    pagination={{ el: ".swiper-pagination", clickable: true }}
+                    navigation={{
+                    prevEl: prevBtn.current,
+                    nextEl: nextBtn.current,
+                    }}
+                    onBeforeInit={(swiper) => {
+                    swiper.params.navigation.prevEl = prevBtn.current;
+                    swiper.params.navigation.nextEl = nextBtn.current;
+                    swiper.params.scrollbar.el = scrollbar.current;
+                    }}
+                    onSwiper={setSwiper}
+                    scrollbar={{
+                    el: scrollbar.current,
+                    draggable: true,
+                    }}
+                    breakpoints={{
+                    600: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        autoplay: false,
+                    },
+                    1024: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        autoplay: false,
+                    },
+                    1300: {
+                        slidesPerView: 6,
+                        spaceBetween: 10,
+                        autoplay: false,
+                    },
+                    }}
                 >
-                  <SwiperSlide key={product.id}>
-                    <Card
-                      style={{
-                        width: 204,
-                        height: 250,
-                        objectFit: "contain",
-                        cursor: "pointer",
-                      }}
-                    >
-                      <Link to={`/product/${product.id}`}>
-                        {product.image ? (
-                          <Card.Img
-                            className="mt-1"
-                            style={{
-                              width: 198,
-                              height: 240,
-                              marginLeft: 3,
-                              objectFit: "contain",
-                            }}
-                            variant="top"
-                            src={process.env.REACT_APP_IMG_URL + product.image}
-                          />
-                        ) : (
-                          <Card.Img
-                            variant="top"
-                            src={
-                              process.env.REACT_APP_IMG_URL +
-                              product.image +
-                              ".webp"
-                            }
-                          />
-                        )}
-                        <Card.Body>
-                          <Card.Title>{product.name}</Card.Title>
-                        </Card.Body>
-                      </Link>
-                    </Card>
-                  </SwiperSlide>
-                </div>
-              );
-            })}
-          </Swiper>
-        </div>
-      </Card>
+                    {sameCollectionProducts?.map((product) => {
+                    return (
+                        <div
+                        style={{
+                            display: "block",
+                            marginLeft: "auto",
+                            marginRight: "auto",
+                        }}
+                        >
+                            <SwiperSlide key={product.id}>
+                                <Card
+                                style={{
+                                    width: 204,
+                                    height: 250,
+                                    objectFit: "contain",
+                                    cursor: "pointer",
+                                }}
+                                >
+                                    <Link to={`/product/${product.id}`}>
+                                        {product.image ? (
+                                        <Card.Img
+                                            className="mt-1"
+                                            style={{
+                                            width: 198,
+                                            height: 240,
+                                            marginLeft: 3,
+                                            objectFit: "contain",
+                                            }}
+                                            variant="top"
+                                            src={process.env.REACT_APP_IMG_URL + product.image}
+                                        />
+                                        ) : (
+                                        <Card.Img
+                                            variant="top"
+                                            src={process.env.REACT_APP_IMG_URL + product.image +".webp"}
+                                        />
+                                        )}
+                                        <Card.Body>
+                                            <Card.Title>{product.name}</Card.Title>
+                                        </Card.Body>
+                                    </Link>
+                                </Card>
+                            </SwiperSlide>
+                        </div>
+                    );
+                    })}
+                </Swiper>
+            </div>
+        </Card>
     </Container>
   );
 };
