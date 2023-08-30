@@ -5,12 +5,7 @@ import { useParams } from "react-router-dom";
 import { append } from "../http/basketAPI.js";
 import { AppContext } from "../components/AppContext.js";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, {
-  Autoplay,
-  Navigation,
-  Pagination,
-  Scrollbar,
-} from "swiper";
+import SwiperCore, { Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 import "swiper/css";
 import planet from "../assets/icon-planet.png";
 import box from "../assets/icon-box.png";
