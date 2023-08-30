@@ -103,7 +103,8 @@ const Shop = observer(() => {
     }, []);
 
     useEffect(() => {
-        fetchCategories()
+        
+    fetchCategories()
         .then((data) => (catalog.categories = data))
         .finally(() => setCategoriesFetching(false));
 
