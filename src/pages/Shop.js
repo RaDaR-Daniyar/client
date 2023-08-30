@@ -103,7 +103,7 @@ const Shop = observer(() => {
     }, []);
 
     useEffect(() => {
-        
+
     fetchCategories()
         .then((data) => (catalog.categories = data))
         .finally(() => setCategoriesFetching(false));
@@ -250,7 +250,7 @@ const Shop = observer(() => {
     return (
         <Container>
             <Helmet>
-                <title>Купить швейцарские наручные часы в Алматы</title>
+                <title>Купить наручные часы в Алматы | Купить мужские наручные часы в Алматы | Купить женские наручные часы в Алматы</title>
                 <meta name="description" content="Онлайн магазин часов"/>
                 <meta name="keywords" content="купить наручные часы в Алматы, наручные часы в Алматы, часы в Алматы, купить наручные часы, наручные часы, часы" />
             </Helmet>
