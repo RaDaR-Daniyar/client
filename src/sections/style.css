@@ -137,11 +137,11 @@ main {
     border-radius: 25px;
     transition: all 200ms ease-out;
     transition: 1s;
-    box-shadow: '0 0 6px 6px #000'
+    box-shadow: '0 0 6px 6px #1200ba'
     }
     .scalecat:hover {
         transform: scale(1.05);
-        box-shadow: 0 0 20px rgb(0, 0, 0);
+        box-shadow: 0 0 20px rgb(18, 0, 186);
     }
 
 .two {
