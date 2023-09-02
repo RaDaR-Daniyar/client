@@ -32,7 +32,7 @@ const ClockWoman = () => {
                     <Row>
                         <Col md={6}>
                             <div>
-                                <a href='/shop/?gender=2'><img class='two' src={ clockwoman } alt="Купить мужские часы в Алматы" width='100%' style={{boxShadow: '0 0 6px 6px #1200ba' }} /></a>
+                                <a href='/shop?gender=2'><img class='two' src={ clockwoman } alt="Купить мужские часы в Алматы" width='100%' style={{boxShadow: '0 0 6px 6px #1200ba' }} /></a>
                             </div>
                         </Col>
                         <Col md={6}>

@@ -30,7 +30,7 @@ const Knife = () => {
                     <Row>
                         <Col md={6}>
                             <div>
-                                <a href='/shop/?gender=3'><img class='two' src={ victorinox } alt="Купить victorinox в Алматы" width='100%' style={{boxShadow: '0 0 6px 6px #1200ba' }} /></a>
+                                <a href='/shop?brand=15'><img class='two' src={ victorinox } alt="Купить victorinox в Алматы" width='100%' style={{boxShadow: '0 0 6px 6px #1200ba' }} /></a>
                             </div>
                         </Col>
                         <Col md={6}>
