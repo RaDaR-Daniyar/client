@@ -3,6 +3,7 @@ import { fetchGenders, deleteGender } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditGender from '../components/EditGender.js'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const AdminGenders = () => {
     const [genders, setGenders] = useState(null)
@@ -50,6 +51,9 @@ const AdminGenders = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>Добавить пол наручных часов - Aksessuary.KZ</title>
+            </Helmet>
             <h1>Пол</h1>
             <Button onClick={() => handleCreateClick()}>Создать пол</Button>
             <EditGender id={genderId} show={show} setShow={setShow} setChange={setChange} />

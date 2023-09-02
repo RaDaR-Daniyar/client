@@ -3,6 +3,7 @@ import { fetchWaters, deleteWater } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditWater from '../components/EditWater.js'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const AdminWaters = () => {
     const [waters, setWaters] = useState(null)
@@ -50,7 +51,10 @@ const AdminWaters = () => {
 
     return (
         <Container>
-            <h1>Бренды</h1>
+            <Helmet>
+                <title>Добавить водонепроницаемость наручных часов - Aksessuary/KZ</title>
+            </Helmet>
+            <h1>Водонепроницаемость</h1>
             <Button onClick={() => handleCreateClick()}>Создать водонепроницаемость</Button>
             <EditWater id={waterId} show={show} setShow={setShow} setChange={setChange} />
             {waters.length > 0 ? (

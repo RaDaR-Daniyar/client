@@ -3,6 +3,7 @@ import { fetchStraps, deleteStrap } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditStrap from '../components/EditStrap.js'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const AdminStraps = () => {
     const [straps, setStraps] = useState(null)
@@ -50,6 +51,9 @@ const AdminStraps = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>Добавить материал браслета/ремешка наручных часов - Aksessuary/KZ</title>
+            </Helmet>
             <h1>Материал браслета/ремешка</h1>
             <Button onClick={() => handleCreateClick()}>Создать материал корпуса/ремешка</Button>
             <EditStrap id={strapId} show={show} setShow={setShow} setChange={setChange} />

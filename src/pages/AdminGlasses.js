@@ -3,6 +3,7 @@ import { fetchGlasses, deleteGlass } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditGlass from '../components/EditGlass.js'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const AdminGlasses = () => {
     const [glasses, setGlasses] = useState(null)
@@ -50,6 +51,9 @@ const AdminGlasses = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>Добавить тип стекла наручных часов - Aksessuary/KZ</title>
+            </Helmet>
             <h1>Стекла</h1>
             <Button onClick={() => handleCreateClick()}>Создать тип стекла</Button>
             <EditGlass id={glassId} show={show} setShow={setShow} setChange={setChange} />

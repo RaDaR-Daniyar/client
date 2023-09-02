@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { AppContext } from '../components/AppContext.js'
 import { Link, useNavigate } from 'react-router-dom'
 import { logout } from '../http/userAPI.js'
+import { Helmet } from 'react-helmet'
 
 const Admin = () => {
     const { user } = useContext(AppContext)
@@ -16,6 +17,9 @@ const Admin = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>Панель управлени Aksessuary.KZ</title>
+            </Helmet>
             <h1>Панель управления</h1>
             <p>
                 Это панель управления магазином для администратора

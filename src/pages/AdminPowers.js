@@ -3,6 +3,7 @@ import { fetchPowers, deletePower } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditPower from '../components/EditPower.js'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const AdminPowers = () => {
     const [powers, setPowers] = useState(null)
@@ -50,7 +51,10 @@ const AdminPowers = () => {
 
     return (
         <Container>
-            <h1>Бренды</h1>
+            <Helmet>
+                <title>Добавить запас хода наручных часов - Aksessuary.KZ</title>
+            </Helmet>
+            <h1>Запас хода</h1>
             <Button onClick={() => handleCreateClick()}>Создать срок запаса хода</Button>
             <EditPower id={powerId} show={show} setShow={setShow} setChange={setChange} />
             {powers.length > 0 ? (

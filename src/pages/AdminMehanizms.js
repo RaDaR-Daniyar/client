@@ -3,6 +3,7 @@ import { fetchMehanizms, deleteMehanizm } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditMehanizm from '../components/EditMehanizm.js'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const AdminMehanizms = () => {
     const [mehanizms, setMehanizms] = useState(null)
@@ -50,6 +51,9 @@ const AdminMehanizms = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>Добавить тип механизма наручных часов - Aksessuary.KZ</title>
+            </Helmet>
             <h1>Типы механизмов</h1>
             <Button onClick={() => handleCreateClick()}>Создать тип механизма</Button>
             <EditMehanizm id={mehanizmId} show={show} setShow={setShow} setChange={setChange} />

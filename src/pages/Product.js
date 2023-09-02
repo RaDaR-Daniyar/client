@@ -72,7 +72,7 @@ const Product = () => {
   return (
     <Container>
         <Helmet>
-            <title>Купить наручные часы {product.name}</title>
+            <title>Купить {product.name} в Алматы</title>
         </Helmet>
         <Card className="mt-4" style={{ padding: "2% 8%" }}>
             <Row>

@@ -3,6 +3,7 @@ import { fetchShapes, deleteShape } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditShape from '../components/EditShape.js'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const AdminShapes = () => {
     const [shapes, setShapes] = useState(null)
@@ -50,7 +51,10 @@ const AdminShapes = () => {
 
     return (
         <Container>
-            <h1>Бренды</h1>
+            <Helmet>
+                <title>Добавить форму корпуса наручных часов - Aksessuary/KZ</title>
+            </Helmet>
+            <h1>Форма корпуса</h1>
             <Button onClick={() => handleCreateClick()}>Создать форму корпуса</Button>
             <EditShape id={shapeId} show={show} setShow={setShow} setChange={setChange} />
             {shapes.length > 0 ? (

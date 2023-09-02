@@ -3,6 +3,7 @@ import { fetchMaterials, deleteMaterial } from '../http/adminAPI.js'
 import { Button, Container, Spinner, Table } from 'react-bootstrap'
 import EditMaterial from '../components/EditMaterial.js'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const AdminMaterials = () => {
     const [materials, setMaterials] = useState(null)
@@ -50,7 +51,10 @@ const AdminMaterials = () => {
 
     return (
         <Container>
-            <h1>Бренды</h1>
+            <Helmet>
+                <title>Добавить материал корпуса наручных часов - Aksessuary/KZ</title>
+            </Helmet>
+            <h1>Материал корпуса</h1>
             <Button onClick={() => handleCreateClick()}>Создать материал корпуса</Button>
             <EditMaterial id={materialId} show={show} setShow={setShow} setChange={setChange} />
             {materials.length > 0 ? (

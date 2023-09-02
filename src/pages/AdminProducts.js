@@ -4,6 +4,7 @@ import { Button, Container, Spinner, Table, Pagination, Row, Col } from 'react-b
 import CreateProduct from '../components/CreateProduct.js'
 import UpdateProduct from '../components/UpdateProduct.js'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const ADMIN_PER_PAGE = 50
 
@@ -77,6 +78,9 @@ const AdminProducts = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>Добавить товар - Aksessuary/KZ</title>
+            </Helmet>
             <Row>
                 <Col md={5}>
                     <h1>Товары</h1>
