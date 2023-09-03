@@ -74,7 +74,7 @@ const Delivery = () => {
                     <h4 style={{textAlign: 'justify'}}>Наличный расчет</h4>
                     <p style={{textAlign: 'justify'}}>Клиент оплачивает заказ наличными в магазине, либо курьеру при получении заказа; все необходимые документы, сопровождающие куплю-продажу, прилагаются к заказу.</p>
                     <h4 style={{textAlign: 'justify'}}>Безналичный расчет</h4>
-                    <h4 style={{textAlign: 'justify'}}>1. Оплата покупки с помощью Kaspi QR:</h4>
+                    <h4 style={{textAlign: 'justify'}}>1. Оплата покупки с помощью Kaspi QR/Kaspi Pay:</h4>
                     <p style={{textAlign: 'justify'}}>В магазине G-Factory вы можете приобрести часы, оплатив покупку очень удобным способом: с помощью QR-кода в мобильном приложении Kaspi.kz</p>
                     <h4 style={{textAlign: 'justify'}}>2. Оплата пластиковой картой через терминал:</h4>
                     <p style={{textAlign: 'justify'}}>
