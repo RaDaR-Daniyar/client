@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import '../sections/style.css'
+import { Form } from "react-bootstrap";
 
 const SearchField = ({ onSearch }) => {
     const [searchInput, setSearchInput] = useState("");
@@ -13,16 +15,17 @@ const SearchField = ({ onSearch }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="d-flex justify-content-between mt-3">
+        <Form onSubmit={handleSubmit} className="d-flex justify-content-between mt-3">
         <input
+            class="input"
             type="text"
             value={searchInput}
             onChange={handleInputChange}
             placeholder="Поиск"
-            style={{ width: "85%", height: 30 }}
+            style={{ width: "83%", height: 37, borderRadius: '5px' }}
         />
-        <button type="submit"style={{ width: "15%", height: 30 }}>Найти</button>
-        </form>
+        <button class="button" type="submit"style={{ paddingLeft: '5px', width: "15%", height: 37, backgroundColor: '#1200ba', color: 'white', borderRadius: '5px' }}>Найти</button>
+        </Form>
     );
 }
 
