@@ -15,7 +15,7 @@ const Waterman = () => {
                 <meta name="keywords" content="купить ручки Waterman в Алматы, купить перьевые ручки Waterman в Алматы, купить перьевые ручки Waterman в Казахстане, 
                     перьевые ручки Waterman, Waterman, ручки Waterman в Алматы, ручки Waterman, Waterman, ручки, перьевые ручки" />
             </Helmet>
-            <Card>
+            <Card style={{borderColor: '#1200ba'}}>
                 <img src={ waterman } alt="Купить перьевые ручки Waterman в Алматы"  width='35%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', marginTop: 15}}/>
                 <p style={{textAlign: 'justify', marginLeft: '20px', marginRight: '20px'}}>
                     Умело сделанная во Франции, каждая ручка Waterman вдохновенно вторит гению основателя Waterman, Льюиса Эдсона, изобретателя первой надежной авторучки в 1883. Перьевые 

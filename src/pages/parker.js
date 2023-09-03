@@ -15,7 +15,7 @@ const Parker = () => {
                 <meta name="keywords" content="купить ручки Parker в Алматы, купить перьевые ручки Parker в Алматы, купить перьевые ручки Parker в Казахстане, 
                     перьевые ручки Parker, Parker, ручки Parker в Алматы, ручка Parker, ручки, перьевые ручки, Parker" />
             </Helmet>
-            <Card>
+            <Card style={{borderColor: '#1200ba'}}>
                 <img src={ parker } alt="Купить перьевые ручки Parker в Алматы"  width='40%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
                 <p style={{textAlign: 'justify', marginLeft: '20px', marginRight: '20px'}}>
                     С 1888 года «PARKER» поддерживает свою репутацию пионера в создании совершенных ручек – как по технологии изготовления, так и по конструктивному решению. 

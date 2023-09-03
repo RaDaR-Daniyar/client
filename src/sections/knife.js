@@ -8,7 +8,7 @@ const Knife = () => {
     return (
         <Container className='mt-4'>
             <div class='hide-on-mobile'>
-                <Card>
+                <Card style={{borderColor: '#1200ba'}}>
                     <Row>
                         <Col md={6}>
                             <div>
@@ -26,7 +26,7 @@ const Knife = () => {
                 </Card>
             </div>
             <div class='show-on-mobile'>
-                <Card>
+                <Card style={{borderColor: '#1200ba'}}>
                     <Row>
                         <Col md={6}>
                             <div>

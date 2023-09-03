@@ -170,11 +170,12 @@ input {
 }
 input:active, input:focus, input:hover {
     outline: #5144c7;
-    border: 2px solid #1200ba;
+    border: 1px solid #1200ba;
     box-shadow: 0 0 4px 4px rgb(131, 172, 241);
 }
 input[type=text]{
     padding-left: 10px;
+    color: black;
 }
 button {
     outline: none;
@@ -183,6 +184,6 @@ button {
 }
 button:active, button:focus, button:hover {
     outline: #5144c7;
-    border: 2px solid #1200ba;
+    border: 1px solid #1200ba;
     box-shadow: 0 0 4px 4px rgb(131, 172, 241);
 }

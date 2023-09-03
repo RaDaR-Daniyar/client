@@ -17,7 +17,7 @@ const Victorinox = () => {
                 купить армейские ножи Victorinox в Казахстане, купить кухонные ножи Victorinox в Казахстане, швейцарские ножи Victorinox, Victorinox, ножи Victorinox в Алматы, ножи Victorinox, Victorinox, 
                 армейские ножи, кухоные ножи, ножи" />
             </Helmet>
-            <Card>
+            <Card style={{borderColor: '#1200ba'}}>
                 <img src={ victorinox } alt="Купить швейцарские ножи Victorinox в Алматы"  width='30%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
                 <p style={{textAlign: 'justify', marginLeft: '20px', marginRight: '20px'}}>
                     Компания Victorinox занимается производством и продажей уникальной высококачественной продукции для различных сфер жизни. В ассортимент входят 

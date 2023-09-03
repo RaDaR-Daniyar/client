@@ -74,7 +74,7 @@ const Product = () => {
         <Helmet>
             <title>Купить {product.name} в Алматы</title>
         </Helmet>
-        <Card className="mt-4" style={{ padding: "2% 8%" }}>
+        <Card className="mt-4" style={{ padding: "2% 8%", borderColor: '#1200ba' }}>
             <Row>
                 <Col lg={6}>
                     {product.image ? (
@@ -104,7 +104,7 @@ const Product = () => {
                 </Col>
             </Row>
         </Card>
-        <Card className="mt-4" style={{ padding: "1%" }}>
+        <Card className="mt-4" style={{ padding: "1%", borderColor: '#1200ba' }}>
             <div>
                 <h4 className="mb-4">Сопутствующие товары:</h4>
                 <Swiper

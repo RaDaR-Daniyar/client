@@ -15,7 +15,7 @@ const AK = () => {
                 <meta name="keywords" content="купить часы Anne Klein в Алматы, купить наручные часы Anne Klein в Алматы, купить часы Anne Klein в Казахстане, 
                     наручные часы Anne Klein, Anne Klein, часы Anne Klein в Алматы, часы Anne Klein, Anne Klein, женские часы, часы" />
             </Helmet>
-            <Card>
+            <Card  style={{borderColor: '#1200ba'}}>
                 <img src={ ak } alt="Купить часы Anne Klein в Алматы"  width='35%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', marginTop: 15}}/>
                 <p style={{textAlign: 'justify', marginLeft: '20px', marginRight: '20px'}}>
                     Наручные часы – это не только приспособление для того, чтобы всегда знать, который час, но и аксессуар, который подчеркнёт ваш стиль, вкус и статус. 

@@ -8,7 +8,7 @@ import Marquee from 'react-fast-marquee';
 const Categories = () => {
     return (
         <Container className='mt-4'>
-            <Card style={{padding: '2%'}}>
+            <Card style={{padding: '2%', borderColor: '#1200ba'}}>
                 <h1 style={{textAlign: 'center', fontWeight: 'normal'}}>Категории</h1>
                 <Row>
                     <Col md={4}>

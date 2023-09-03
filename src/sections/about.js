@@ -6,7 +6,7 @@ import go from "../assets/go.png";
 const About = () => {
     return (
         <Container className='mt-4'>
-            <Card>
+            <Card style={{borderColor: '#1200ba'}}>
                 <Row>
                 <Col md={6}>
                         <div style={{padding: '3%'}}>

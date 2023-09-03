@@ -17,8 +17,10 @@ const Service = () => {
                 <title>Сервис центр швейцарских наручных часов - Aksessuary.KZ</title>
                 <meta name="description" content="Онлайн магазин часов"/>
             </Helmet>
-            <a href='https://sws.kz/'><img src={ sws } alt="Авторизованный сервисный центр в Казахстане - SWService" style={{width: '100%'}} /></a>
-            <Card className='mt-4'>
+            <Card className='mt-4' style={{borderColor: '#1200ba'}}>
+                <a href='https://sws.kz/'><img src={ sws } alt="Авторизованный сервисный центр в Казахстане - SWService" style={{width: '100%'}} /></a>
+            </Card>
+            <Card className='mt-4' style={{borderColor: '#1200ba'}}>
                 <h2 style={{textAlign: 'center'}}>Услуги</h2>
                 <Row>
                     <Col md={4}>
@@ -59,7 +61,7 @@ const Service = () => {
                     </Col>
                 </Row>
             </Card>
-            <Card className='mt-4' style={{padding: '2%'}}>
+            <Card className='mt-4' style={{padding: '2%', borderColor: '#1200ba'}}>
                 <h2 style={{textAlign:'center'}}>Авторизованный сервисный центр в Казахстане</h2><br />
                 <p style={{textAlign:'justify'}}>
                     Авторизованный сервисный центр «SWService» — это команда профессиональных мастеров по ремонту часов. Мастера производят обслуживание и ремонт на самом высоком 
@@ -73,7 +75,7 @@ const Service = () => {
                     произвести стандартное профилактическое обслуживание.
                 </p>
             </Card>
-            <Card className='mt-4' style={{padding: '2%'}}>
+            <Card className='mt-4' style={{padding: '2%', borderColor: '#1200ba'}}>
                 <h2 style={{textAlign: 'center'}}>Гаранития</h2><br />
                 <p style={{textAlign: 'justify'}}>
                     Все часы находятся на официальной гарантии авторизованного сервис центра “SW Service”. Если по каким–либо причинам Вы хотите вернуть покупку, то мы примем обратно 
@@ -139,7 +141,7 @@ const Service = () => {
                     </ul>
                 </p>
             </Card>
-            <Card className='mt-4'>
+            <Card className='mt-4' style={{borderColor: '#1200ba'}}>
                 <Row>
                     <Col md={8}>
                         <div>

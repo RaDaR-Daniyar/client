@@ -9,7 +9,7 @@ const ClockWoman = () => {
     return (
         <Container className='mt-4'>
             <div class='hide-on-mobile'>
-                <Card style={{display: 'flex', flexWrap: 'nowrap'}}>
+                <Card style={{display: 'flex', flexWrap: 'nowrap', borderColor: '#1200ba'}}>
                     <Row>
                         <Col md={6}>
                             <div>
@@ -28,7 +28,7 @@ const ClockWoman = () => {
                 </Card>
             </div>
             <div class='show-on-mobile'>
-                <Card style={{display: 'flex', flexWrap: 'nowrap'}}>
+                <Card style={{display: 'flex', flexWrap: 'nowrap', borderColor: '#1200ba'}}>
                     <Row>
                         <Col md={6}>
                             <div>

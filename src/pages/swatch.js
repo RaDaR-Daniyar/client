@@ -15,7 +15,7 @@ const Swatch = () => {
                 <meta name="keywords" content="купить часы Swatch в Алматы, купить наручные часы Swatch в Алматы, купить часы Swatch в Казахстане, 
                     наручные часы Swatch, Swatch, часы Swatch в Алматы, часы Swatch, Swatch, часы, наручные часы, женские часы, мужские часы, швейчарские часы" />
             </Helmet>
-            <Card>
+            <Card style={{borderColor: '#1200ba'}}>
                 <img src={ swatch } alt="Купить наручные часы Swatch в Алматы"  width='40%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
                 <p style={{textAlign: 'justify', marginLeft: '20px', marginRight: '20px'}}>
                     Швейцарское качество может быть вполне доступным! Доказательство этому — часы «Swatch». Яркие, стильные и необычные аксессуары станут изюминкой вашего образа, а 

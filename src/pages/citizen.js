@@ -15,7 +15,7 @@ const Citizen = () => {
                 <meta name="keywords" content="купить часы Citizen в Алматы, купить наручные часы Citizen в Алматы, купить часы Citizen в Казахстане, 
                     наручные часы Citizen, Citizen, часы Citizen в Алматы, часы Citizen, часы, наручные часы, женские часы, мужские часы, японские часы" />
             </Helmet>
-            <Card>
+            <Card style={{borderColor: '#1200ba'}}>
                 <img src={ citizen } alt="Купить наручные часы Citizen в Алматы"  width='30%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
                 <p style={{textAlign: 'justify', marginLeft: '20px', marginRight: '20px'}}>
                     Citizen-  пионер часового дела и инновационных технологий, основанный в 1918 году для создания часов. На протяжении более чем 100 лет мы оставались верны миссии 

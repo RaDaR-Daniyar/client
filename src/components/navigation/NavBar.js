@@ -18,7 +18,7 @@ const UserCicle = styled.div`
 
 const NavBar = observer(() => {
     return (
-        <Card className="mb-4" style={{marginTop: 10}}>
+        <Card className="mb-4" style={{marginTop: 10, borderColor: '#1200ba'}}>
             <div class="hide-on-mobile">
                 <Navbar bg="white" className='d-flex justify-content-center'>
                     <Nav className="ml-auto">

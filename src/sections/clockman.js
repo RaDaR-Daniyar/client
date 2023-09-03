@@ -9,7 +9,7 @@ import './style.css'
 const ClockMan = () => {
     return (
         <Container className='mt-4'>
-            <Card>
+            <Card style={{borderColor: '#1200ba'}}>
                 <Row>
                     <Col md={6}>
                         <div>

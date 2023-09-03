@@ -11,14 +11,14 @@ const Delivery = () => {
                 <title>Доставка и оплата наручных часов - Aksessuary.KZ</title>
                 <meta name="description" content="Онлайн магазин часов"/>
             </Helmet>
-            <Card>
+            <Card style={{borderColor: '#1200ba'}}>
                 <div style={{padding: '2%', textAlign: 'center'}}>
                     <h2>Доставка</h2>
                     <h4>Быстрая и удобная доставка заказов по всей территории Казахстана</h4>
                     <p>Доставка осуществляется только при указании точного адреса и дополнительного контактного номера телефона.</p>
                 </div>
             </Card>
-            <Card className='mt-4' style={{padding: '2%'}}>
+            <Card className='mt-4' style={{padding: '2%', borderColor: '#1200ba'}}>
                 <Row>
                     <Col md={5} className='mt-4'>
                         <img src={ delivery } alt="Авторизованный сервисный центр в Казахстане - SWService" style={{width: '100%'}} />
@@ -49,7 +49,7 @@ const Delivery = () => {
                     </Col>
                 </Row>
             </Card>
-            <Card className='mt-4' style={{padding: '2%'}}>
+            <Card className='mt-4' style={{padding: '2%', borderColor: '#1200ba'}}>
                 <Row>
                     <Col md={5}>
                         <a href='https://2gis.kz/almaty/search/%D0%BC%D1%83%D0%BA%D0%B0%D0%BD%D0%BE%D0%B2%D0%B0%2070/firm/70000001054138837?m=76.91472%2C43.259361%2F18.65%2Fr%2F6.54' target='_blank'>
@@ -68,7 +68,7 @@ const Delivery = () => {
                     </Col>
                 </Row>
             </Card>
-            <Card className='mt-4'>
+            <Card className='mt-4' style={{borderColor: '#1200ba'}}>
                 <div style={{padding: '2%', textAlign: 'center'}}>
                     <h2>Оплата</h2>
                     <h4 style={{textAlign: 'justify'}}>Наличный расчет</h4>

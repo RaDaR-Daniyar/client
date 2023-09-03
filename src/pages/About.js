@@ -20,7 +20,7 @@ const About = () => {
                 <title>О магазине - Aksessuary.KZ</title>
                 <meta name="description" content="Онлайн магазин часов"/>
             </Helmet>
-            <Card style={{padding: '2%'}}>
+            <Card style={{padding: '2%', borderColor: '#1200ba'}}>
                 <h4 style={{textAlign: 'center'}}>Дорогие друзья!</h4>
                 <p> Интернет-магазин часов Aksessuary.KZ предлагает собственный товар, представленный 
                     в наших магазинах, а не занимаемся реализацией часов сторонних компаний, к которым мы не имеем отношение. Группа наших компаний является эксклюзивным 
@@ -41,11 +41,11 @@ const About = () => {
                     </ul>
                 </p>
             </Card>
-            <Card className='mt-4' style={{padding: '2%', textAlign: 'center'}}>
+            <Card className='mt-4' style={{padding: '2%', textAlign: 'center', borderColor: '#1200ba'}}>
                 <h4 style={{fontWeight: 'normal'}}>Наша миссия – сделать все возможное для облегчения выбора и экономии времени и денег наших клиентов при покупке часов.</h4>
                 <h4 style={{fontWeight: 'normal'}}>Желаем Вам приятных и ярких покупок!</h4>
             </Card>
-            <Card className='mt-4'>
+            <Card className='mt-4' style={{borderColor: '#1200ba'}}>
                 <h1 style={{textAlign: 'center', fontWeight: 'normal'}}>Бренды</h1>
                 <Marquee pauseOnHover speed={200} style={{margin: '2%', width: '96%', height: 360}}>
                     

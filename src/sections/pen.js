@@ -7,7 +7,7 @@ import S0637020 from "../assets/categories/S0637020.webp"
 const Pen = () => {
     return (
         <Container className='mt-4'>
-            <Card>
+            <Card style={{borderColor: '#1200ba'}}>
                 <Row>
                 <Col md={6}>
                         <div>

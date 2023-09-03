@@ -15,7 +15,7 @@ const Lamy = () => {
                 <meta name="keywords" content="купить ручки Lamy в Алматы, купить перьевые ручки Lamy в Алматы, купить перьевые ручки Lamy в Казахстане, 
                     перьевые ручки Lamy, Lamy, ручки Lamy в Алматы, ручка Lamy, ручки, перьевые ручки, Lamy" />
             </Helmet>
-            <Card>
+            <Card style={{borderColor: '#1200ba'}}>
                 <img src={ lamy } alt="Купить перьевые ручки Lamy в Алматы"  width='40%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
                 <p style={{textAlign: 'justify', marginLeft: '20px', marginRight: '20px'}}>
                     Lamy — это немецкий бренд пишущих инструментов с 85-летней историей. Все началось с маленькой фабрики в Гейдельберге. Сейчас 

@@ -16,7 +16,7 @@ const CK = () => {
                     наручные часы Calvin Klein, Calvin Klein, часы Calvin Klein в Алматы, часы ck, часы Calvin Klein, ck, Calvin Klein, часы, наручные часы, женские часы, мужские часы, 
                     швейчарские часы" />
             </Helmet>
-            <Card>
+            <Card style={{borderColor: '#1200ba'}}>
                 <img src={ ck } alt="Купить часы Calvin Klein в Алматы"  width='35%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', marginTop: 15}}/>
                 <p style={{textAlign: 'justify', marginLeft: '20px', marginRight: '20px'}}>
                     В 1997 году, дизайнерский мир знаменитого американского экспериментатора Calvin Klien пополнился именным часовым брендом, а самый мощный швейцарский концерн 

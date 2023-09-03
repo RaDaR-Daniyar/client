@@ -9,7 +9,7 @@ import telegram from '../assets/telegram.png'
 const Footer = () => {
     return (
         <Container className='mt-4' style={{marginBottom: 30}}>
-            <Card>
+            <Card style={{borderColor: '#1200ba'}}>
                 <Row>
                     <Col md={4} style={{marginRight: 160, marginLeft: 10, marginTop: 20}}>
                         <img  src = { logo } alt = "Купить аксессуары в Алматы" style={{width: 170}}/><br /><br />
@@ -21,15 +21,14 @@ const Footer = () => {
                         <a href='/shop' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Каталог</a><br />
                         <a href='/shop/?gender=3' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Мужские часы</a><br />
                         <a href='/shop/?gender=2' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Женские часы</a><br />
-                        <a href='/shop' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Ручки</a><br />
-                        <a href='/shop' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Ножи</a>
+                        <a href='/shop?brend=1' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Ручки</a><br />
+                        <a href='/shop?brand=15' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Ножи</a>
                     </Col>
                     <Col md={2} style={{marginBottom: 20, marginTop: 20, marginLeft: 10}}>
                         <h4 style={{color: "#1200ba", marginBottom: 20}}>Информация</h4>
                         <a href='/about' style={{textDecoration: "none", fontSize: 14, color: "black"}}>О магазине</a><br />
                         <a href='/delivery' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Доставка и оплата</a><br />
                         <a href='/service' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Сервис-центр</a><br />
-                        <a href='/contacts' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Контакты</a><br />
                     </Col>
                     <Col md={2} style={{marginLeft: 10}}>
                         <h4 style={{color: "#1200ba", marginBottom: 20, marginTop: 20}}>Контакты</h4>

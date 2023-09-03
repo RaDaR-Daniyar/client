@@ -15,7 +15,7 @@ const Diesel = () => {
                 <meta name="keywords" content="купить часы Diesel в Алматы, купить наручные часы Diesel в Алматы, купить часы Diesel в Казахстане, 
                     наручные часы Diesel, Diesel, часы Diesel в Алматы, часы Diesel, Diesel, часы, наручные часы, женские часы, мужские часы, брендовые часы" />
             </Helmet>
-            <Card>
+            <Card style={{borderColor: '#1200ba'}}>
                 <img src={ diesel } alt="Купить наручные часы Diesel в Алматы"  width='40%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
                 <p style={{textAlign: 'justify', marginLeft: '20px', marginRight: '20px'}}>
                     Итальянский бренд Diesel создаёт авангардные fashion-часы с выраженным футуристичным акцентом в дизайне. Нестандартная величина корпуса и броские, провокационные 

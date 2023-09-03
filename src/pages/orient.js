@@ -15,7 +15,7 @@ const Orient = () => {
                 <meta name="keywords" content="купить часы Orient в Алматы, купить наручные часы Orient в Алматы, купить часы Orient в Казахстане, 
                     наручные часы Orient, Orient, часы Orient в Алматы, часы Orient, Orient, часы, наручные часы, женские часы, мужские часы, японские часы" />
             </Helmet>
-            <Card>
+            <Card style={{borderColor: '#1200ba'}}>
                 <img src={ orient } alt="Купить наручные часы Orient в Алматы"  width='30%' style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
                 <p style={{textAlign: 'justify', marginLeft: '20px', marginRight: '20px'}}>
                     Всемирно известные японские часы Orient выпускает фирма-производитель Orient Watch Co Ltd., основанная еще в 1950 году в Токио. Ранее она носила название 
