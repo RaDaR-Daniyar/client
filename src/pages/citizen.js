@@ -41,7 +41,11 @@ const Citizen = () => {
                         <img src={ citizenw } alt="Купить японские наручные часы Citizen в Алматы" width='100%'/>
                     </Col>
                 </Row>
-                <a href='/shop?brand=3'><img class='scalecat' src={ go } alt="Купить японские наручные часы Citizen в Алматы" style={{width: '20%', display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: '20px' }} /></a>
+                <a href='/shop?brand=3'>
+                    <img class='scalecat' src={ go } alt="Купить наручные часы Anne Kleinx в Алматы" 
+                        style={{width: '12em', display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: '20px' }} 
+                    />
+                </a>
             </Card>
         </Container>
     )

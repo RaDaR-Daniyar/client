@@ -38,7 +38,11 @@ const Waterman = () => {
                         <img src={ watermanp } alt="Купить перьевые ручки Waterman в Алматы" width='100%'/>
                     </Col>
                 </Row>
-                <a href='/shop?brand=16'><img class='scalecat' src={ go } alt="Купить перьевые ручки Waterman в Алматы" style={{width: '20%', display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: '20px' }} /></a>
+                <a href='/shop?brand=16'>
+                    <img class='scalecat' src={ go } alt="Купить наручные часы Anne Kleinx в Алматы" 
+                        style={{width: '12em', display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: '20px' }} 
+                    />
+                </a>
             </Card>
         </Container>
     )

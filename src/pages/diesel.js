@@ -49,7 +49,11 @@ const Diesel = () => {
                         <img src={ dieselw } alt="Купить наручные часы Diesel в Алматы" width='100%'/>
                     </Col>
                 </Row>
-                <a href='/shop?brand=5'><img class='scalecat' src={ go } alt="Купить наручные часы Diesel в Алматы" style={{width: '20%', display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: '20px' }} /></a>
+                <a href='/shop?brand=5'>
+                    <img class='scalecat' src={ go } alt="Купить наручные часы Anne Kleinx в Алматы" 
+                        style={{width: '12em', display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: '20px' }} 
+                    />
+                </a>
             </Card>
         </Container>
     )

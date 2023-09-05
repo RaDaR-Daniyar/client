@@ -43,7 +43,11 @@ const CK = () => {
                         <img src={ calvinklein } alt="Купить швейцарские часы Calvin Klein в Алматы" width='100%'/>
                     </Col>
                 </Row>
-                <a href='/shop?brand=4'><img class='scalecat' src={ go } alt="Купить наручные швейцарские часы Calvin Klein в Алматы" style={{width: '20%', display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: '20px' }} /></a>
+                <a href='/shop?brand=4'>
+                    <img class='scalecat' src={ go } alt="Купить наручные часы Anne Kleinx в Алматы" 
+                        style={{width: '12em', display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: '20px' }} 
+                    />
+                </a>
             </Card>
         </Container>
     )
