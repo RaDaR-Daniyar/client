@@ -1,12 +1,13 @@
 import React from "react";
+import '../sections/style.css'
 
 const ProductsSort = ({ setSortOrder }) => {
     return (
         <div className="d-flex justify-content-between mt-3">
-          <p>Сортировать:</p>
+          <p style={{marginTop: '4px', marginLeft: '15px'}}>Сортировать:</p>
           <select
                 onChange={(e) => setSortOrder(e.target.value)}
-                style={{ width: "70%", alignItems: "flex-start", height: 30 }}
+                style={{ width: "70%", height: 37, flexDirection: 'center' , borderRadius: '5px' }}
             >
             <option value="">По умолчанию</option>
             <option value="less">По возрастанию цены</option>

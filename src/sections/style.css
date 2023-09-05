@@ -138,9 +138,24 @@ main {
     transition: all 200ms ease-out;
     transition: 1s;
     box-shadow: '0 0 6px 6px #1200ba'
-    }
+}
     .scalecat:hover {
         transform: scale(1.05);
+        box-shadow: 0 0 20px rgb(18, 0, 186);
+    }
+
+.scalecategories {
+    width:100%;
+    line-height:70px;
+    text-align:center;
+    border:2px solid #fff;
+    border-radius: 4px;
+    transition: all 200ms ease-out;
+    transition: 1s;
+    box-shadow: '0 0 6px 6px #1200ba'
+}
+    .scalecategories:hover {
+         transform: scale(1.05);
         box-shadow: 0 0 20px rgb(18, 0, 186);
     }
 
@@ -183,6 +198,15 @@ button {
     border-radius: 5px;
 }
 button:active, button:focus, button:hover {
+    outline: #5144c7;
+    border: 1px solid #1200ba;
+    box-shadow: 0 0 4px 4px rgb(131, 172, 241);
+}
+select {
+    outline: none;
+    border: 1px solid rgb(206 212 218);
+}
+select:active, select:focus, select:hover {
     outline: #5144c7;
     border: 1px solid #1200ba;
     box-shadow: 0 0 4px 4px rgb(131, 172, 241);

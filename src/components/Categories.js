@@ -1,24 +1,29 @@
 import { Card, Col, Row } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
-import clock from "../assets/clockcategories.jpg";
-import pen from "../assets/pencategories.jpg";
-import victorinox from "../assets/victorinoxcategories.jpg";
-import Marquee from 'react-fast-marquee';
+import clock from "../assets/clockcategories1.jpg";
+import clock1 from "../assets/clockcategories2.jpg";
+import pen1 from "../assets/pencategories1.jpg";
+import pen2 from "../assets/pencategories2.jpg";
+import victorinox1 from "../assets/victorinoxcategories1.jpg";
+import victorinox2 from "../assets/victorinoxcategories2.jpg";
 
 const Categories = () => {
     return (
         <Container className='mt-4'>
             <Card style={{padding: '2%', borderColor: '#1200ba'}}>
-                <h1 style={{textAlign: 'center', fontWeight: 'normal'}}>Категории</h1>
-                <Row>
+                <h1 style={{textAlign: 'center', fontWeight: 'normal', color: '#1200ba'}}>Категории</h1>
+                <Row className='mt-3'>
                     <Col md={4}>
-                        <a href='/shop'><img class='scalecat' src={ clock } alt="Купить наручные часы в Алматы" style={{width: '100%', marginBottom: 10}} /></a>
+                        <a href='/shop?mehanizm=3'><img class='scalecategories' src={ clock } alt="Купить наручные механические часы в Алматы" style={{width: '48%', marginBottom: 10}} /></a>
+                        <a href='/shop?mehanizm=1'><img class='scalecategories' src={ clock1 } alt="Купить наручные кварцевые часы в Алматы" style={{width: '48%', marginBottom: 10, marginLeft: '4%'}} /></a>
                     </Col>
                     <Col md={4}>
-                        <a href=''><img class='scalecat' src={ pen } alt="Купить перьевые ручки в Алматы" style={{width: '100%', marginBottom: 10}} /></a>
+                        <a href='/shop?brend=1'><img class='scalecategories' src={ pen1 } alt="Купить перьевые ручки в Алматы" style={{width: '48%', marginBottom: 10}} /></a>
+                        <a href='/shop?brend=2'><img class='scalecategories' src={ pen2 } alt="Купить шариковые ручки в Алматы" style={{width: '48%', marginBottom: 10, marginLeft: '4%'}} /></a>
                     </Col>
                     <Col md={4}>
-                        <a href='/shop?brand=15'><img class='scalecat' src={ victorinox } alt="Купить ножи Victorinox в Алматы" style={{width: '100%'}} /></a>
+                        <a href='/shop?brand=15'><img class='scalecategories' src={ victorinox1 } alt="Купить армейские ножи Victorinox в Алматы" style={{width: '48%'}} /></a>
+                        <a href='/shop?brend=29'><img class='scalecategories' src={ victorinox2 } alt="Купить кухонные ножи Victorinox в Алматы" style={{width: '48%', marginLeft: '4%'}} /></a>
                     </Col>
                 </Row>
             </Card>
