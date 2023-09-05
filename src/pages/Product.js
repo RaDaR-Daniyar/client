@@ -96,7 +96,7 @@ const Product = () => {
                         <img src={box} alt="map" style={{ width: "18px" }} /> Бесплатная доставка
                     </p>
                     <Button onClick={() => handleClick(product.id)}>
-                    Добавить в корзину
+                        Добавить в корзину
                     </Button>
                     <div style={{ marginTop: 40 }}>
                         {propertiesToDisplay.map((property) => renderProperty(property.label, property.value) )}

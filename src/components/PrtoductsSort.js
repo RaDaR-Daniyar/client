@@ -3,7 +3,7 @@ import '../sections/style.css'
 
 const ProductsSort = ({ setSortOrder }) => {
     return (
-        <div className="d-flex justify-content-between mt-3">
+        <div className="d-flex justify-content-between mt-3" style={{marginRight: '15px'}}>
           <p style={{marginTop: '4px', marginLeft: '15px'}}>Сортировать:</p>
           <select
                 onChange={(e) => setSortOrder(e.target.value)}
