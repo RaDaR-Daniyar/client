@@ -5,6 +5,7 @@ import CreateProduct from '../components/CreateProduct.js'
 import UpdateProduct from '../components/UpdateProduct.js'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
+import SearchField from '../components/SearchField.js';
 
 const ADMIN_PER_PAGE = 50
 
@@ -17,6 +18,8 @@ const AdminProducts = () => {
     const [product, setProduct] = useState(null)
     const [currentPage, setCurrentPage] = useState(1)
     const [totalPages, setTotalPages] = useState(1)
+    const [searchTerm, setSearchTerm] = useState('');
+
 
     const handlePageClick = (page) => {
         setCurrentPage(page)
@@ -60,7 +63,7 @@ const AdminProducts = () => {
     }
 
     useEffect(() => {
-        fetchAllProducts(null, null, currentPage, ADMIN_PER_PAGE)
+        fetchAllProducts(null, null, currentPage, ADMIN_PER_PAGE, searchTerm)
             .then(
                 data => {
                     setProducts(data.rows)
@@ -70,7 +73,7 @@ const AdminProducts = () => {
             .finally(
                 () => setFetching(false)
             )
-    }, [change, currentPage])
+    }, [change, currentPage, searchTerm])
 
     if (fetching) {
         return <Spinner animation="border" />
@@ -87,7 +90,9 @@ const AdminProducts = () => {
                     <Button onClick={() => setCreateShow(true)}>Создать товар</Button>
                 </Col>
                 <Col md={7}>
-                    <h1>Место для поиска</h1>
+
+                        <SearchField onSearch={setSearchTerm} />
+
                 </Col>
             </Row>
             <CreateProduct show={createShow} setShow={setCreateShow} setChange={setChange} />
@@ -110,7 +115,7 @@ const AdminProducts = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {products.map(item => 
+                        {products.map(item =>
                             <tr key={item.id}>
                                 <td>{item.name}</td>
                                 <td>

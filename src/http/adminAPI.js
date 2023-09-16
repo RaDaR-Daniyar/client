@@ -241,14 +241,14 @@ export const deleteProduct = async (id) => {
     return data
 }
 
-export const fetchAllProducts = async (categoryId = null, brandId = null, page = 1, limit = 3) => {
+export const fetchAllProducts = async (categoryId = null, brandId = null, page = 1, limit = 3, searchTerm = '') => {
     let url = 'catalog/getall'
     if (categoryId) url = url + '/categoryId/' + categoryId
     if (brandId) url = url + '/brandId/' + brandId
     const { data } = await guestInstance.get(
         url,
         {params: {
-            page, limit
+            page, limit, searchTerm
         }
     })
     return data

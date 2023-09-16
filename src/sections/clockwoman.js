@@ -13,10 +13,10 @@ const ClockWoman = () => {
                     <Row>
                         <Col md={6}>
                             <div>
-                                <p style={{paddingBottom: 10, paddingTop: 10, textAlign: 'center', fontSize: 17}}>В нашем интернет магазине представлены женские модели, которые отличаются усовершенствованным функциональными возможностями, роскошной отделкой и безупречным стилем.</p>
-                                <a href='/product/30'><img class='scale' src={ K2U296L6} alt="Купить Calvin Klein K2U296L6 в Алматы" width='27%' style={{marginRight: '3%', marginLeft: '3%'}}/></a>
-                                <a href='/product/850'><img class='scale' src={ AK2972MPRG } alt="Купить Anne Klein AK2972MPRG в Алматы" width='28%' style={{marginRight: '3%'}}/></a>
-                                <a href='/product/388'><img class='scale' src={ EM055482X } alt="Купить Citizen EM0554-82X в Алматы" width='27%'/></a>
+                                <p style={{paddingBottom: 2, paddingTop: 5, textAlign: 'center', fontSize: 17}}>В нашем интернет магазине представлены женские модели, которые отличаются усовершенствованным функциональными возможностями, роскошной отделкой и безупречным стилем.</p>
+                                <a href='/product/30'><img class='scale' src={ K2U296L6} alt="Купить Calvin Klein K2U296L6 в Алматы" width='23%' style={{marginRight: '8%', marginLeft: '8%'}}/></a>
+                                <a href='/product/850'><img class='scale' src={ AK2972MPRG } alt="Купить Anne Klein AK2972MPRG в Алматы" width='24%' style={{marginRight: '8%'}}/></a>
+                                <a href='/product/388'><img class='scale' src={ EM055482X } alt="Купить Citizen EM0554-82X в Алматы" width='23%'/></a>
                             </div>
                         </Col>
                         <Col md={6}>
@@ -37,10 +37,10 @@ const ClockWoman = () => {
                         </Col>
                         <Col md={6}>
                             <div>
-                            <p style={{paddingBottom: 10, paddingTop: 10, textAlign: 'center', fontSize: 17}}>В нашем интернет магазине представлены женские модели, которые отличаются усовершенствованным функциональными возможностями, роскошной отделкой и безупречным стилем.</p>
-                                <a href='/product/30'><img class='scale' src={ K2U296L6} alt="Купить Calvin Klein K2U296L6 в Алматы" width='27%' style={{marginRight: '3%', marginLeft: '3%'}}/></a>
-                                <a href='/product/850'><img class='scale' src={ AK2972MPRG } alt="Купить Anne Klein AK2972MPRG в Алматы" width='28%' style={{marginRight: '3%'}}/></a>
-                                <a href='/product/388'><img class='scale' src={ EM055482X } alt="Купить Citizen EM0554-82X в Алматы" width='27%'/></a>
+                                <p style={{paddingBottom: 2, paddingTop: 5, textAlign: 'center', fontSize: 17}}>В нашем интернет магазине представлены женские модели, которые отличаются усовершенствованным функциональными возможностями, роскошной отделкой и безупречным стилем.</p>
+                                <a href='/product/30'><img class='scale' src={ K2U296L6} alt="Купить Calvin Klein K2U296L6 в Алматы" width='23%' style={{marginRight: '8%', marginLeft: '8%'}}/></a>
+                                <a href='/product/850'><img class='scale' src={ AK2972MPRG } alt="Купить Anne Klein AK2972MPRG в Алматы" width='24%' style={{marginRight: '8%', marginBottom: '2%'}}/></a>
+                                <a href='/product/388'><img class='scale' src={ EM055482X } alt="Купить Citizen EM0554-82X в Алматы" width='23%'/></a>
                             </div>
                         </Col>
                     </Row>

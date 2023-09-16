@@ -12,7 +12,7 @@ const Knife = () => {
                     <Row>
                         <Col md={6}>
                             <div>
-                                <p style={{paddingBottom: 50, textAlign: 'center', fontSize: 17}}>Компания Victorinox занимается производством уникальной высококачественной продукции для различных сфер жизни.</p>
+                                <p style={{paddingBottom: 10, textAlign: 'center', fontSize: 17}}>Компания Victorinox занимается производством уникальной высококачественной продукции для различных сфер жизни.</p>
                                 <a href='/product/1337'><img class='scale' src={ MWN08623 } alt="Купить  армейский нож Victorinox в Алматы" width='47%' style={{marginRight: '3%'}}/></a>
                                 <a href='/product/1302'><img class='scale' src={ V0824126 } alt="Купить  армейский нож Waterman Victorinox в Алматы" width='47%' style={{marginRight: '3%'}}/></a>
                             </div>

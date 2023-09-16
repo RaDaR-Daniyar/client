@@ -9,8 +9,11 @@ const About = () => {
             <Card style={{borderColor: '#1200ba'}}>
                 <Row>
                 <Col md={6}>
-                        <div style={{padding: '3%'}}>
-                            <a href='/shop'><img class='scaleabout' src={ fon } alt="Купить японские часы в Алматы" width='100%' style={{borderRadius: '65px', boxShadow: '0 0 6px 6px #1200ba'}} /></a>
+                        <div class='hide-on-mobile' style={{padding: '2%'}}>
+                            <a href='/shop'><img class='scaleabout' src={ fon } alt="Купить японские часы в Алматы" width='83%' style={{marginTop: '2%', marginBottom: '2%', borderRadius: '65px', boxShadow: '0 0 6px 6px #1200ba'}} /></a>
+                        </div>
+                        <div class='show-on-mobile' style={{padding: '3%'}}>
+                            <a href='/shop'><img class='scaleabout' src={ fon } alt="Купить японские часы в Алматы" width='94%' style={{marginTop: '3%', borderRadius: '65px', boxShadow: '0 0 6px 6px #1200ba'}} /></a>
                         </div>
                     </Col>
                     <Col md={6}>

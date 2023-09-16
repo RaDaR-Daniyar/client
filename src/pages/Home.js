@@ -5,6 +5,7 @@ import ClockWoman from '../sections/clockwoman.js';
 import Pen from '../sections/pen.js';
 import Knife from '../sections/knife.js';
 import About from '../sections/about.js'
+import Recomendation from '../components/Recomendation.js'
 import Categories from '../components/Categories.js';
 import { Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
@@ -22,6 +23,7 @@ const Home = () => {
                 <ClockWoman />
                 <Pen />
                 <Knife />
+                <Recomendation />
                 <About />
                 <Categories />
             </Row>

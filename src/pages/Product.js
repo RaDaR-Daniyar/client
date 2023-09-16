@@ -27,9 +27,9 @@ const Product = () => {
     fetchOneProduct(id)
       .then((data) => setProduct(data))
       .catch((error) => console.error("Error fetching product:", error));
-
+    console.log(id)
     fetchCategoryProducts(id)
-      .then((data) => setSameCollectionProducts(data))
+        .then((data) => {debugger; setSameCollectionProducts(data)})
       .catch((error) =>
         console.error("Error fetching same collection products:", error)
       );
