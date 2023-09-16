@@ -1,4 +1,4 @@
-import { Card, Row } from 'react-bootstrap'
+import { Card, Col, Row } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
 import { Helmet } from "react-helmet"
 import ck from "../assets/marquee/ck.png";
@@ -11,6 +11,9 @@ import parker from "../assets/marquee/parker.png";
 import waterman from "../assets/marquee/waterman.png";
 import lamy from "../assets/marquee/lamy.png";
 import victorinox from "../assets/marquee/victorinox.png";
+import clock from "../assets/clock-shop.jpg";
+import pen from "../assets/pen-shop.jpg";
+import knife from "../assets/knife-shop.jpg";
 import Marquee from 'react-fast-marquee';
 
 const About = () => {
@@ -21,6 +24,19 @@ const About = () => {
                 <meta name="description" content="Онлайн магазин часов"/>
             </Helmet>
             <Card style={{padding: '2%', borderColor: '#1200ba'}}>
+                <Row>
+                    <Col md={4}>
+                        <img src={ clock } alt="Купить наручные часы в Алматы" width='100%' />
+                    </Col>
+                    <Col md={4}>
+                        <img src={ pen } alt="Купить наручные часы в Алматы" width='100%' />
+                    </Col>
+                    <Col md={4}>
+                        <img src={ knife } alt="Купить наручные часы в Алматы" width='100%' />  
+                    </Col>
+                </Row>
+            </Card>
+            <Card className='mt-4' style={{padding: '2%', borderColor: '#1200ba'}}>
                 <h4 style={{textAlign: 'center'}}>Дорогие друзья!</h4>
                 <p> Интернет-магазин часов Aksessuary.KZ предлагает собственный товар, представленный 
                     в наших магазинах, а не занимаемся реализацией часов сторонних компаний, к которым мы не имеем отношение. Группа наших компаний является эксклюзивным 
