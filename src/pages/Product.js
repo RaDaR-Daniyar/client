@@ -1,6 +1,6 @@
 import { Container, Row, Col, Button, Image, Spinner, Card, } from "react-bootstrap";
 import { useEffect, useState, useContext, useRef } from "react";
-import { fetchOneProduct, fetchCategoryProducts } from "../http/catalogAPI.js";
+import { fetchOneProduct, fetchCategoryProducts, fetchBrendProducts } from "../http/catalogAPI.js";
 import { useParams } from "react-router-dom";
 import { append } from "../http/basketAPI.js";
 import { AppContext } from "../components/AppContext.js";
@@ -14,8 +14,6 @@ import { Helmet } from "react-helmet";
 
 const Product = () => {
   SwiperCore.use([Autoplay, Navigation, Pagination]);
-  const prevBtn = useRef();
-  const nextBtn = useRef();
   const scrollbar = useRef();
   const { id } = useParams();
   const { basket } = useContext(AppContext);
@@ -27,13 +25,32 @@ const Product = () => {
     fetchOneProduct(id)
       .then((data) => setProduct(data))
       .catch((error) => console.error("Error fetching product:", error));
-    console.log(id)
-    fetchCategoryProducts(id)
-        .then((data) => {debugger; setSameCollectionProducts(data)})
-      .catch((error) =>
-        console.error("Error fetching same collection products:", error)
-      );
-  }, [id]);
+
+    }, [id]);
+    useEffect(() => {
+        if (!product) {
+            return;
+        }
+        if (product.brand.name === 'Victorinox'
+            || product.brand.name === "Waterman"
+            || product.brand.name === "Parker"
+            || product.brand.name === "Lamy"
+        ) {
+            fetchBrendProducts(id)
+                .then((data => setSameCollectionProducts(data)))
+                .catch((error) => {
+                console.log("Error fetching same collection products:", error)
+            })
+            return;
+        }
+
+        fetchCategoryProducts(id)
+            .then((data) => {debugger; setSameCollectionProducts(data)})
+          .catch((error) =>
+            console.error("Error fetching same collection products:", error)
+          );
+
+    }, [product])
 
   const handleClick = (productId) => {
     append(productId).then((data) => {
@@ -113,15 +130,7 @@ const Product = () => {
                     modules={[Navigation, Scrollbar]}
                     autoplay={{ delay: 3000 }}
                     pagination={{ el: ".swiper-pagination", clickable: true }}
-                    navigation={{
-                    prevEl: prevBtn.current,
-                    nextEl: nextBtn.current,
-                    }}
-                    onBeforeInit={(swiper) => {
-                    swiper.params.navigation.prevEl = prevBtn.current;
-                    swiper.params.navigation.nextEl = nextBtn.current;
-                    swiper.params.scrollbar.el = scrollbar.current;
-                    }}
+                    navigation={true}
                     onSwiper={setSwiper}
                     scrollbar={{
                     el: scrollbar.current,
