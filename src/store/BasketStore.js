@@ -13,7 +13,6 @@ class BasketStore {
 
     get count() {
 
-        // sums up the number of all products in the basket
         const productCount = this._products.reduce((sum, item) => sum + item.quantity, 0);
 
         return productCount;

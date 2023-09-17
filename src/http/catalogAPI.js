@@ -198,7 +198,6 @@ export const deleteProperty = async (productId, id) => {
   return data;
 };
 
-// Выдает 25 рандомных товаров
 export const getRandom = async () => {
 
   const { data } = await guestInstance.get('catalog/getrandom');
