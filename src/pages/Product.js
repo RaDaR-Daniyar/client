@@ -193,6 +193,7 @@ const Product = () => {
                                         )}
                                         <Card.Body>
                                             <Card.Title>{product.name}</Card.Title>
+                                            <Card.Title>{product.price}</Card.Title>
                                         </Card.Body>
                                     </Link>
                                 </Card>
