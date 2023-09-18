@@ -257,7 +257,7 @@ const Shop = observer(() => {
             <Card style={{ borderColor: '#1200ba'}}>
                 <Row className="mt-4" style={{marginLeft: '1px'}}>
                     <Col md={3}>
-                        
+                        <h4 style={{textAlign: 'center', marginTop: '20px', color: '#1200ba'}}>Фильтр товаров</h4>
                     </Col>
                     <Col mt={5} style={{marginRight: '5px'}}>
                         <SearchField onSearch={setSearchTerm} />
