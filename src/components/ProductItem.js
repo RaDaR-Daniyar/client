@@ -13,8 +13,8 @@ const ProductItem = ({data}) => {
                         <Card.Img class='scale' variant="top" src={process.env.REACT_APP_IMG_URL + data.image} />
                     )}
                     <Card.Body style={{height: 100, overflow: 'hidden', textAlign: 'center'}}>
-                        <strong style={{color: 'black'}}>{data.name}</strong>
-                        <p color='black'>{data.price} тг.</p>
+                        <strong style={{color: 'black', fontSize: '17px'}}>{data.name}</strong>
+                        <p  style={{color: 'black', fontSize: '17px'}}>{data.price} тг.</p>
                     </Card.Body>
                 </Card>
                 </Link>

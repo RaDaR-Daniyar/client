@@ -108,8 +108,8 @@ const Recomendation = () => {
                                             />
                                             )}
                                             <Card.Body>
-                                                <Card.Title>{product.name}</Card.Title>
-                                                <Card.Title>{product.price}</Card.Title>
+                                                <Card.Title style={{marginTop: '-10px'}}>{product.name}</Card.Title>
+                                                <Card.Title style={{marginTop: '-10px'}}>{product.price + ' тг.'}</Card.Title>
                                             </Card.Body>
                                         </Link>
                                     </Card>
