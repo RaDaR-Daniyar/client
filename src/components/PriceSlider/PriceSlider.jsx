@@ -96,7 +96,7 @@ function PriceSlider({ maxPrice }) {
                 <input
                     className="prices_inp"
                     type="text"
-                    value={min + ' тг.'}
+                    value={min}
                     onKeyDown={handleKeyDown}
                     onPaste={handlePaste}
                     onChange={(e) => handleChange(e, 'min')}
@@ -106,7 +106,7 @@ function PriceSlider({ maxPrice }) {
                 <input
                     className="prices_inp"
                     type="text"
-                    value={max + ' тг.'}
+                    value={max}
                     onKeyDown={handleKeyDown}
                     onPaste={handlePaste}
                     onChange={(e) => handleChange(e, 'max')}
@@ -124,7 +124,7 @@ function PriceSlider({ maxPrice }) {
                 ariaLabel={['Lower thumb', 'Upper thumb']}
                 ariaValuetext={(state) => `Thumb value ${state.valueNow}`}
                 renderThumb={(props, state) => (
-                <div {...props}></div>
+                    <div {...props}>{`${state.valueNow.toLocaleString('ru-RU')}\u00A0тг.`}</div>
                 )}
             />
         </>
