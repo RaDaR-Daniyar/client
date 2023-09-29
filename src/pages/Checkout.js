@@ -144,7 +144,7 @@ const Checkout = () => {
                 <Form.Control
                     name="comment"
                     className="mb-3"
-                    placeholder="Комментарий к заказу... (Неоюязательно)"
+                    placeholder="Комментарий к заказу... (Необязательно)"
                 />
                 <Button type="submit" >Отправить</Button>
             </Form>
