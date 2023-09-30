@@ -16,7 +16,7 @@ const UpdateProperties = (props) => {
                 elem => elem.unique === unique ? {...elem, change: false, remove: true} : elem
             ))
         } else {
-            setProperties(properties.filter(elem => elem.unique === unique))
+            setProperties(properties.filter(elem => elem.unique !== unique))
         }
     }
     const change = (key, value, unique) => {
@@ -52,7 +52,7 @@ const UpdateProperties = (props) => {
                         />
                     </Col>
                     <Col>
-                        <Button onClick={() => remove(item.unique)} size="sm" variant="outline-danger">
+                        <Button onClick={() => {remove(item.unique)}} size="sm" variant="outline-danger">
                             Удалить
                         </Button>
                         {item.change && ' *'}

@@ -1,20 +1,20 @@
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap'
-import { fetchOneProduct, updateProduct, fetchCategories, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, 
-    fetchMaterials, fetchGlasses, fetchStraps, fetchPowers, fetchWaters, fetchBrends 
-} from '../http/catalogAPI.js'  
+import { fetchOneProduct, updateProduct, fetchCategories, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes,
+    fetchMaterials, fetchGlasses, fetchStraps, fetchPowers, fetchWaters, fetchBrends
+} from '../http/catalogAPI.js'
 import { useState, useEffect } from 'react'
 import uuid from 'react-uuid'
 import UpdateProperties from './UpdateProperties.js'
 import { createProperty, updateProperty, deleteProperty } from '../http/catalogAPI.js'
 
 const defaultValue = {name: '', price: '', category: '', brand: '', mehanizm: '', gender: '', shape: '', material: '', glass: '', strap: '', power: '', water: '', brend: ''}
-const defaultValid = {name: null, price: null, category: null, brand: null, mehanizm: null, gender: null, shape: null, 
+const defaultValid = {name: null, price: null, category: null, brand: null, mehanizm: null, gender: null, shape: null,
     material: null, glass: null, strap: null, power: null, water: null, brend: null
 }
 
 const isValid = (value) => {
     const result = {}
-    const pattern = /^[1-9][0-9]*$/
+    const pattern = /^[1-9][0-9]*$/;
     for (let key in value) {
         if (key === 'name') result.name = value.name.trim() !== ''
         if (key === 'price') result.price = pattern.test(value.price.trim())
@@ -89,30 +89,31 @@ const UpdateProduct = (props) => {
     const [brends, setBrends] = useState(null)
     const [image, setImage] = useState(null)
     const [properties, setProperties] = useState([])
-
+    console.log(value)
     useEffect(() => {
         if(id) {
             fetchOneProduct(id)
                 .then(
                     data => {
+
                         const prod = {
                             name: data.name,
-                            price: data.price.toString(),
-                            category: data.categoryId.toString(),
-                            brand: data.brandId.toString(),
-                            mehanizm: data.mehanizmId.toString(),
-                            gender: data.genderId.toString(),
-                            shape: data.shapeId.toString(),
-                            material: data.materialId.toString(),
-                            glass: data.glassId.toString(),
-                            strap: data.strapId.toString(),
-                            power: data.powerId.toString(),
-                            water: data.waterId.toString(),
-                            brend: data.brendId.toString()
+                            price: data.price?.toString(),
+                            category: data.categoryId?.toString(),
+                            brand: data.brandId?.toString(),
+                            mehanizm: data.mehanizmId?.toString(),
+                            gender: data.genderId?.toString(),
+                            shape: data.shapeId?.toString(),
+                            material: data.materialId?.toString(),
+                            glass: data.glassId?.toString(),
+                            strap: data.strapId?.toString(),
+                            power: data.powerId?.toString(),
+                            water: data.waterId?.toString(),
+                            brend: data.brendId?.toString()
                         }
                         setValue(prod)
                         setValid(isValid(prod))
-                        setProperties(data.props.map(item => {
+                        setProperties(data.props?.map(item => {
                             return {...item, unique: uuid(), append: false, remove: false, change: false}
                         }))
                     }
@@ -183,24 +184,70 @@ const UpdateProduct = (props) => {
         const correct = isValid(value)
         setValid(correct)
 
-        if (correct.name && correct.price && correct.category && correct.brand && correct.mehanizm && correct.gender && 
-                correct.shape && correct.material && correct.glass && correct.strap && correct.power && correct.water && correct.brend
-            ) {
-            const data = new FormData()
+        if (correct.name && correct.price && correct.brand) {
+            const data = new FormData();
             data.append('name', value.name.trim())
             data.append('price', value.price.trim())
-            data.append('categoryId', value.category)
-            data.append('brandId', value.brand)
-            data.append('mehanizmId', value.mehanizm)
-            data.append('genderId', value.gender)
-            data.append('shapeId', value.shape)
-            data.append('materialId', value.material)
-            data.append('glassId', value.glass)
-            data.append('strapId', value.strap)
-            data.append('powerId', value.power)
-            data.append('waterId', value.water)
-            data.append('brendId', value.brend)
+
+            if (correct.brand) {
+                data.append('brandId', value.brand);
+            }
+            else if (value.mehanizm === '') {
+                data.append('brandId', null);
+            };
+            if (correct.mehanizm){
+                data.append('mehanizmId', value.mehanizm);
+            }
+            else if (value.mehanizm === '') {
+                data.append('mehanizmId', null);
+            };
+            if (correct.gender) {
+                data.append('genderId', value.gender);
+            }else if (value.mehanizm === '') {
+                data.append('genderId', null);
+            };
+            if (correct.shape) {
+                data.append('shapeId', value.shape);
+            }else if (value.mehanizm === '') {
+                data.append('shapeId', null);
+            }
+            if (correct.material) {
+                data.append('materialId', value.material);
+            }else if (value.mehanizm === '') {
+                data.append('materialId', null);
+            };
+            if (correct.glass) {
+                data.append('glassId', value.glass);
+            }else if (value.mehanizm === '') {
+                data.append('glassId', null);
+            };
+            if (correct.strap) {
+                data.append('strapId', value.strap);
+            }else if (value.mehanizm === '') {
+                data.append('strapId', null);
+            }
+            if (correct.power) {
+                data.append('powerId', value.power);
+            }else if (value.mehanizm === '') {
+                data.append('powerId', null);
+            };
+            if (correct.water) {
+                data.append('waterId', value.water);
+            }else if (value.mehanizm === '') {
+                data.append('waterId', null);
+            }
+            if (correct.brend) {
+                data.append('brendId', value.brend);
+            }
             if (image) data.append('image', image, image.name)
+            if (properties.length) {
+                const props = properties.filter(
+                    prop => prop.name.trim() !== '' && prop.value.trim() !== ''
+                )
+                if (props.length) {
+                    data.append('props', JSON.stringify(props))
+                }
+            }
 
             if (properties.length) {
                 await updateProperties(properties, id)
@@ -209,22 +256,33 @@ const UpdateProduct = (props) => {
             updateProduct(id, data)
                 .then(
                     data => {
+
                         event.target.image.value = ''
                         const prod = {
                             name: data.name,
                             price: data.price.toString(),
-                            category: data.categoryId.toString(),
-                            brand: data.brandId.toString(),
-                            mehanizm: data.mehanizmId.toString(),
-                            gender: data.genderId.toString(),
-                            shape: data.shapeId.toString(),
-                            material: data.materialId.toString(),
-                            glass: data.glassId.toString(),
-                            strap: data.strapId.toString(),
-                            power: data.powerId.toString(),
-                            water: data.waterId.toString(),
-                            brend: data.brendId.toString()
+                            // brand: data.brandId?.toString(),
+                            // category: data.categoryId?.toString(),
+                            // mehanizm: data.mehanizmId?.toString(),
+                            // gender: data.genderId.toString(),
+                            // shape: data.shapeId?.toString(),
+                            // material: data.materialId?.toString(),
+                            // glass: data.glassId?.toString(),
+                            // strap: data.strapId?.toString(),
+                            // power: data.powerId?.toString(),
+                            // water: data.waterId?.toString(),
+                            brend: data.brendId?.toString()
                         }
+                        if (data.categoryId) prod.category = data.categoryId.toString();
+                        if (data.mehanizmId) prod.mehanizm = data.mehanizmId.toString();
+                        if (data.brandId) prod.brand = data.brandId.toString();
+                        if (data.genderId) prod.gender = data.genderId.toString();
+                        if (data.shapeId) prod.shape = data.shapeId.toString();
+                        if (data.glassId) prod.glass = data.glassId.toString();
+                        if (data.strapId) prod.strap = data.strapId.toString();
+                        if (data.powerId) prod.power = data.powerId.toString();
+                        if (data.waterId) prod.water = data.waterId.toString();
+                        if (data.materialId) prod.material = data.materialId.toString();
                         setValue(prod)
                         setValid(isValid(prod))
                         setProperties(data.props.map(item => {
@@ -278,7 +336,6 @@ const UpdateProduct = (props) => {
                                 value={value.mehanizm}
                                 onChange={e => handleInputChange(e)}
                                 isValid={valid.mehanizm === true}
-                                isInvalid={valid.mehanizm === false}
                             >
                                 <option value="">Тип механизма</option>
                                 {mehanizms && mehanizms.map(item =>
@@ -292,7 +349,6 @@ const UpdateProduct = (props) => {
                                 value={value.gender}
                                 onChange={e => handleInputChange(e)}
                                 isValid={valid.gender === true}
-                                isInvalid={valid.gender === false}
                             >
                                 <option value="">Пол</option>
                                 {genders && genders.map(item =>
@@ -308,7 +364,6 @@ const UpdateProduct = (props) => {
                                 value={value.shape}
                                 onChange={e => handleInputChange(e)}
                                 isValid={valid.shape === true}
-                                isInvalid={valid.shape === false}
                             >
                                 <option value="">Форма корпуса</option>
                                 {shapes && shapes.map(item =>
