@@ -25,7 +25,7 @@ const BrendBar = observer(() => {
         if (catalog.strap) params.strap = catalog.strap
         if (catalog.power) params.power = catalog.power
         if (catalog.water) params.water = catalog.water
-        if (catalog.brend) params.brend = catalog.brend
+        if (catalog.brend) params.brend = catalog.brend 
         if (catalog.page > 1) params.page = catalog.page
         navigate({
             pathname: '/shop',
@@ -34,11 +34,11 @@ const BrendBar = observer(() => {
     }
 
     return (
-        <Form.Select aria-label="Label" value={catalog.brend} placeholder="Бренд" onChange={event => {
+        <Form.Select onChange={event => {
             handleClick(Number(event.target.value))
         }}>
-            <option>Тип</option>
-            {catalog.brends.map(brend => <option selected={catalog.brend === brend.id} value={brend.id} key={brend.id}>{brend.name}</option>)}
+            <option>Типы ручек или ножей</option>
+            {catalog.brends.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}
         </Form.Select>
     )
 })
