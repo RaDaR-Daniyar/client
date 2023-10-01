@@ -43,6 +43,7 @@ const ProductList = observer(() => {
         if (catalog.strap) params.strap = catalog.strap;
         if (catalog.power) params.power = catalog.power;
         if (catalog.water) params.water = catalog.water;
+        if (catalog.water) params.brend = catalog.brend;
         if (catalog.page > 1) params.page = catalog.page;
         navigate({
             pathname: "/shop",
