@@ -90,7 +90,6 @@ const Product = () => {
     <Container>
         <Helmet>
             <title>Купить {product.name} в Алматы</title>
-            <meta name="keywords" content="купить наручные часы в Алматы, наручные часы в Алматы, часы в Алматы, купить наручные часы, наручные часы, часы, купить мужские часы, купить женские часы" />
         </Helmet>
         <Card className="mt-4" style={{ padding: "2% 8%", borderColor: '#1200ba' }}>
             <Row>
