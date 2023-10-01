@@ -35,10 +35,10 @@ const Footer = () => {
                         <a href='tel:+77003069000' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Телефон: +77003069000</a><br />
                         <a href="mailto:radar-daniyar@mail.ru" style={{textDecoration: "none", fontSize: 14, color: "black"}}>E-mail: radar-daniyar@mail.ru</a><br />
                         <div className='mt-3'>
-                            <a href='https://www.instagram.com/radar.daniyar/'><img  src = { instagram } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
-                            <a href='https://web.facebook.com/profile.php?id=100093576204176'><img  src = { facebook } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
-                            <a href='//wa.me/77003069000' rel="noopener"><img  src = { whatsapp } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
-                            <a href='//t.me/RaDaR1204' rel="noopener"><img  src = { telegram } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
+                            <a href='https://www.instagram.com/radar.daniyar/' target='_blank'><img  src = { instagram } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
+                            <a href='https://web.facebook.com/profile.php?id=100093576204176' target='_blank'><img  src = { facebook } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
+                            <a href='//wa.me/77003069000' target='_blank' rel="noopener"><img  src = { whatsapp } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
+                            <a href='//t.me/RaDaR1204' target='_blank' rel="noopener"><img  src = { telegram } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
                         </div>
                         <div className='mt-1'>
                             <a href='/' style={{textDecoration: "none", fontSize: 14, color: "black", fontWeight: "bold", whiteSpace: 'nowrap'}}>© 2023. Все права защищены</a>
