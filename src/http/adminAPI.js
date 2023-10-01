@@ -68,11 +68,11 @@ export const createGender = async (gender) => {
     return data;
 };
 export const updateGender = async (id, ender) => {
-    const { data } = await authInstance.put(`ender/update/${id}`, ender);
+    const { data } = await authInstance.put(`gender/update/${id}`, ender);
     return data;
 };
 export const deleteGender = async (id) => {
-    const { data } = await authInstance.delete(`ender/delete/${id}`);
+    const { data } = await authInstance.delete(`gender/delete/${id}`);
     return data;
 };
 export const fetchGenders = async () => {
