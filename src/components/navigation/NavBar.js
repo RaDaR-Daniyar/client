@@ -32,10 +32,15 @@ const NavBar = observer(() => {
                                     <ListGroup style={{width:'130px', background: "white"}}>
                                         <NavLink style={{paddingLeft: '10px'}} to="/anne_klein" className="link" target='_parent'>ANNE KLEIN</NavLink>
                                         <NavLink style={{paddingLeft: '10px'}} to="/calvin_klein" className="link" target='_parent'>CALVIN KLEIN</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/citizen" className="link" target='_parent'>CITIZEN</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/diesel" className="link" target='_parent'>DIESEL</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/orient" className="link" target='_parent'>ORIENT</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/certina" className="link" target='_parent'>CERTINA</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/tissot" className="link" target='_parent'>TISSOT</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/hamilton" className="link" target='_parent'>HAMILTON</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/invicta" className="link" target='_parent'>INVICTA</NavLink>
                                         <NavLink style={{paddingLeft: '10px'}} to="/swatch" className="link" target='_parent'>SWATCH</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/casio" className="link" target='_parent'>CASIO</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/citizen" className="link" target='_parent'>CITIZEN</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/orient" className="link" target='_parent'>ORIENT</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/diesel" className="link" target='_parent'>DIESEL</NavLink>
                                         <NavLink style={{paddingLeft: '10px'}} to="/parker" className="link" target='_parent'>PARKER</NavLink>
                                         <NavLink style={{paddingLeft: '10px'}} to="/waterman" className="link" target='_parent'>WATERMAN</NavLink>
                                         <NavLink style={{paddingLeft: '10px'}} to="/lamy" className="link" target='_parent'>LAMY</NavLink>

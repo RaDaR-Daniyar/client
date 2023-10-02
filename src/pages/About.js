@@ -11,6 +11,11 @@ import parker from "../assets/marquee/parker.png";
 import waterman from "../assets/marquee/waterman.png";
 import lamy from "../assets/marquee/lamy.png";
 import victorinox from "../assets/marquee/victorinox.png";
+import certina from "../assets/marquee/certina.png";
+import tissot from "../assets/marquee/tissot.png";
+import hamilton from "../assets/marquee/hamilton.png";
+import invicta from "../assets/marquee/invicta.png";
+import casio from "../assets/marquee/casio.png";
 import clock from "../assets/clock-shop.jpg";
 import pen from "../assets/pen-shop.jpg";
 import knife from "../assets/knife-shop.jpg";
@@ -65,13 +70,28 @@ const About = () => {
                 <h1 style={{textAlign: 'center', fontWeight: 'normal'}}>Бренды</h1>
                 <Marquee pauseOnHover speed={200} style={{margin: '2%', width: '96%', height: 360}}>
                     <div>
+                        <a href='/shop?brand=22'><img class='scale' src={ certina } alt="Купить часы Certina в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
+                    </div>
+                    <div>
+                        <a href='/shop?brand=20'><img class='scale' src={ tissot } alt="Купить часы Tissot в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
+                    </div>
+                    <div>
                         <a href='/shop?brand=1'><img class='scale' src={ ck } alt="Купить часы Calvin Klein в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
+                    </div>
+                    <div>
+                        <a href='/shop?brand=21'><img class='scale' src={ hamilton } alt="Купить часы Hamilton в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
                     </div>
                     <div> 
                         <a href='/shop?brand=2'><img class='scale' src={ ak } alt="Купить часы Anne Klein в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
                     </div>
                     <div>    
                         <a href='/shop?brand=8'><img class='scale' src={ swatch } alt="Купить часы Swatch в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
+                    </div>
+                    <div>
+                        <a href='/shop?brand=23'><img class='scale' src={ invicta } alt="Купить часы Invicta в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
+                    </div>
+                    <div>
+                        <a href='/shop?brand=19'><img class='scale' src={ casio } alt="Купить часы Casio в Алматы" style={{height: '320px', marginLeft: 50}} /></a>
                     </div>
                     <div>
                         <a href='/shop?brand=6'><img class='scale' src={ orient } alt="Купить часы Orient в Алматы" style={{height: '320px', marginLeft: 50}} /></a>

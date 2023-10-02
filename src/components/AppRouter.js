@@ -21,6 +21,11 @@ import swatch from '../pages/swatch.js'
 import parker from '../pages/parker.js'
 import waterman from '../pages/waterman.js'
 import victorinox from '../pages/victorinox.js'
+import certina from '../pages/certina.js'
+import tissot from '../pages/tissot.js'
+import hamilton from '../pages/hamilton.js'
+import invicta from '../pages/invicta.js'
+import casio from '../pages/casio.js'
 import User from '../pages/User.js'
 import UserOrders from '../pages/UserOrders.js'
 import UserOrder from '../pages/UserOrder.js'
@@ -58,6 +63,11 @@ const publicRoutes = [
     {path: '/parker', Component: parker},
     {path: '/waterman', Component: waterman},
     {path: '/victorinox', Component: victorinox},
+    {path: '/certina', Component: certina},
+    {path: '/tissot', Component: tissot},
+    {path: '/hamilton', Component: hamilton},
+    {path: '/invicta', Component: invicta},
+    {path: '/casio', Component: casio},
     {path: '/product/:id', Component: Product},
     {path: '/basket', Component: Basket},
     {path: '/checkout', Component: Checkout},
