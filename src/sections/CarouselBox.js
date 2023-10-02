@@ -1,8 +1,11 @@
 import React from 'react';
 import { Carousel, Container } from 'react-bootstrap';
 import ck from "../assets/ck.jpg";
+import tissot from "../assets/tissot.jpeg";
+import certina from "../assets/certina.jpg";
 import orient  from "../assets/orient.jpg";
 import diesel from "../assets/diesel.jpg";
+import casio from "../assets/casio.jpg";
 import victorinox from "../assets/victorinox.jpg";
 import parker from "../assets/parker.jpg";
 import waterman from "../assets/waterman.jpg";
@@ -11,6 +14,20 @@ export default function CarouselBox() {
     return (
         <Container>
             <Carousel className='b-1'>
+                <Carousel.Item>
+                    <img className="b-block w-100" src={ certina } alt="Купить Tissot в Алматы"/>
+                    <Carousel.Caption className='hide-on-mobile'>
+                        <h3 style={{color: "white"}}>Certina</h3>
+                        <p style={{color: "white"}}>Швейцарское качество и настоящий спортивный дух - с 1888 года</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img className="b-block w-100" src={ tissot } alt="Купить Tissot в Алматы"/>
+                    <Carousel.Caption className='hide-on-mobile'>
+                        <h3 style={{color: "white"}}>Tissot</h3>
+                        <p style={{color: "white"}}>«Новаторство - наша традиция» - прекрасно отражает положение вещей</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
                 <Carousel.Item>
                     <img className="b-block w-100" src={ ck } alt="Купить Calvin Klein в Алматы"/>
                     <Carousel.Caption className='hide-on-mobile'>
@@ -31,7 +48,14 @@ export default function CarouselBox() {
                         <h3>Diesel</h3>
                         <p>Бренд ломающий все стереотипы в головах. Буть смелым.</p>
                     </Carousel.Caption>
-                    </Carousel.Item>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img className="b-block w-100" src={ casio } alt="Купить Tissot в Алматы"/>
+                    <Carousel.Caption className='hide-on-mobile'>
+                        <h3 style={{color: "white"}}>Casio</h3>
+                        <p style={{color: "white"}}>Культурный феномен часового мира!</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
                 <Carousel.Item>
                     <img className="b-block w-100" src={ victorinox } alt="Купить Victorinox в Алматы" />
                     <Carousel.Caption className='hide-on-mobile'>
