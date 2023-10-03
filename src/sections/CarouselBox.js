@@ -25,7 +25,7 @@ export default function CarouselBox() {
                     <img className="b-block w-100" src={ tissot } alt="Купить Tissot в Алматы"/>
                     <Carousel.Caption className='hide-on-mobile'>
                         <h3 style={{color: "white"}}>Tissot</h3>
-                        <p style={{color: "white"}}>«Новаторство - наша традиция» - прекрасно отражает положение вещей</p>
+                        <p style={{color: "white"}}>«Новаторство - наша традиция»</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
