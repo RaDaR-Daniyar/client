@@ -7,7 +7,7 @@ import uuid from 'react-uuid'
 import UpdateProperties from './UpdateProperties.js'
 import { createProperty, updateProperty, deleteProperty } from '../http/catalogAPI.js'
 
-const defaultValue = {name: '', price: '', category: '', brand: '', mehanizm: '', gender: '', shape: '', material: '', glass: '', strap: '', power: '', water: '', brend: ''}
+const defaultValue = {name: '', price: '', category: '', brand: '', mehanizm: '', gender: '', shape: '', material: '', glass: '', strap: '', power: '', water: '', brend: '', sale: ''}
 const defaultValid = {name: null, price: null, category: null, brand: null, mehanizm: null, gender: null, shape: null,
     material: null, glass: null, strap: null, power: null, water: null, brend: null
 }
@@ -29,6 +29,8 @@ const isValid = (value) => {
         if (key === 'power') result.power = pattern.test(value.power)
         if (key === 'water') result.water = pattern.test(value.water)
         if (key === 'brend') result.brend = pattern.test(value.brend)
+        if (key === 'sale') result.sale = (pattern.test(value.sale) && 0 <= value.sale && value.sale <= 100) || value.sale === '0';
+
     }
     return result
 }
@@ -74,6 +76,7 @@ const updateProperties = async (properties, productId) => {
 const UpdateProduct = (props) => {
     const { id, show, setShow, setChange } = props
 
+
     const [value, setValue] = useState(defaultValue)
     const [valid, setValid] = useState(defaultValid)
     const [categories, setCategories] = useState(null)
@@ -109,7 +112,8 @@ const UpdateProduct = (props) => {
                             strap: data.strapId?.toString(),
                             power: data.powerId?.toString(),
                             water: data.waterId?.toString(),
-                            brend: data.brendId?.toString()
+                            brend: data.brendId?.toString(),
+                            sale: data.finId?.toString()
                         }
                         setValue(prod)
                         setValid(isValid(prod))
@@ -167,7 +171,7 @@ const UpdateProduct = (props) => {
                 )
         }
     }, [id])
-
+    console.log(value)
     const handleInputChange = (event) => {
         const data = {...value, [event.target.name]: event.target.value}
         setValue(data)
@@ -239,6 +243,11 @@ const UpdateProduct = (props) => {
             if (correct.brend) {
                 data.append('brendId', value.brend);
             }
+            debugger
+
+            if (correct.sale) {
+                data.append('finId', value.sale);
+            }
             if (image) data.append('image', image, image.name)
             if (properties.length) {
                 const props = properties.filter(
@@ -283,6 +292,7 @@ const UpdateProduct = (props) => {
                         if (data.powerId) prod.power = data.powerId.toString();
                         if (data.waterId) prod.water = data.waterId.toString();
                         if (data.materialId) prod.material = data.materialId.toString();
+                        if (data.finId) prod.sale = data.finId.toString();
                         setValue(prod)
                         setValid(isValid(prod))
                         setProperties(data.props.map(item => {
@@ -441,19 +451,6 @@ const UpdateProduct = (props) => {
                     </Row>
                     <Row className="mb-3">
                         <Col>
-                            <Form.Select
-                                name="brend"
-                                value={value.brend}
-                                onChange={e => handleInputChange(e)}
-                                isValid={valid.brend === true}
-                            >
-                                <option value="">Бренд</option>
-                                {brends && brends.map(item =>
-                                    <option key={item.id} value={item.id}>{item.name}</option>
-                                )}
-                            </Form.Select>
-                        </Col>
-                        <Col>
                             <Form.Control
                                 name="price"
                                 value={value.price}
@@ -462,6 +459,33 @@ const UpdateProduct = (props) => {
                                 isInvalid={valid.price === false}
                                 placeholder="Цена товара..."
                             />
+                        </Col>
+                        <Col>
+                            <Form.Control
+                                name="sale"
+                                value={value.sale}
+                                onChange={e => handleInputChange(e)}
+                                isValid={valid.sale === true}
+                                placeholder='Скидка(%)'
+                            />
+                        </Col>
+                        <Col>
+                            Цена без скидки: {Math.ceil(value.price * 100 / (100 - (value.sale? value.sale: 0) ))}
+                        </Col>
+                    </Row>
+                    <Row className="mb-3">
+                        <Col xs={4}>
+                            <Form.Select
+                                name="brend"
+                                value={value.brend}
+                                onChange={e => handleInputChange(e)}
+                                isValid={valid.brend === true}
+                            >
+                                <option value="">Тип товара</option>
+                                {brends && brends.map(item =>
+                                    <option key={item.id} value={item.id}>{item.name}</option>
+                                )}
+                            </Form.Select>
                         </Col>
                         <Col>
                             <Form.Control

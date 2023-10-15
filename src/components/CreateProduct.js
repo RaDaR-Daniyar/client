@@ -3,8 +3,8 @@ import { createProduct, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, 
 import { useState, useEffect } from 'react'
 import CreateProperties from './CreateProperties.js'
 
-const defaultValue = {name: '', price: '', brand: '', mehanizm: '', gender: '', shape: '', material: '', glass: '', strap: '', power: '', water: '', brend: ''}
-const defaultValid = {name: null, price: null, brand: null, mehanizm: null, gender: null, shape: null, material: null, glass: null, strap: null, power: null, water: null, brend: null}
+const defaultValue = {name: '', price: '', brand: '', mehanizm: '', gender: '', shape: '', material: '', glass: '', strap: '', power: '', water: '', brend: '', sale: ''}
+const defaultValid = {name: null, price: null, brand: null, mehanizm: null, gender: null, shape: null, material: null, glass: null, strap: null, power: null, water: null, brend: null, sale: null}
 
 const isValid = (value) => {
     const result = {}
@@ -22,6 +22,7 @@ const isValid = (value) => {
         if (key === 'power') result.power = pattern.test(value.power)
         if (key === 'water') result.water = pattern.test(value.water)
         if (key === 'brend') result.brend = pattern.test(value.brend)
+        if (key === 'sale') result.sale = pattern.test(value.sale) && 0 <= value.sale && value.sale <= 100;
     }
     return result
 }
@@ -83,7 +84,7 @@ const CreateProduct = (props) => {
         fetchBrends()
             .then(
                 data => setBrends(data)
-            )        
+            )
     }, [])
 
     const handleInputChange = (event) => {
@@ -124,6 +125,7 @@ const CreateProduct = (props) => {
                 data.append('glassId', value.glass);
             };
             if (correct.strap) {
+                debugger
                 data.append('strapId', value.strap);
             }
             if (correct.power) {
@@ -135,6 +137,10 @@ const CreateProduct = (props) => {
             if (correct.brend) {
                 data.append('brendId', value.brend);
             };
+            if (correct.sale) {
+                debugger
+                data.append('finId', value.sale);
+            }
             if (image) data.append('image', image, image.name)
             if (properties.length) {
                 const props = properties.filter(
@@ -144,6 +150,8 @@ const CreateProduct = (props) => {
                     data.append('props', JSON.stringify(props))
                 }
             }
+
+
 
             createProduct(data)
                 .then(
@@ -305,6 +313,30 @@ const CreateProduct = (props) => {
                     </Row>
                     <Row className="mb-3">
                         <Col>
+                            <Form.Control
+                                name="price"
+                                value={value.price}
+                                onChange={e => handleInputChange(e)}
+                                isValid={valid.price === true}
+                                isInvalid={valid.price === false}
+                                placeholder="Цена товара..."
+                            />
+                        </Col>
+                        <Col>
+                            <Form.Control
+                                name="sale"
+                                value={value.sale}
+                                onChange={e => handleInputChange(e)}
+                                isValid={valid.sale === true}
+                                placeholder='Скидка(%)'
+                            />
+                        </Col>
+                        <Col>
+                            Цена без скидки: {Math.ceil(value.price * 100 / (100 - value.sale))}
+                        </Col>
+                    </Row>
+                    <Row className="mb-3">
+                        <Col xs={4}>
                             <Form.Select
                                 name="brend"
                                 value={value.brend}
@@ -316,16 +348,6 @@ const CreateProduct = (props) => {
                                     <option key={item.id} value={item.id}>{item.name}</option>
                                 )}
                             </Form.Select>
-                        </Col>
-                        <Col>
-                            <Form.Control
-                                name="price"
-                                value={value.price}
-                                onChange={e => handleInputChange(e)}
-                                isValid={valid.price === true}
-                                isInvalid={valid.price === false}
-                                placeholder="Цена товара..."
-                            />
                         </Col>
                         <Col>
                             <Form.Control

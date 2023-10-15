@@ -11,5 +11,22 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      const procentObjectCreate = () => {
+        for (let i = 0; i <= 100; i++){
+          const data = {
+            id: `${i}`,
+            name: `${i}`
+          }
+          fetch('http://localhost:7000/api/sale/create', {
+            method: 'POST',
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+          })
+        }
+      }
+    </script>
   </body>
 </html>

@@ -44,7 +44,7 @@ const Product = () => {
             return;
         }
 
-        fetchCategoryProducts(id)
+        fetchBrendProducts(id)
             .then((data) => {debugger; setSameCollectionProducts(data)})
           .catch((error) =>
             console.error("Error fetching same collection products:", error)
@@ -105,8 +105,15 @@ const Product = () => {
                     )}
                 </Col>
                 <Col lg={6} style={{ textAlign: "left", marginTop: 20 }}>
-                    <h3>{product.name}</h3>
-                    <h3>{product.price} тг.</h3>
+                      <h3>{product.name} {product.finId ? <span style={{ border: '2px solid #0d6efd', marginLeft: '15px', borderRadius: '6px', fontSize: '24px', }}>{product.finId}%</span>:''}</h3>
+
+                      <h3>{product.price} тг.
+                          {product.finId ?
+                              <>
+                                  <span style={{fontSize: '20px', textDecoration: 'line-through', margin: '0 10px', color:'rgba(0, 0, 0, 0.176)'}}>{Math.ceil(product.price * 100 / (100 - product.finId))} тг.</span>
+                              </> : ''
+                          }
+                      </h3>
                     <p>
                         <img src={planet} alt="map" style={{ width: "18px" }} />{" "} Международная гарантия
                     <br />
@@ -193,7 +200,6 @@ const Product = () => {
                                         )}
                                         <Card.Body>
                                             <Card.Title>{product.name}</Card.Title>
-                                            <Card.Title>{product.price}</Card.Title>
                                         </Card.Body>
                                     </Link>
                                 </Card>

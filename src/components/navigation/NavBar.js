@@ -22,20 +22,16 @@ const NavBar = observer(() => {
             <div class="hide-on-mobile">
                 <Navbar bg="white" className='d-flex justify-content-center'>
                     <Nav className="ml-auto">
-                        <NavLink to="/" className="link" style={{paddingRight: '80px', paddingTop: '10px', paddingBottom: '10px'}}>ГЛАВНАЯ</NavLink>
-                        <NavLink to="/shop" className="link" style={{paddingRight: '80px', paddingTop: '10px', paddingBottom: '10px'}}>КАТАЛОГ</NavLink>
+                        <NavLink to="/" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px'}}>ГЛАВНАЯ</NavLink>
+                        <NavLink to="/shop" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px'}}>КАТАЛОГ</NavLink>
                         <UIDropdown
-                            render={(toggleShow) => <UserCicle className='link' onClick={toggleShow} style={{paddingTop: '10px', paddingBottom: '10px'}}>БРЕНДЫ</UserCicle>}
+                            render={(toggleShow) => <UserCicle className='link' onClick={toggleShow} style={{paddingTop: '10px', paddingBottom: '10px', paddingRight: '50px'}}>БРЕНДЫ</UserCicle>}
                         >
                             {(toggleShow) => (
                                 <Card style={{marginTop: '14px', width: '160px'}}>
                                     <ListGroup style={{width:'130px', background: "white"}}>
                                         <NavLink style={{paddingLeft: '10px'}} to="/anne_klein" className="link" target='_parent'>ANNE KLEIN</NavLink>
                                         <NavLink style={{paddingLeft: '10px'}} to="/calvin_klein" className="link" target='_parent'>CALVIN KLEIN</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/certina" className="link" target='_parent'>CERTINA</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/tissot" className="link" target='_parent'>TISSOT</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/hamilton" className="link" target='_parent'>HAMILTON</NavLink>
-                                        <NavLink style={{paddingLeft: '10px'}} to="/invicta" className="link" target='_parent'>INVICTA</NavLink>
                                         <NavLink style={{paddingLeft: '10px'}} to="/swatch" className="link" target='_parent'>SWATCH</NavLink>
                                         <NavLink style={{paddingLeft: '10px'}} to="/casio" className="link" target='_parent'>CASIO</NavLink>
                                         <NavLink style={{paddingLeft: '10px'}} to="/citizen" className="link" target='_parent'>CITIZEN</NavLink>
@@ -49,9 +45,23 @@ const NavBar = observer(() => {
                                 </Card>
                             )}
                         </UIDropdown>
-                        <NavLink to="/about" className="link" style={{paddingLeft: '80px', paddingRight: '80px', paddingTop: '10px', paddingBottom: '10px'}}>О МАГАЗИНЕ</NavLink>
-                        <NavLink to="/delivery" className="link" style={{paddingRight: '80px', paddingTop: '10px', paddingBottom: '10px'}}>ДОСТАВКА И ОПЛАТА</NavLink>
-                        <NavLink to="/service" className="link" style={{paddingRight: '80px', paddingTop: '10px', paddingBottom: '10px'}}>СЕРВИС-ЦЕНТР</NavLink>
+                        <UIDropdown
+                            render={(toggleShow) => <UserCicle className='link' onClick={toggleShow} style={{paddingTop: '10px', paddingBottom: '10px'}}>КОМИССИОНКА</UserCicle>}
+                        >
+                            {(toggleShow) => (
+                                <Card style={{marginTop: '14px', width: '160px'}}>
+                                    <ListGroup style={{width:'130px', background: "white"}}>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/certina" className="link" target='_parent'>CERTINA</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/tissot" className="link" target='_parent'>TISSOT</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/hamilton" className="link" target='_parent'>HAMILTON</NavLink>
+                                        <NavLink style={{paddingLeft: '10px'}} to="/invicta" className="link" target='_parent'>INVICTA</NavLink>
+                                    </ListGroup>
+                                </Card>
+                            )}
+                        </UIDropdown>
+                        <NavLink to="/about" className="link" style={{paddingLeft: '50px', paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px'}}>О МАГАЗИНЕ</NavLink>
+                        <NavLink to="/delivery" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px'}}>ДОСТАВКА И ОПЛАТА</NavLink>
+                        <NavLink to="/service" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px'}}>СЕРВИС-ЦЕНТР</NavLink>
                     </Nav>
                 </Navbar>
             </div>
