@@ -96,16 +96,17 @@ const Product = () => {
                 <Col lg={6}>
                     {product.image ? (
                     <Image
-                        width={300}
+                        
+                        height={600}
                         src={process.env.REACT_APP_IMG_URL + product.image}
-                        style={{ marginTop: 50 }}
+                        style={{ marginTop: 20, marginLeft: '5%' }}
                     />
                     ) : (
                     <Image width={300} src="http://via.placeholder.com/300" />
                     )}
                 </Col>
                 <Col lg={6} style={{ textAlign: "left", marginTop: 20 }}>
-                      <h3>{product.name} {product.finId ? <span style={{ border: '2px solid #0d6efd', marginLeft: '15px', borderRadius: '6px', fontSize: '24px', }}>{product.finId}%</span>:''}</h3>
+                      <h3>{product.name} {product.finId ? <span style={{ border: '2px solid #1200ba', marginLeft: '15px', borderRadius: '10px', fontSize: '24px', }}> -{product.finId}% </span>:''}</h3>
 
                       <h3>{product.price} тг.
                           {product.finId ?
