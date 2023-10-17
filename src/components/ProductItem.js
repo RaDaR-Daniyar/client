@@ -12,12 +12,13 @@ const ProductItem = ({ data }) => {
                         right: '5px',
                         padding: '0px 7px',
                         position: 'absolute',
-                        border: '2px solid #1200ba',
+                        border: '1px solid #1200ba',
                         borderRadius: '25px',
                         color: '#1200ba',
                         background: '#fff',
                         fontWeight: 'bold',
                         fontSize: '18px',
+                        fontFamily: 'Times New Roman',
                         zIndex: '1000'
                     }}>-{data.finId}%</div> : ''}
                     {data.image ? (

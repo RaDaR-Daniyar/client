@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a5d02e9f.css",
-    "main.js": "/static/js/main.2f29a65e.js",
+    "main.js": "/static/js/main.05ae6b00.js",
     "static/media/fon.png": "/static/media/fon.97670f1579221d203065.png",
     "static/media/casio.jpg": "/static/media/casio.60e8992628c717eb7e3e.jpg",
     "static/media/clockcategories1.jpg": "/static/media/clockcategories1.82b3c9d2070546f882fc.jpg",
@@ -101,10 +101,10 @@
     "static/media/victorinox-kitchen.webp": "/static/media/victorinox-kitchen.1eb4ce89325843ce2d85.webp",
     "index.html": "/index.html",
     "main.a5d02e9f.css.map": "/static/css/main.a5d02e9f.css.map",
-    "main.2f29a65e.js.map": "/static/js/main.2f29a65e.js.map"
+    "main.05ae6b00.js.map": "/static/js/main.05ae6b00.js.map"
   },
   "entrypoints": [
     "static/css/main.a5d02e9f.css",
-    "static/js/main.2f29a65e.js"
+    "static/js/main.05ae6b00.js"
   ]
 }
