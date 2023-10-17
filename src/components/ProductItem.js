@@ -8,21 +8,26 @@ const ProductItem = ({ data }) => {
             <Link to={`/product/${data.id}`} style={{ textDecoration: 'none' }}>
                 <Card style={{width: '100%', height: '460px', objectFit: 'contain', cursor: 'pointer', position: 'relative'}}>
                     {data.finId ? <div style={{
-                        top: '15px',
-                        left: '15px',
+                        top: '5px',
+                        right: '5px',
                         padding: '0px 7px',
                         position: 'absolute',
-                        border: '2px solid rgba(0, 0, 0, 0.175)',
-                        borderRadius: '4px'
-                    }}>{data.finId}%</div> : ''}
+                        border: '2px solid #1200ba',
+                        borderRadius: '25px',
+                        color: '#1200ba',
+                        background: '#fff',
+                        fontWeight: 'bold',
+                        fontSize: '18px',
+                        zIndex: '1000'
+                    }}>-{data.finId}%</div> : ''}
                     {data.image ? (
                         <Card.Img class='scale' className='mt-1' style={{width: '100%', height: '360px', marginLeft: 'auto', marginRight: 'auto', objectFit: 'contain'}} variant="top" src={process.env.REACT_APP_IMG_URL + data.image} />
                     ) : (
                         <Card.Img class='scale' variant="top" src={process.env.REACT_APP_IMG_URL + data.image} />
                     )}
-                    <Card.Body style={{height: 100, overflow: 'hidden', textAlign: 'center'}}>
-                        <strong>{data.name}</strong>
-                        <p>{data.price} тг.</p>
+                    <Card.Body style={{height: 100, overflow: 'hidden', textAlign: 'center', color: '#1200ba'}}>
+                        <strong style={{fontFamily: 'Book Antiqua', fontSize: 18}}>{data.name}</strong>
+                        <p style={{fontFamily: 'Book Antiqua', fontSize: 18}}>{data.price} тг.</p>
                     </Card.Body>
                 </Card>
                 </Link>

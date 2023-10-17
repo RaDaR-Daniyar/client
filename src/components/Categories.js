@@ -11,7 +11,7 @@ const Categories = () => {
     return (
         <Container className='mt-4'>
             <Card style={{padding: '2%', borderColor: '#1200ba'}}>
-                <h1 style={{textAlign: 'center', fontWeight: 'normal', color: '#1200ba'}}>Категории</h1>
+                <h1 style={{textAlign: 'center', fontWeight: 'normal', color: '#1200ba', fontFamily: 'Book Antiqua'}}>Категории</h1>
                 <Row className='mt-3'>
                     <Col md={4}>
                         <a href='/shop?mehanizm=3'><img class='scalecategories' src={ clock } alt="Купить наручные механические часы в Алматы" style={{width: '48%', marginBottom: 10}} /></a>
