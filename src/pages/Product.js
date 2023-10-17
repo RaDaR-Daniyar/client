@@ -91,21 +91,20 @@ const Product = () => {
         <Helmet>
             <title>Купить {product.name} в Алматы</title>
         </Helmet>
-        <Card className="mt-4" style={{ padding: "2% 8%", borderColor: '#1200ba' }}>
+        <Card className="mt-4" style={{ padding: "2%", borderColor: '#1200ba' }}>
             <Row>
-                <Col lg={6}>
+                <Col lg={6} style={{marginRight: '30px'}}>
                     {product.image ? (
                     <Image
-                        
-                        height={600}
+                        height={640}
                         src={process.env.REACT_APP_IMG_URL + product.image}
-                        style={{ marginTop: 20, marginLeft: '5%' }}
+                        style={{ marginTop: 23, display: 'block', margin: 'auto', paddingTop: '5%' }}
                     />
                     ) : (
                     <Image width={300} src="http://via.placeholder.com/300" />
                     )}
                 </Col>
-                <Col lg={6} style={{ textAlign: "left", marginTop: 20 }}>
+                <Col lg={5} style={{ textAlign: "left", marginTop: 20 }}>
                       <h3>{product.name} {product.finId ? <span style={{ border: '2px solid #1200ba', marginLeft: '15px', borderRadius: '10px', fontSize: '24px', }}> -{product.finId}% </span>:''}</h3>
 
                       <h3>{product.price} тг.
