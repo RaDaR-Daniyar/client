@@ -1,6 +1,6 @@
 import { Container, Row, Col, Button, Image, Spinner, Card, } from "react-bootstrap";
 import { useEffect, useState, useContext, useRef } from "react";
-import { fetchOneProduct, fetchCategoryProducts, fetchBrendProducts } from "../http/catalogAPI.js";
+import { fetchOneProduct, fetchCategoryProducts, fetchGenderProducts, fetchBrendProducts } from "../http/catalogAPI.js";
 import { useParams } from "react-router-dom";
 import { append } from "../http/basketAPI.js";
 import { AppContext } from "../components/AppContext.js";
@@ -44,7 +44,7 @@ const Product = () => {
             return;
         }
 
-        fetchBrendProducts(id)
+        fetchGenderProducts(id)
             .then((data) => {debugger; setSameCollectionProducts(data)})
           .catch((error) =>
             console.error("Error fetching same collection products:", error)

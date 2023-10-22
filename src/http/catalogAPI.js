@@ -165,6 +165,10 @@ export const fetchCategoryProducts = async (id) => {
   const { data } = await guestInstance.get(`similar-categories/${id}`);
   return data;
 };
+export const fetchGenderProducts = async (id) => {
+  const { data } = await guestInstance.get(`similar-categories/gender/${id}`);
+  return data;
+};
 export const fetchBrendProducts = async (id) => {
   const { data } = await guestInstance.get(`similar-categories/brend/${id}`);
   return data;
