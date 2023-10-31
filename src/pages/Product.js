@@ -46,9 +46,9 @@ const Product = () => {
 
         fetchCategoryProducts(id)
             .then((data) => {debugger; setSameCollectionProducts(data)})
-          .catch((error) =>
+            .catch((error) =>
             console.error("Error fetching same collection products:", error)
-          );
+        );
 
     }, [product])
 
