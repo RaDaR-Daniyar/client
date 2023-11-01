@@ -30,7 +30,7 @@ const Recomendation = () => {
 
         <Container className='mt-4'>
             <Card style={{padding: '2%', borderColor: '#1200ba', overflow: "hidden"}}>
-                <h1 style={{ textAlign: 'center', fontWeight: 'normal', color: '#1200ba' }}>Рекомендованные:</h1>
+                <h1 style={{ textAlign: 'center', fontWeight: 'normal', color: '#1200ba', fontFamily: 'Book Antiqua' }}>Рекомендованные:</h1>
                 <div className="recomendation-swiper">
 
                 <Row className='mt-3'>
