@@ -29,95 +29,97 @@ const Recomendation = () => {
     return (
 
         <Container className='mt-4'>
-            <Card style={{padding: '2%', borderColor: '#1200ba'}}>
-                <h2 style={{ textAlign: 'center', fontWeight: 'bold', color: '#1200ba', fontFamily: 'Book Antiqua' }}>Рекомендованные товары</h2>
+            <Card style={{padding: '2%', borderColor: '#1200ba', overflow: "hidden"}}>
+                <h1 style={{ textAlign: 'center', fontWeight: 'normal', color: '#1200ba' }}>Рекомендованные:</h1>
                 <div className="recomendation-swiper">
 
                 <Row className='mt-3'>
-                    <Swiper
-                        spaceBetween={20}
-                        slidesPerView={1}
-                        modules={[Navigation, Scrollbar]}
-                        autoplay={{ delay: 3000 }}
-                        pagination={{ el: ".swiper-pagination", clickable: true }}
-                        navigation={true}
-                        onSwiper={setSwiper}
-                        scrollbar={{
-                        el: scrollbar.current,
-                        draggable: true,
-                        }}
-                        breakpoints={{
-                        524: {
-                            slidesPerView: 2,
-                            navigation: false
-                        },
-                        768: {
-                            slidesPerView: 2.9,
-                            spaceBetween: 10,
+        <Swiper
+                    spaceBetween={20}
+                    slidesPerView={1}
+                    modules={[Navigation, Scrollbar]}
+                    autoplay={{ delay: 3000 }}
+                    pagination={{ el: ".swiper-pagination", clickable: true }}
+                    navigation={true}
+                    onSwiper={setSwiper}
+                    scrollbar={{
+                    el: scrollbar.current,
+                    draggable: true,
+                    }}
+                    breakpoints={{
+                    524: {
+                        slidesPerView: 2,
+                        navigation: false
+                    },
+                    768: {
+                        slidesPerView: 2.9,
+                        spaceBetween: 10,
 
-                            autoplay: false,
-                            navigation: false,
-                        },
-                        1200: {
-                            slidesPerView: 3.9,
-                            spaceBetween: 10,
-                            autoplay: false,
-                        },
-                        1400: {
-                            slidesPerView: 4.9,
-                            spaceBetween: 0,
-                            autoplay: false,
-                        },
+                        autoplay: false,
+                        navigation: false,
+                    },
+                    1200: {
+                        slidesPerView: 3.9,
+                        spaceBetween: 10,
+                        autoplay: false,
+                    },
+                    1400: {
+                        slidesPerView: 4.9,
+                        spaceBetween: 0,
+                        autoplay: false,
+                    },
+                    }}
+                >
+                    {randomProducts?.map((product) => {
+                    return (
+                        <div
+                        style={{
+                            display: "block",
+                            marginLeft: "auto",
+                            marginRight: "auto",
+
                         }}
-                    >
-                        {randomProducts?.map((product) => {
-                        return (
-                            <div
-                            style={{
-                                display: "block",
-                                marginLeft: "auto",
-                                marginRight: "auto",
-                            }}
-                            >
-                                <SwiperSlide key={product.id} >
-                                    <Card
-                                    style={{
-                                        width: 235,
-                                            height: 280,
+                        >
+                            <SwiperSlide key={product.id} >
+                                <Card
+                                style={{
+                                    width: 235,
+                                        height: 280,
+                                    objectFit: "contain",
+                                        cursor: "pointer",
+                                }}
+                                >
+                                    <Link to={`/product/${product.id}`}>
+                                        {product.image ? (
+                                        <Card.Img
+                                            className="mt-1"
+                                            style={{
+                                                width: 225,
+                                                height: 197,
+                                            marginLeft: 3,
                                             objectFit: "contain",
-                                            cursor: "pointer",
-                                    }}
-                                    >
-                                        <Link to={`/product/${product.id}`}>
-                                            {product.image ? (
-                                            <Card.Img
-                                                className="mt-1"
-                                                style={{
-                                                    width: 225,
-                                                    height: 197,
-                                                    marginLeft: 3,
-                                                    objectFit: "contain",
-                                                }}
-                                                variant="top"
-                                                src={process.env.REACT_APP_IMG_URL + product.image}
-                                            />
-                                            ) : (
-                                            <Card.Img
-                                                variant="top"
-                                                src={process.env.REACT_APP_IMG_URL + product.image +".webp"}
-                                            />
-                                            )}
-                                            <Card.Body>
-                                                <Card.Title style={{marginTop: '-10px'}}>{product.name}</Card.Title>
-                                                <Card.Title style={{marginTop: '-10px'}}>{product.price + ' тг.'}</Card.Title>
-                                            </Card.Body>
-                                        </Link>
-                                    </Card>
-                                </SwiperSlide>
-                            </div>
-                        );
-                        })}
-                    </Swiper>
+                                            }}
+                                            variant="top"
+                                            src={process.env.REACT_APP_IMG_URL + product.image}
+                                        />
+                                        ) : (
+                                        <Card.Img
+                                            variant="top"
+                                            src={process.env.REACT_APP_IMG_URL + product.image +".webp"}
+                                        />
+                                        )}
+                                        <Card.Body>
+                                            <Card.Title>{product.name}</Card.Title>
+                                        </Card.Body>
+                                    </Link>
+                                </Card>
+                            </SwiperSlide>
+
+                        </div>
+                    );
+                    })}
+                </Swiper>
+
                 </Row>
                 </div>
             </Card>
