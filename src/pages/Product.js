@@ -98,21 +98,21 @@ const Product = () => {
                     : <title>Купить {product.gender.name || ''} {product.name} в Алматы</title>
             }
         </Helmet>
-        <Card className="mt-4" style={{ padding: "2% 8%", borderColor: '#1200ba' }}>
+        <Card className="mt-4" style={{ padding: "2%", borderColor: '#1200ba' }}>
             <Row>
-                <Col lg={6}>
+                <Col lg={6} style={{marginRight: '30px'}}>
                     {product.image ? (
                     <Image
-                        width={300}
+                        height={640}
                         src={process.env.REACT_APP_IMG_URL + product.image}
-                        style={{ marginTop: 50 }}
+                        style={{ marginTop: 23, display: 'block', margin: 'auto', paddingTop: '5%' }}
                     />
                     ) : (
                     <Image width={300} src="http://via.placeholder.com/300" />
                     )}
                 </Col>
-                <Col lg={6} style={{ textAlign: "left", marginTop: 20 }}>
-                      <h3>{product.name} {product.finId ? <span style={{ border: '2px solid #0d6efd', marginLeft: '15px', borderRadius: '6px', fontSize: '24px', }}>{product.finId}%</span>:''}</h3>
+                <Col lg={5} style={{ textAlign: "left", marginTop: 20 }}>
+                      <h3>{product.name} {product.finId ? <span style={{ border: '2px solid #0d6efd', marginLeft: '15px', borderRadius: '6px', fontSize: '24px', }}> -{product.finId}%</span>:''}</h3>
 
                       <h3>{product.price} тг.
                           {product.finId ?
