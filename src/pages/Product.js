@@ -86,7 +86,6 @@ const Product = () => {
     ...propsToDisplay
   ];
 
-  // Список брендов, при которых будут показываться бренд и название продукта
   const titleNameList = ['Victorinox', 'Parker', 'Waterman', 'Lamy'];
   const brendName = product.brand.name;
 
