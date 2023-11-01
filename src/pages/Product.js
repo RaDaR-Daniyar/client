@@ -44,7 +44,7 @@ const Product = () => {
             return;
         }
 
-        fetchBrendProducts(id)
+        fetchCategoryProducts(id)
             .then((data) => {debugger; setSameCollectionProducts(data)})
           .catch((error) =>
             console.error("Error fetching same collection products:", error)
