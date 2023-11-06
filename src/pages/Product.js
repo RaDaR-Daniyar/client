@@ -101,15 +101,24 @@ const Product = () => {
         <Card className="mt-4" style={{ padding: "2%", borderColor: '#1200ba' }}>
             <Row>
                 <Col lg={6} style={{marginRight: '30px'}}>
-                    {product.image ? (
-                    <Image
-                        height={640}
-                        src={process.env.REACT_APP_IMG_URL + product.image}
-                        style={{ marginTop: 23, display: 'block', margin: 'auto', paddingTop: '5%' }}
-                    />
-                    ) : (
-                    <Image width={300} src="http://via.placeholder.com/300" />
-                    )}
+                    <div class='hide-on-mobile'>
+                        {product.image ? (
+                        <Image
+                            height={640}
+                            src={process.env.REACT_APP_IMG_URL + product.image}
+                            style={{ marginTop: 23, display: 'block', margin: 'auto', paddingTop: '5%' }}
+                        />
+                        ) : (
+                        <Image width={300} src="http://via.placeholder.com/300" />
+                        )}
+                    </div>
+                    <div class='show-on-mobile'>
+                        {product.image ? (
+                            <Image width={350} src={process.env.REACT_APP_IMG_URL + product.image} style={{marginTop: 50}} />
+                        ) : (
+                            <Image width={350} src="http://via.placeholder.com/300" />
+                        )}
+                    </div>
                 </Col>
                 <Col lg={5} style={{ textAlign: "left", marginTop: 20 }}>
                       <h3>{product.name} {product.finId ? <span style={{ border: '2px solid #0d6efd', marginLeft: '15px', borderRadius: '6px', fontSize: '24px', }}> -{product.finId}%</span>:''}</h3>

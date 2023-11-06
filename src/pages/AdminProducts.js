@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import SearchField from '../components/SearchField.js';
 
-const ADMIN_PER_PAGE = 50
+const ADMIN_PER_PAGE = 70
 
 const AdminProducts = () => {
     const [products, setProducts] = useState([])

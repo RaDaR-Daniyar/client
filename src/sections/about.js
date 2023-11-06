@@ -1,38 +1,68 @@
 import { Card, Col, Row } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
-import fon from "../assets/fon.png";
-import go from "../assets/go.png";
+import garant from "../assets/about/garant.png"
+import dostavka from "../assets/about/dostavka.png"
+import original from "../assets/about/original.png"
+import kaspi from "../assets/about/kaspi.png"
+import ck from "../assets/about/ck.png"
+import swatch from "../assets/about/swatch.png"
 
 const About = () => {
     return (
         <Container className='mt-4'>
-            <Card style={{borderColor: '#1200ba'}}>
-                <Row>
-                <Col md={6}>
-                        <div class='hide-on-mobile' style={{padding: '2%'}}>
-                            <a href='/shop'><img class='scaleabout' src={ fon } alt="Купить японские часы в Алматы" width='83%' style={{marginTop: '2%', marginBottom: '2%', borderRadius: '65px', boxShadow: '0 0 6px 6px #1200ba'}} /></a>
-                        </div>
-                        <div class='show-on-mobile' style={{padding: '3%'}}>
-                            <a href='/shop'><img class='scaleabout' src={ fon } alt="Купить японские часы в Алматы" width='94%' style={{marginTop: '3%', borderRadius: '65px', boxShadow: '0 0 6px 6px #1200ba'}} /></a>
-                        </div>
+            <Row>
+                <Col md={2}>
+                    <div class='hide-on-mobile'>
+                        <h2 style={{marginTop: '2%', fontFamily: 'Book Antiqua', fontWeight: 'bold', color: '#1200ba'}}>Почему выбирают нас?</h2>
+                    </div>
+                    <div class='show-on-mobile'>
+                        <h2 style={{textAlign: 'center', marginBottom: '4%', marginTop: '4%', fontFamily: 'Book Antiqua', fontWeight: 'bold', color: '#1200ba'}}>Почему выбирают нас?</h2>
+                    </div>
+                </Col>
+                <Col md={5}>
+                    <div class='hide-on-mobile'>
+                        <a href='/shop'><img class='scalecat' src={ original } alt="Оригинальная продукция" style={{width: '47%', marginBottom: '3%'}}/></a>
+                        <a href='/service'><img class='scalecat' src={ garant } alt="Международная гарантия" style={{width: '47%', marginLeft: '20px', marginBottom: '3%'}}/></a>
+                    </div>
+                    <div class='show-on-mobile'>
+                        <a href='/shop'><img class='scalemobile' src={ original } alt="Оригинальная продукция" style={{width: '47%', marginBottom: '3%'}}/></a>
+                        <a href='/service'><img class='scalemobile' src={ garant } alt="Международная гарантия" style={{width: '47%', marginLeft: '20px', marginBottom: '3%'}}/></a>
+                    </div>
+                </Col>
+                <Col md={5}>
+                    <div class='hide-on-mobile'>
+                        <a href='/delivery'><img class='scalecat' src={ dostavka } alt="Международная гарантия" style={{width: '47%', marginBottom: '3%'}}/></a>
+                        <a href='/delivery'><img class='scalecat' src={ kaspi } alt="Международная гарантия" style={{width: '47%', marginLeft: '20px', marginBottom: '3%'}}/></a>
+                    </div>
+                    <div class='show-on-mobile'>
+                        <a href='/delivery'><img class='scalemobile' src={ dostavka } alt="Международная гарантия" style={{width: '47%', marginBottom: '3%'}}/></a>
+                        <a href='/delivery'><img class='scalemobile' src={ kaspi } alt="Международная гарантия" style={{width: '47%', marginLeft: '20px', marginBottom: '3%'}}/></a>
+                    </div>
+                </Col>
+            </Row>
+            <div class='hide-on-mobile'>
+                <h2 style={{textAlign: 'center', marginTop: '2%', color: '#1200ba', fontFamily: 'Book Antiqua', fontWeight: 'bold'}}>Интернет-магазин "Aksessuary.KZ"</h2>
+                <p style={{textAlign: 'justify', fontSize: 17}}>Является официальным дистрибьютором на территории Республики Казахстан 
+                    представленных брендов. Мы несём полную ответственность за нашу продукцию и гарантируем её подлинность и качество. До того, как товар поступает к нам 
+                    в магазин, мы тщательно отбираем каждую модель на предмет дизайна, качества материалов и механизма. Мы предлагаем только те часы, которые бы носили 
+                    сами или дарили близким нам людям.
+                    На каждом этапе выбора часов, мы будем рады помочь вам и проконсультировать. Нам не терпится ответить на все ваши вопросы и 
+                    помочь найти часы, которыми вы с гордостью будете владеть долгие годы. Мы относимся серьезно к работе, в 
+                    первую очередь, потому что любим наше дело.
+                </p>
+            </div>
+            <div>
+                <h2 style={{textAlign: 'center', color: '#1200ba', fontFamily: 'Book Antiqua', fontWeight: 'bold'}}>Акции</h2>
+                <Row style={{marginTop: '20px'}}>
+                    <Col md={6}>
+                    <a href='/shop?brand=4'><img class='scalecat' src={ ck } alt="Оригинальная продукция" style={{width: '98%', marginBottom: '3%'}}/></a>
                     </Col>
                     <Col md={6}>
-                        <div>
-                            <h2 style={{textAlign: 'justify', marginTop: '5%', color: '#1200ba', fontFamily: 'Book Antiqua', marginLeft: 10, fontWeight: 'bold'}}>Интернет-магазин "Aksessuary.KZ"</h2>
-                            <p style={{textAlign: 'justify', fontSize: 17, width: '95%', marginLeft: 10}}>Является официальным дистрибьютором на территории Республики Казахстан 
-                                представленных брендов. Мы несём полную ответственность за нашу продукцию и гарантируем её подлинность и качество. До того, как товар поступает к нам 
-                                в магазин, мы тщательно отбираем каждую модель на предмет дизайна, качества материалов и механизма. Мы предлагаем только те часы, которые бы носили 
-                                сами или дарили близким нам людям.
-                                На каждом этапе выбора часов, мы будем рады помочь вам и проконсультировать. Нам не терпится ответить на все ваши вопросы и 
-                                помочь найти часы, которыми вы с гордостью будете владеть долгие годы. Мы относимся серьезно к работе, в 
-                                первую очередь, потому что любим наше дело.
-                            </p>
-                            <p style={{textAlign: 'justify', fontSize: 17, width: '95%', marginLeft: 10}}>Наш магазин, специализируется на продаже оригинальных аксессуаров более 20 лет.</p>
-                            <a href='/shop'><img class='scalecat' src={ go } alt="Купить швейцарские часы в Алматы" style={{width: '37%', marginLeft: '28%', marginTop: '20px', marginBottom: '10px'}} /></a>
-                        </div>
+                        <a href='/shop?brand=11'><img class='scalecat' src={ swatch } alt="Оригинальная продукция" style={{width: '98%', marginBottom: '3%'}}/></a>
                     </Col>
                 </Row>
-            </Card>
+            </div>
+
         </Container>
     )
 }

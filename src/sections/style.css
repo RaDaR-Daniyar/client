@@ -129,12 +129,22 @@ main {
         transform: scale(1.12);
    }
 
+.scalemobile {
+    width:100%;
+    line-height:70px;
+    text-align:center;
+    border:1px solid #1200ba;
+    border-radius: 12px;
+    transition: all 200ms ease-out;
+    transition: 1s;
+    box-shadow: '0 0 6px 6px #1200ba'
+}
+
 .scalecat {
     width:100%;
     line-height:70px;
     text-align:center;
-    border:2px solid #fff;
-    border-radius: 25px;
+    border-radius: 15px;
     transition: all 200ms ease-out;
     transition: 1s;
     box-shadow: '0 0 6px 6px #1200ba'

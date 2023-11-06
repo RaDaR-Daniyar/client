@@ -19,12 +19,12 @@ const Home = () => {
             </Helmet>
             <Row>
                 <CarouselBox />
+                <About />
                 <ClockMan />
                 <ClockWoman />
                 <Pen />
                 <Knife />
                 <Recomendation />
-                <About />
                 <Categories />
             </Row>
         </Container>
