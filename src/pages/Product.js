@@ -112,9 +112,12 @@ const Product = () => {
                         <Image width={300} src="http://via.placeholder.com/300" />
                         )}
                     </div>
-                    <div class='show-on-mobile'>
+                    <div class='show-on-mobile' style={{height: '2500rem'}}>
                         {product.image ? (
-                            <Image width={350} src={process.env.REACT_APP_IMG_URL + product.image} style={{marginTop: 50}} />
+                            <Image width={'250rem'}
+                            src={process.env.REACT_APP_IMG_URL + product.image}
+                            style={{ marginTop: 23, display: 'block', margin: 'auto', paddingTop: '5%' }}
+                        />
                         ) : (
                             <Image width={350} src="http://via.placeholder.com/300" />
                         )}

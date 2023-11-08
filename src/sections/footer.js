@@ -15,7 +15,8 @@ const Footer = () => {
                         <img  src = { logo } alt = "Купить аксессуары в Алматы" style={{width: 170}}/><br /><br />
                         <p style={{textAlign: "justify", fontSize: 16, width: '95%'}}>Брендовые аксессуары — это стильные и полезные мелочи, которые дополняют Ваш образ. У нас Вы найдете подходящие аксессуары для любого случая. Если пользоваться этими штрихами умело и со вкусом, Вы легко поднимете свой стиль на новую высоту.</p>
                     </Col>
-                    <Col md={2} style={{marginBottom: 20, marginTop: 20, marginLeft: 10}}>
+                    <Col md={4} style={{marginBottom: 20, marginTop: 20, marginLeft: 10}}>
+                        <div style={{width: '48%', float: 'left'}}>
                         <h4 style={{color: "#1200ba", marginBottom: 20}}>Навигация</h4>
                         <a href='/' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Главная</a><br />
                         <a href='/shop' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Каталог</a><br />
@@ -23,12 +24,13 @@ const Footer = () => {
                         <a href='/shop/?gender=2' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Женские часы</a><br />
                         <a href='/shop?brend=1' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Ручки</a><br />
                         <a href='/shop?brand=15' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Ножи</a>
-                    </Col>
-                    <Col md={2} style={{marginBottom: 20, marginTop: 20, marginLeft: 10}}>
+                        </div>
+                        <div style={{width: '48%', float: 'left'}}>
                         <h4 style={{color: "#1200ba", marginBottom: 20}}>Информация</h4>
                         <a href='/about' style={{textDecoration: "none", fontSize: 14, color: "black"}}>О магазине</a><br />
                         <a href='/delivery' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Доставка и оплата</a><br />
                         <a href='/service' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Сервис-центр</a><br />
+                        </div>
                     </Col>
                     <Col md={2} style={{marginLeft: 10}}>
                         <h4 style={{color: "#1200ba", marginBottom: 20, marginTop: 20}}>Контакты</h4>

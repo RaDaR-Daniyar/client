@@ -20,12 +20,8 @@ const Home = () => {
             <Row>
                 <CarouselBox />
                 <About />
-                <ClockMan />
-                <ClockWoman />
-                <Pen />
-                <Knife />
-                <Recomendation />
                 <Categories />
+                <Recomendation />
             </Row>
         </Container>
     )

@@ -27,9 +27,8 @@ const Recomendation = () => {
     }, []);
 
     return (
-
         <Container className='mt-4'>
-            <Card style={{padding: '2%', borderColor: '#1200ba', overflow: "hidden"}}>
+            
                 <h1 style={{ textAlign: 'center', fontWeight: 'bold', color: '#1200ba', fontFamily: 'Book Antiqua', fontSize: '32px' }}>Рекомендованные товары</h1>
                 <div className="recomendation-swiper">
 
@@ -84,9 +83,9 @@ const Recomendation = () => {
                                 <Card
                                 style={{
                                     width: 235,
-                                        height: 280,
+                                    height: 280,
                                     objectFit: "contain",
-                                        cursor: "pointer",
+                                    cursor: "pointer",
                                 }}
                                 >
                                     <Link to={`/product/${product.id}`}>
@@ -96,8 +95,8 @@ const Recomendation = () => {
                                             style={{
                                                 width: 225,
                                                 height: 197,
-                                            marginLeft: 3,
-                                            objectFit: "contain",
+                                                marginLeft: 3,
+                                                objectFit: "contain",
                                             }}
                                             variant="top"
                                             src={process.env.REACT_APP_IMG_URL + product.image}
@@ -119,10 +118,9 @@ const Recomendation = () => {
                     );
                     })}
                 </Swiper>
-
                 </Row>
                 </div>
-            </Card>
+            
         </Container>
 
     )
