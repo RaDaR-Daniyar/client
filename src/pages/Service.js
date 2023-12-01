@@ -1,6 +1,6 @@
 import { Card, Col, Row, Table } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
-import sws from "../assets/sws.webp";
+import sws from "../assets/sws.jpg";
 import sws1 from "../assets/sws/sws1.png";
 import sws2 from "../assets/sws/sws2.png";
 import sws3 from "../assets/sws/sws3.png";

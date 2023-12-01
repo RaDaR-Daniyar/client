@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container'
 import { Helmet } from 'react-helmet'
 import lamy from "../assets/lamy-logo.jpg"
 import lamypen from "../assets/lamy1.jpg"
-import lamyp from "../assets/lamy2.webp"
+import lamyp from "../assets/lamy2.jpg"
 import go from "../assets/go.png";
 
 const Lamy = () => {
