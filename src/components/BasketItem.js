@@ -4,7 +4,7 @@ const BasketItem = (props) => {
     return (
         <tr>
             <td>{props.name}</td>
-            <td>
+            <td style={{whiteSpace: 'nowrap'}}>
                 <Button variant="outline-dark" size="sm" onClick={() => props.decrement(props.id)}>-</Button>
                 {' '}<strong>{props.quantity}</strong>{' '}
                 <Button variant="outline-dark" size="sm" onClick={() => props.increment(props.id)}>+</Button>
@@ -12,7 +12,7 @@ const BasketItem = (props) => {
             <td>{props.price} тг.</td>
             <td>{props.price * props.quantity} тг.</td>
             <td>
-                <Button variant="link" onClick={() => props.remove(props.id)}>
+                <Button variant="link" onClick={() => props.remove(props.id)} style={{marginLeft: '-10px'}}>
                     Удалить
                 </Button>
             </td>
