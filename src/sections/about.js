@@ -1,4 +1,4 @@
-import { Card, Col, Row } from 'react-bootstrap'
+import { Carousel, Card, Col, Row } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
 import garant from "../assets/about/garant.png"
 import dostavka from "../assets/about/dostavka.png"
@@ -55,20 +55,28 @@ const About = () => {
             </div>
             <div>
                 <h2 style={{textAlign: 'center', color: '#1200ba', fontFamily: 'Book Antiqua', fontWeight: 'bold'}}>Акции</h2>
-                <Row style={{marginTop: '20px'}}>
-                    <Col md={6}>
-                        <a href='/shop?brand=4'><img class='scalecat' src={ ck } alt="Скидки на часы Calvin Klein" style={{width: '98%', marginBottom: '3%'}}/></a>
-                    </Col>
-                    <Col md={6}>
-                        <a href='/shop?brand=11'><img class='scalecat' src={ swatch } alt="Скидки на часы Swatch" style={{width: '98%', marginBottom: '3%'}}/></a>
-                    </Col>
-                    <Col md={6}>
-                        <a href='/shop?brand=3'><img class='scalecat' src={ citizen } alt="Скидки на часы Citizen" style={{width: '98%', marginBottom: '3%'}}/></a>
-                    </Col>
-                    <Col md={6}>
-                        <a href='/shop?brand=5'><img class='scalecat' src={ diesel } alt="Скидки на часы Diesel" style={{width: '98%', marginBottom: '3%'}}/></a>
-                    </Col>
-                </Row>
+                <Carousel className='b-1' interval={2000}> 
+                    <Carousel.Item>
+                        <Row style={{marginTop: '20px'}}>
+                            <Col md={6}>
+                                <a href='/shop?brand=4'><img class='scalecat' src={ ck } alt="Скидки на часы Calvin Klein" style={{width: '98%', marginBottom: '3%'}}/></a>
+                            </Col>
+                            <Col md={6}>
+                                <a href='/shop?brand=3'><img class='scalecat' src={ citizen } alt="Скидки на часы Citizen" style={{width: '98%', marginBottom: '3%'}}/></a>
+                            </Col>
+                        </Row>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <Row style={{marginTop: '20px'}}>
+                            <Col md={6}>
+                                <a href='/shop?brand=11'><img class='scalecat' src={ swatch } alt="Скидки на часы Swatch" style={{width: '98%', marginBottom: '3%'}}/></a>
+                            </Col>
+                            <Col md={6}>
+                                <a href='/shop?brand=5'><img class='scalecat' src={ diesel } alt="Скидки на часы Diesel" style={{width: '98%', marginBottom: '3%'}}/></a>
+                            </Col>
+                        </Row>
+                    </Carousel.Item>
+                </Carousel>
             </div>
 
         </Container>
