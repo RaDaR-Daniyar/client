@@ -5,9 +5,9 @@ const BasketItem = (props) => {
         <tr>
             <td>{props.name}</td>
             <td style={{whiteSpace: 'nowrap'}}>
-                <Button variant="outline-dark" size="sm" onClick={() => props.decrement(props.id)}>-</Button>
+                <Button size="sm" onClick={() => props.decrement(props.id)}>-</Button>
                 {' '}<strong>{props.quantity}</strong>{' '}
-                <Button variant="outline-dark" size="sm" onClick={() => props.increment(props.id)}>+</Button>
+                <Button size="sm" onClick={() => props.increment(props.id)}>+</Button>
             </td>
             <td>{props.price} тг.</td>
             <td>{props.price * props.quantity} тг.</td>
