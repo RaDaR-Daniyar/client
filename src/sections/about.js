@@ -6,6 +6,8 @@ import original from "../assets/about/original.png"
 import kaspi from "../assets/about/kaspi.png"
 import ck from "../assets/about/ck.png"
 import swatch from "../assets/about/swatch.png"
+import citizen from "../assets/about/citizen.png"
+import diesel from "../assets/about/diesel.png"
 
 const About = () => {
     return (
@@ -16,7 +18,7 @@ const About = () => {
                         <h2 style={{marginTop: '2%', fontFamily: 'Book Antiqua', fontWeight: 'bold', color: '#1200ba'}}>Почему выбирают нас?</h2>
                     </div>
                     <div class='show-on-mobile'>
-                        <h2 style={{textAlign: 'center', marginBottom: '4%', marginTop: '4%', fontFamily: 'Book Antiqua', fontWeight: 'bold', color: '#1200ba'}}>Почему выбирают нас?</h2>
+                        <h2 style={{textAlign: 'center', marginBottom: '4%', marginTop: '-10%', fontFamily: 'Book Antiqua', fontWeight: 'bold', color: '#1200ba'}}>Почему выбирают нас?</h2>
                     </div>
                 </Col>
                 <Col md={5}>
@@ -55,10 +57,16 @@ const About = () => {
                 <h2 style={{textAlign: 'center', color: '#1200ba', fontFamily: 'Book Antiqua', fontWeight: 'bold'}}>Акции</h2>
                 <Row style={{marginTop: '20px'}}>
                     <Col md={6}>
-                    <a href='/shop?brand=4'><img class='scalecat' src={ ck } alt="Оригинальная продукция" style={{width: '98%', marginBottom: '3%'}}/></a>
+                        <a href='/shop?brand=4'><img class='scalecat' src={ ck } alt="Скидки на часы Calvin Klein" style={{width: '98%', marginBottom: '3%'}}/></a>
                     </Col>
                     <Col md={6}>
-                        <a href='/shop?brand=11'><img class='scalecat' src={ swatch } alt="Оригинальная продукция" style={{width: '98%', marginBottom: '3%'}}/></a>
+                        <a href='/shop?brand=11'><img class='scalecat' src={ swatch } alt="Скидки на часы Swatch" style={{width: '98%', marginBottom: '3%'}}/></a>
+                    </Col>
+                    <Col md={6}>
+                        <a href='/shop?brand=3'><img class='scalecat' src={ citizen } alt="Скидки на часы Citizen" style={{width: '98%', marginBottom: '3%'}}/></a>
+                    </Col>
+                    <Col md={6}>
+                        <a href='/shop?brand=5'><img class='scalecat' src={ citizen } alt="Скидки на часы Diesel" style={{width: '98%', marginBottom: '3%'}}/></a>
                     </Col>
                 </Row>
             </div>
