@@ -11,7 +11,7 @@ const BasketItem = (props) => {
             </td>
             <td>{props.price} тг.</td>
             <td>{props.price * props.quantity} тг.</td>
-            <td>
+            <td class='hide-on-mobile'>
                 <Button variant="link" onClick={() => props.remove(props.id)} style={{marginLeft: '-10px'}}>
                     Удалить
                 </Button>
