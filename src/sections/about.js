@@ -66,7 +66,7 @@ const About = () => {
                         <a href='/shop?brand=3'><img class='scalecat' src={ citizen } alt="Скидки на часы Citizen" style={{width: '98%', marginBottom: '3%'}}/></a>
                     </Col>
                     <Col md={6}>
-                        <a href='/shop?brand=5'><img class='scalecat' src={ citizen } alt="Скидки на часы Diesel" style={{width: '98%', marginBottom: '3%'}}/></a>
+                        <a href='/shop?brand=5'><img class='scalecat' src={ diesel } alt="Скидки на часы Diesel" style={{width: '98%', marginBottom: '3%'}}/></a>
                     </Col>
                 </Row>
             </div>
