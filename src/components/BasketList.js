@@ -57,10 +57,10 @@ const BasketList = observer(() => {
                         <thead>
                             <tr>
                                 <th>Наименование</th>
-                                <th style={{whiteSpace: 'nowrap'}}>Кол-во</th>
+                                <th>Количество</th>
                                 <th>Цена</th>
                                 <th>Сумма</th>
-                                <th>Удалить</th>
+                                <th class='hide-on-mobile'>Удалить</th>
                             </tr>
                         </thead>
                         <tbody>
