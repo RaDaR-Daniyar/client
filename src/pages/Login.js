@@ -28,31 +28,60 @@ const Login = observer(() => {
 
     return (
         <Container className="d-flex justify-content-center">
-            <Card style={{width: '50%'}} className="p-2 mt-5 bg-light">
-                <h3 className="m-auto">Авторизация</h3>
-                <Form className="d-flex flex-column" onSubmit={handleSubmit}>
-                    <Form.Control
-                        name="email"
-                        className="mt-3"
-                        placeholder="Введите ваш email..."
-                    />
-                    <Form.Control
-                        name="password"
-                        className="mt-3"
-                        placeholder="Введите ваш пароль..."
-                        type='password'
-                    />
-                    <div className="d-flex justify-content-between mt-3 pl-3 pr-3">
-                        <Button type="submit">
-                            Войти
-                        </Button>
-                        <p>
-                            Нет аккаунта? 
-                            <Link to="/signup"> Зарегистрирутесь!</Link> 
-                        </p>
-                    </div>
-                </Form>
-            </Card>
+            <div class='hide-on-mobile'>
+                <Card style={{width: '50%'}} className="p-2 mt-5 bg-light">
+                    <h3 className="m-auto">Авторизация</h3>
+                    <Form className="d-flex flex-column" onSubmit={handleSubmit}>
+                        <Form.Control
+                            name="email"
+                            className="mt-3"
+                            placeholder="Введите ваш email..."
+                        />
+                        <Form.Control
+                            name="password"
+                            className="mt-3"
+                            placeholder="Введите ваш пароль..."
+                            type='password'
+                        />
+                        <div className="d-flex justify-content-between mt-3 pl-3 pr-3">
+                            <Button type="submit">
+                                Войти
+                            </Button>
+                            <p>
+                                Нет аккаунта? 
+                                <Link to="/signup"> Зарегистрирутесь!</Link> 
+                            </p>
+                        </div>
+                    </Form>
+                </Card>
+            </div>
+            <div class='show-on-mobile'>
+                <Card style={{width: '100%'}} className="p-2 mt-5 bg-light">
+                    <h3 className="m-auto">Авторизация</h3>
+                    <Form className="d-flex flex-column" onSubmit={handleSubmit}>
+                        <Form.Control
+                            name="email"
+                            className="mt-3"
+                            placeholder="Введите ваш email..."
+                        />
+                        <Form.Control
+                            name="password"
+                            className="mt-3"
+                            placeholder="Введите ваш пароль..."
+                            type='password'
+                        />
+                        <div className="d-flex justify-content-between mt-3 pl-3 pr-3">
+                            <Button type="submit">
+                                Войти
+                            </Button>
+                            <p style={{marginLeft: '10px', marginTop: '10px'}}>
+                                Нет аккаунта? 
+                                <Link to="/signup"> Зарегистрирутесь!</Link> 
+                            </p>
+                        </div>
+                    </Form>
+                </Card>
+            </div>
         </Container>
     )
 })

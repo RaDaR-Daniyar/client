@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Container, Row, Card, Form, Button } from 'react-bootstrap'
 import { signup } from '../http/userAPI.js'
 import { observer } from 'mobx-react-lite'
+import '../sections/style.css'
 
 const Signup = observer(() => {
     const { user } = useContext(AppContext)
@@ -28,31 +29,60 @@ const Signup = observer(() => {
 
     return (
         <Container className="d-flex justify-content-center">
-            <Card style={{width: '50%'}} className="p-2 mt-5 bg-light">
-                <h3 className="m-auto">Регистрация</h3>
-                <Form className="d-flex flex-column" onSubmit={handleSubmit}>
-                    <Form.Control
-                        name="email"
-                        className="mt-3"
-                        placeholder="Введите ваш email..."
-                    />
-                    <Form.Control
-                        name="password"
-                        className="mt-3"
-                        placeholder="Введите ваш пароль..."
-                        type='password'
-                    />
-                    <div className="d-flex justify-content-between mt-3 pl-3 pr-3">
-                        <Button type="submit">
-                            Регистрация
-                        </Button>
-                        <p>
-                            Есть аккаунта? 
-                            <Link to="/login"> Войдите!</Link> 
-                        </p>
-                    </div>
-                </Form>
-            </Card>
+            <div class='hide-on-mobile'>
+                <Card style={{width: '50%'}} className="p-2 mt-5 bg-light">
+                    <h3 className="m-auto">Регистрация</h3>
+                    <Form className="d-flex flex-column" onSubmit={handleSubmit}>
+                        <Form.Control
+                            name="email"
+                            className="mt-3"
+                            placeholder="Введите ваш email..."
+                        />
+                        <Form.Control
+                            name="password"
+                            className="mt-3"
+                            placeholder="Введите ваш пароль..."
+                            type='password'
+                        />
+                        <div className="d-flex justify-content-between mt-3 pl-3 pr-3">
+                            <Button type="submit">
+                                Регистрация
+                            </Button>
+                            <p>
+                                Есть аккаунта? 
+                                <Link to="/login"> Войдите!</Link> 
+                            </p>
+                        </div>
+                    </Form>
+                </Card>
+            </div>
+            <div class='show-on-mobile'>
+                <Card style={{width: '100%'}} className="p-2 mt-5 bg-light">
+                    <h3 className="m-auto">Регистрация</h3>
+                    <Form className="d-flex flex-column" onSubmit={handleSubmit}>
+                        <Form.Control
+                            name="email"
+                            className="mt-3"
+                            placeholder="Введите ваш email..."
+                        />
+                        <Form.Control
+                            name="password"
+                            className="mt-3"
+                            placeholder="Введите ваш пароль..."
+                            type='password'
+                        />
+                        <div className="d-flex justify-content-between mt-3 pl-3 pr-3">
+                            <Button type="submit">
+                                Регистрация
+                            </Button>
+                            <p style={{marginLeft: '10px', marginTop: '10px'}}>
+                                Есть аккаунта? 
+                                <Link to="/login"> Войдите!</Link> 
+                            </p>
+                        </div>
+                    </Form>
+                </Card>
+            </div>
         </Container>
     )
 })
