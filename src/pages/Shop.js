@@ -21,6 +21,7 @@ import ProductsSort from '../components/PrtoductsSort.js';
 import PriceSlider from '../components/PriceSlider/PriceSlider.jsx';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
+import '../sections/style.css'
 
 const getSearchParams = (searchParams) => {
     let category = searchParams.get('category');
@@ -261,7 +262,9 @@ const Shop = observer(() => {
                         <h4 style={{textAlign: 'center', marginTop: '20px', color: '#1200ba', fontFamily: 'Book Antiqua', fontWeight: 'bold'}}>Фильтр товаров</h4>
                     </Col>
                     <Col mt={5} style={{marginRight: '5px'}}>
-                        <SearchField onSearch={setSearchTerm} />
+                        <div class="hide-on-mobile">
+                            <SearchField onSearch={setSearchTerm} />
+                        </div>
                     </Col>
                     <Col md={4}>
                         <ProductsSort setSortOrder={setSortOrder}/>
