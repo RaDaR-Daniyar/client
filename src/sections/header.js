@@ -17,7 +17,7 @@ const Header = observer(() => {
     const { user, basket } = useContext(AppContext);
 
     return (
-        <Container>
+        <Container style={{ position: 'relative'}}>
             <MobileMenu />
             <Top />
             <Row className="mt-4">

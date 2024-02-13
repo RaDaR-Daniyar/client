@@ -12,11 +12,11 @@ import PowerBar from '../components/PowerBar.js';
 import WaterBar from '../components/WaterBar.js';
 import BrendBar from '../components/BrendBar.js';
 import ProductList from '../components/ProductList.js';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { AppContext } from '../components/AppContext.js';
 import {fetchCategories, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, fetchMaterials, fetchGlasses, fetchStraps, fetchPowers, fetchWaters, fetchBrends, fetchAllProducts} from '../http/catalogAPI.js';
 import { observer } from 'mobx-react-lite';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams, createSearchParams, useNavigate } from 'react-router-dom';
 import ProductsSort from '../components/PrtoductsSort.js';
 import PriceSlider from '../components/PriceSlider/PriceSlider.jsx';
 import axios from 'axios';
@@ -76,6 +76,7 @@ const getSearchParams = (searchParams) => {
   };
 
 const Shop = observer(() => {
+    const navigate = useNavigate();
     const { catalog } = useContext(AppContext);
     const [categoriesFetching, setCategoriesFetching] = useState(true);
     const [brandsFetching, setBrandsFetching] = useState(true);
@@ -94,6 +95,31 @@ const Shop = observer(() => {
     const location = useLocation();
     const [searchParams] = useSearchParams();
     const [maxPrice, setMaxPrice] = useState(null);
+    const mobileFiltersRef = useRef();
+    const filterOpenButtonRef = useRef();
+
+    // THE SIZE OBSERVER
+
+    // We are not watching the "window",
+    // but the container.Due to problems with adaptivity
+    const containerRef = useRef();
+
+    const {0: width, 1: setWidth} = useState()
+
+    const resizeWindow = () => {
+        setWidth(window.innerWidth);
+    };
+
+    useEffect(() => {
+        setWidth(window.innerWidth)
+
+        window.addEventListener("resize", resizeWindow);
+        return () => window.removeEventListener("resize", resizeWindow);
+    });
+
+    // STATUS OF OPENING AND CLOSING FILTERS IN THE MOBILE VERSION
+    const { 0: isOpenFilters, 1: setIsOpenFilters } = useState(false);
+    //
 
     useEffect(() => {
         async function getPrices() {
@@ -148,7 +174,7 @@ const Shop = observer(() => {
     fetchBrends()
         .then((data) => (catalog.brends = data))
         .finally(() => setBrendsFetching(false));
-    
+
         const { category, brand, mehanizm, gender, shape, material, glass, strap, power, water, brend, page } =
         getSearchParams(searchParams);
         catalog.category = category;
@@ -196,8 +222,70 @@ const Shop = observer(() => {
         }
     }, [location.search]);
 
+    // CHANGE PARAMS
     useEffect(() => {
         setProductsFetching(true);
+        fetchAllProducts(
+            searchTerm,
+            catalog.category,
+            catalog.brand,
+            catalog.mehanizm,
+            catalog.gender,
+            catalog.shape,
+            catalog.material,
+            catalog.glass,
+            catalog.strap,
+            catalog.power,
+            catalog.water,
+            catalog.brend,
+            1, // page (if change this params ==> show first page with this params)
+            catalog.limit,
+            sortOrder,
+            catalog.minPrice,
+            catalog.maxPrice,
+            )
+        .then((data) => {
+                const filtered = data.rows.filter((product) => {
+                    return product.price > catalog.minPrice && product.price <= catalog.maxPrice;
+                });
+                catalog.count = data.count;
+                filtered.splice(catalog.limit * catalog.page, filtered.length);
+                console.log('filtered: ', filtered);
+                catalog.products = filtered;
+            })
+        .finally(() => setProductsFetching(false));
+        // on first page
+        catalog.page = 1;
+        navigate({
+            pathname: "/shop",
+            search: "?" + createSearchParams(searchParams),
+        });
+    }, [
+        searchTerm,
+        catalog.category,
+        catalog.brand,
+        catalog.mehanizm,
+        catalog.gender,
+        catalog.shape,
+        catalog.material,
+        catalog.glass,
+        catalog.strap,
+        catalog.power,
+        catalog.water,
+        catalog.brend,
+        catalog.minPrice,
+        catalog.maxPrice,
+        sortOrder,
+        maxPrice,
+    ]);
+    // CHANGE PAGE
+    useEffect(() => {
+        if (catalog.page === 1) {
+            return;
+        }
+        if (width > 767) {
+            setProductsFetching(true);
+        }
         fetchAllProducts(
             searchTerm,
             catalog.category,
@@ -217,47 +305,63 @@ const Shop = observer(() => {
             catalog.minPrice,
             catalog.maxPrice,
         )
-        .then((data) => {
-            const filtered = data.rows.filter((product) => {
-                return product.price > catalog.minPrice && product.price <= catalog.maxPrice;
-            });
-            catalog.count = data.count;
-            filtered.splice(catalog.limit * catalog.page, filtered.length);
-            console.log('filtered: ', filtered);
-            catalog.products = filtered;
-        })
-        .finally(() => setProductsFetching(false));
+            .then((data) => {
+
+                const filtered = data.rows.filter((product) => {
+                    return product.price > catalog.minPrice && product.price <= catalog.maxPrice;
+                });
+                catalog.count = data.count;
+                filtered.splice(catalog.limit * catalog.page, filtered.length);
+                console.log('filtered: ', filtered);
+
+                if (width <= 767 &&
+                    catalog.products[catalog.products - 1]?.id != filtered[filtered.length - 1].id
+                ) {
+                    return catalog.products.push(...filtered);
+                }
+                catalog.products = filtered;
+
+            })
+            .finally(() => setProductsFetching(false));
     }, [
-        searchTerm,
-        catalog.category,
-        catalog.brand,
-        catalog.mehanizm,
-        catalog.gender,
-        catalog.shape,
-        catalog.material,
-        catalog.glass,
-        catalog.strap,
-        catalog.power,
-        catalog.water,
-        catalog.brend,
         catalog.page,
-        catalog.minPrice,
-        catalog.maxPrice,
-        sortOrder,
-        maxPrice,
-        catalog.page,
-    ]);
+    ])
+
+    // MOBILE FILTERS
+    // close the filters if you click not on them
+    const closeFilters = (event) => {
+
+        var path = event.composedPath() || event.path;
+
+        if (!path.includes(mobileFiltersRef.current) && !path.includes(filterOpenButtonRef.current)) {
+            setIsOpenFilters(false)
+        }
+    }
+    // the click observer
+    useEffect(() => {
+        document.body.addEventListener('click', closeFilters)
+
+        return () => document.body.removeEventListener('click', closeFilters)
+    }, [])
+    // blocking page scrolling
+    useEffect(() => {
+        if (isOpenFilters) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+     }, [isOpenFilters])
 
     return (
-        <Container>
+        <Container ref={containerRef} style={{position: 'relative'}}>
             <Helmet>
                 <title>Купить наручные часы в Алматы | Купить мужские часы в Алматы | Купить женские часы в Алматы</title>
                 <meta name="description" content="Онлайн магазин часов"/>
-                <meta name="keywords" content="купить наручные часы в Алматы, наручные часы в Алматы, часы в Алматы, 
+                <meta name="keywords" content="купить наручные часы в Алматы, наручные часы в Алматы, часы в Алматы,
                     купить наручные часы, наручные часы, часы, купить мужские часы, купить женские часы" />
             </Helmet>
             <Card style={{ borderColor: '#1200ba'}}>
-                <Row className="mt-4" style={{marginLeft: '1px'}}>
+                {width > 767 && <Row className="mt-4" style={{marginLeft: '1px'}}>
                     <Col md={3}>
                         <h4 style={{textAlign: 'center', marginTop: '20px', color: '#1200ba', fontFamily: 'Book Antiqua', fontWeight: 'bold'}}>Фильтр товаров</h4>
                     </Col>
@@ -269,29 +373,125 @@ const Shop = observer(() => {
                     <Col md={4}>
                         <ProductsSort setSortOrder={setSortOrder}/>
                     </Col>
-                </Row>
+                </Row>}
                 <Row className="mt-4" style={{marginLeft: '1px'}}>
-                    <Col md={3} className="mb-3">
-                        <div style={{marginRight: '10px'}}>{maxPrice ? <PriceSlider maxPrice={maxPrice} /> : null}</div>
-                        <div style={{marginRight: '10px'}}>{brandsFetching ? <Spinner animation="border" /> : <BrandBar />}</div>
-                        <div className="mt-3" style={{marginRight: '10px'}}>{mehanizmsFetching ? <Spinner animation="border" /> : <MehanizmBar />}</div>
-                        <div className="mt-3" style={{marginRight: '10px'}}>{gendersFetching ? <Spinner animation="border" /> : <GenderBar />}</div>
-                        <div className="mt-3" style={{marginRight: '10px'}}>{shapesFetching ? <Spinner animation="border" /> : <ShapeBar />}</div>
-                        <div className="mt-3" style={{marginRight: '10px'}}>{materialsFetching ? <Spinner animation="border" /> : <MaterialBar />}</div>
-                        <div className="mt-3" style={{marginRight: '10px'}}>{glassesFetching ? <Spinner animation="border" /> : <GlassBar />}</div>
-                        <div className="mt-3" style={{marginRight: '10px'}}>{strapsFetching ? <Spinner animation="border" /> : <StrapBar />}</div>
-                        <div className="mt-3" style={{marginRight: '10px'}}>{powersFetching ? <Spinner animation="border" /> : <PowerBar />}</div>
-                        <div className="mt-3" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <WaterBar />}</div>
-                        <div className="mt-3" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
-                        <Card className='mt-3' style={{height: '40px', marginRight: '10px'}}>
-                            <a href='/shop' style={{fontSize: '18px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
-                        </Card>
-                    </Col>
+                    {width > 767 &&
+                        <Col md={3} className="mb-3">
+                            <div style={{marginRight: '10px'}}>{maxPrice ? <PriceSlider maxPrice={maxPrice} /> : null}</div>
+                            <div style={{marginRight: '10px'}}>{brandsFetching ? <Spinner animation="border" /> : <BrandBar />}</div>
+                            <div className="mt-3" style={{marginRight: '10px'}}>{mehanizmsFetching ? <Spinner animation="border" /> : <MehanizmBar />}</div>
+                            <div className="mt-3" style={{marginRight: '10px'}}>{gendersFetching ? <Spinner animation="border" /> : <GenderBar />}</div>
+                            <div className="mt-3" style={{marginRight: '10px'}}>{shapesFetching ? <Spinner animation="border" /> : <ShapeBar />}</div>
+                            <div className="mt-3" style={{marginRight: '10px'}}>{materialsFetching ? <Spinner animation="border" /> : <MaterialBar />}</div>
+                            <div className="mt-3" style={{marginRight: '10px'}}>{glassesFetching ? <Spinner animation="border" /> : <GlassBar />}</div>
+                            <div className="mt-3" style={{marginRight: '10px'}}>{strapsFetching ? <Spinner animation="border" /> : <StrapBar />}</div>
+                            <div className="mt-3" style={{marginRight: '10px'}}>{powersFetching ? <Spinner animation="border" /> : <PowerBar />}</div>
+                            <div className="mt-3" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <WaterBar />}</div>
+                            <div className="mt-3" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
+                            <Card className='mt-3' style={{height: '40px', marginRight: '10px'}}>
+                                <a href='/shop' style={{fontSize: '18px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
+                            </Card>
+                        </Col>
+                    }
                     <Col md={9}>
                         <div style={{marginRight: '12px'}}>{productsFetching ? (<Spinner animation="border" />) : (<ProductList sortOrder={sortOrder} />)}</div>
                     </Col>
                 </Row>
             </Card>
+            {width <= 767 &&
+                <>
+                    <Col className="d-flex justify-content-center" style={{right:'0', left:'0', position: 'fixed', bottom: '10px', zIndex:100 }}>
+                        <div className='mr-3'>
+                        <button
+                            style={{
+                                width: '200px',
+                                height: '37px',
+                                borderRadius: '5px'
+                            }}
+                            onClick={() => {setIsOpenFilters(true)}}
+                            ref={filterOpenButtonRef}
+                        >
+                            Фильтры
+                        </button>
+                        </div>
+
+                        <div style={{marginTop: '-1rem', marginRight: '-60px', marginLeft:"5px"}}>
+                            <ProductsSort status='withoutName' setSortOrder={setSortOrder}/>
+                        </div>
+                    </Col>
+                    { <Col
+                        md={3}
+                        className="mb-3"
+                        style={Object.assign({
+                            position: 'fixed',
+                            zIndex: '1001',
+                            justifyContent: 'center',
+                            backgroundColor: 'rgba(0, 0, 0, .3)',
+                            display: 'flex',
+                            alignItems: 'flex-end',
+                            left: '0',
+                            right: 0,
+                            top: 0,
+                            bottom: '-19px',
+                            overflow: 'scroll',
+                        },isOpenFilters? {display: 'flex'}:{display: 'none'})}
+                    >
+
+                        <div
+                            style={{
+                                paddingTop: '25px',
+                                overflow: 'hidden',
+                                borderRadius: '10px',
+                                border: '2px solid rgb(18, 0, 186)',
+                                position: 'relative',
+                                backgroundColor: 'white',
+                            }
+                        }
+                            ref={mobileFiltersRef}
+                        >
+                        <div style={{
+                            padding: '0 25px 25px',
+                            overflowY: 'auto',
+                            overflowX: 'hidden',
+                            height: '25rem',
+                        }
+                    }>
+
+                            <button
+                                style={{
+                                    position: 'absolute',
+                                    fontSize: '40px',
+                                    zIndex: 1002,
+                                    border: 'none',
+                                    backgroundColor: 'transparent',
+                                    color: '#949494',
+                                    right: '50px',
+                                    transform: 'rotate(45deg)',
+                                    top: '0',
+                                    boxShadow: 'none'
+
+                                }}
+                                onClick={() => {setIsOpenFilters(false)}}
+                                >+</button>
+                                <div style={{marginRight: '10px'}}>{maxPrice ? <PriceSlider maxPrice={maxPrice} /> : null}</div>
+                                <div style={{marginRight: '10px'}}>{brandsFetching ? <Spinner animation="border" /> : <BrandBar />}</div>
+                                <div className="mt-3" style={{marginRight: '10px'}}>{mehanizmsFetching ? <Spinner animation="border" /> : <MehanizmBar />}</div>
+                                <div className="mt-3" style={{marginRight: '10px'}}>{gendersFetching ? <Spinner animation="border" /> : <GenderBar />}</div>
+                                <div className="mt-3" style={{marginRight: '10px'}}>{shapesFetching ? <Spinner animation="border" /> : <ShapeBar />}</div>
+                                <div className="mt-3" style={{marginRight: '10px'}}>{materialsFetching ? <Spinner animation="border" /> : <MaterialBar />}</div>
+                                <div className="mt-3" style={{marginRight: '10px'}}>{glassesFetching ? <Spinner animation="border" /> : <GlassBar />}</div>
+                                <div className="mt-3" style={{marginRight: '10px'}}>{strapsFetching ? <Spinner animation="border" /> : <StrapBar />}</div>
+                                <div className="mt-3" style={{marginRight: '10px'}}>{powersFetching ? <Spinner animation="border" /> : <PowerBar />}</div>
+                                <div className="mt-3" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <WaterBar />}</div>
+                                <div className="mt-3" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
+                                <Card className='mt-3' style={{height: '40px', marginRight: '10px'}}>
+                                    <a href='/shop' style={{fontSize: '18px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
+                                </Card>
+                        </div>
+                        </div>
+                    </Col>}
+                </>
+            }
         </Container>
     );
 });
