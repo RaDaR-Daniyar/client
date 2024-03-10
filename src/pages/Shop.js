@@ -11,6 +11,7 @@ import StrapBar from '../components/StrapBar.js';
 import PowerBar from '../components/PowerBar.js';
 import WaterBar from '../components/WaterBar.js';
 import BrendBar from '../components/BrendBar.js';
+// import SaleBar from '../components/SaleBar.js';
 import ProductList from '../components/ProductList.js';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { AppContext } from '../components/AppContext.js';
@@ -72,7 +73,9 @@ const getSearchParams = (searchParams) => {
     if (brend && /[1-9][0-9]*/.test(brend)) {
         brend = parseInt(brend);
     }
-    return { category, brand, mehanizm, gender, shape, material, glass, strap, power, water, brend, page };
+    debugger
+    let sale = searchParams.get('sale');
+    return { category, brand, mehanizm, gender, shape, material, glass, strap, power, water, brend, page, sale };
   };
 
 const Shop = observer(() => {
@@ -98,10 +101,6 @@ const Shop = observer(() => {
     const mobileFiltersRef = useRef();
     const filterOpenButtonRef = useRef();
 
-    // THE SIZE OBSERVER
-
-    // We are not watching the "window",
-    // but the container.Due to problems with adaptivity
     const containerRef = useRef();
 
     const {0: width, 1: setWidth} = useState()
@@ -175,7 +174,7 @@ const Shop = observer(() => {
         .then((data) => (catalog.brends = data))
         .finally(() => setBrendsFetching(false));
 
-        const { category, brand, mehanizm, gender, shape, material, glass, strap, power, water, brend, page } =
+        const { category, brand, mehanizm, gender, shape, material, glass, strap, power, water, brend, page, sale } =
         getSearchParams(searchParams);
         catalog.category = category;
         catalog.brand = brand;
@@ -189,11 +188,12 @@ const Shop = observer(() => {
         catalog.water = water;
         catalog.brend = brend;
         catalog.page = page ?? 1;
+        catalog.withSale = sale;
     }, []);
 
     useEffect(() => {
-        const { category, brand, mehanizm, shape, gender, material, glass, strap, power, water, brend, page } = getSearchParams(searchParams);
-        if (category || brand || mehanizm || gender || shape || material || glass || strap || power || water || brend || page) {
+        const { category, brand, mehanizm, shape, gender, material, glass, strap, power, water, brend, page, sale } = getSearchParams(searchParams);
+        if (category || brand || mehanizm || gender || shape || material || glass || strap || power || water || brend || page || sale) {
             if (category !== catalog.category) {catalog.category = category}
             if (brand !== catalog.brand) {catalog.brand = brand}
             if (mehanizm !== catalog.mehanizm) {catalog.mehanizm = mehanizm}
@@ -205,7 +205,8 @@ const Shop = observer(() => {
             if (power !== catalog.power) {catalog.power = power}
             if (water !== catalog.water) {catalog.water = water}
             if (brend !== catalog.brend) {catalog.brend = brend}
-            if (page !== catalog.page) {catalog.page = page ?? 1}
+            if (page !== catalog.page) { catalog.page = page ?? 1 }
+            if (sale !== catalog.withSale) { catalog.withSale = true}
         } else {
             catalog.category = null;
             catalog.brand = null;
@@ -218,11 +219,11 @@ const Shop = observer(() => {
             catalog.power = null;
             catalog.water = null;
             catalog.brend = null;
+            catalog.withSale = null;
             catalog.page = 1;
         }
     }, [location.search]);
 
-    // CHANGE PARAMS
     useEffect(() => {
         setProductsFetching(true);
         fetchAllProducts(
@@ -238,11 +239,12 @@ const Shop = observer(() => {
             catalog.power,
             catalog.water,
             catalog.brend,
-            1, // page (if change this params ==> show first page with this params)
+            1,
             catalog.limit,
             sortOrder,
             catalog.minPrice,
             catalog.maxPrice,
+            catalog.withSale
             )
         .then((data) => {
                 const filtered = data.rows.filter((product) => {
@@ -253,36 +255,34 @@ const Shop = observer(() => {
                 console.log('filtered: ', filtered);
                 catalog.products = filtered;
             })
-        .finally(() => setProductsFetching(false));
-        // on first page
-        catalog.page = 1;
-        navigate({
-            pathname: "/shop",
-            search: "?" + createSearchParams(searchParams),
-        });
-    }, [
-        searchTerm,
-        catalog.category,
-        catalog.brand,
-        catalog.mehanizm,
-        catalog.gender,
-        catalog.shape,
-        catalog.material,
-        catalog.glass,
-        catalog.strap,
-        catalog.power,
-        catalog.water,
-        catalog.brend,
-        catalog.minPrice,
-        catalog.maxPrice,
-        sortOrder,
-        maxPrice,
+            .finally(() => setProductsFetching(false));
+            catalog.page = 1;
+
+            navigate({
+                pathname: "/shop",
+                search: "?" + createSearchParams(searchParams),
+            });
+        }, [
+            searchTerm,
+            catalog.category,
+            catalog.brand,
+            catalog.mehanizm,
+            catalog.gender,
+            catalog.shape,
+            catalog.material,
+            catalog.glass,
+            catalog.strap,
+            catalog.power,
+            catalog.water,
+            catalog.brend,
+            catalog.minPrice,
+            catalog.maxPrice,
+            sortOrder,
+            maxPrice,
+            catalog.withSale,
     ]);
-    // CHANGE PAGE
     useEffect(() => {
-        if (catalog.page === 1) {
-            return;
-        }
+
         if (width > 767) {
             setProductsFetching(true);
         }
@@ -304,6 +304,7 @@ const Shop = observer(() => {
             sortOrder,
             catalog.minPrice,
             catalog.maxPrice,
+            catalog.withSale
         )
             .then((data) => {
 
@@ -327,8 +328,6 @@ const Shop = observer(() => {
         catalog.page,
     ])
 
-    // MOBILE FILTERS
-    // close the filters if you click not on them
     const closeFilters = (event) => {
 
         var path = event.composedPath() || event.path;
@@ -337,13 +336,11 @@ const Shop = observer(() => {
             setIsOpenFilters(false)
         }
     }
-    // the click observer
     useEffect(() => {
         document.body.addEventListener('click', closeFilters)
 
         return () => document.body.removeEventListener('click', closeFilters)
     }, [])
-    // blocking page scrolling
     useEffect(() => {
         if (isOpenFilters) {
             document.body.style.overflow = 'hidden';
@@ -388,6 +385,7 @@ const Shop = observer(() => {
                             <div className="mt-3" style={{marginRight: '10px'}}>{powersFetching ? <Spinner animation="border" /> : <PowerBar />}</div>
                             <div className="mt-3" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <WaterBar />}</div>
                             <div className="mt-3" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
+                            {/* <div className="mt-3" style={{ marginRight: '10px' }}><SaleBar /></div> */}
                             <Card className='mt-3' style={{height: '40px', marginRight: '10px'}}>
                                 <a href='/shop' style={{fontSize: '18px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
                             </Card>
@@ -483,7 +481,8 @@ const Shop = observer(() => {
                                 <div className="mt-3" style={{marginRight: '10px'}}>{strapsFetching ? <Spinner animation="border" /> : <StrapBar />}</div>
                                 <div className="mt-3" style={{marginRight: '10px'}}>{powersFetching ? <Spinner animation="border" /> : <PowerBar />}</div>
                                 <div className="mt-3" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <WaterBar />}</div>
-                                <div className="mt-3" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
+                                <div className="mt-3" style={{ marginRight: '10px' }}>{brendsFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
+                                {/* <div className="mt-3" style={{ marginRight: '10px' }}><SaleBar /></div> */}
                                 <Card className='mt-3' style={{height: '40px', marginRight: '10px'}}>
                                     <a href='/shop' style={{fontSize: '18px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
                                 </Card>

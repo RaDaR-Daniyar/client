@@ -8,6 +8,7 @@ import { observer } from 'mobx-react-lite'
 import Loader from './components/Loader.js'
 import Header from './sections/header.js'
 import Footer from './sections/footer.js'
+import Aside from './sections/aside.js'
 
 import { fetchBasket } from './http/basketAPI.js'
 
@@ -39,6 +40,7 @@ const App = observer(() => {
     return (
         <BrowserRouter>
             <Header />
+            <Aside />
             <AppRouter />
             <Footer />
         </BrowserRouter>

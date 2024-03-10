@@ -24,12 +24,13 @@ class CatalogStore {
     _power = null;
     _water = null;
     _brend = null;
+    _withSale = null;
     _page = 1;
     _count = 0;
     _limit = 16;
     _searchTerm = "";
 	_minPrice = 0;
-	_maxPrice = 0;
+	_maxPrice = 999999999999999;
 
     constructor() {
         makeAutoObservable(this);
@@ -113,6 +114,9 @@ class CatalogStore {
     }
     get limit() {
         return this._limit;
+    }
+    get withSale() {
+        return this._withSale;
     }
     get pages() {
         return Math.ceil(this.count / this.limit);
@@ -217,6 +221,9 @@ class CatalogStore {
     }
     set limit(limit) {
         this._limit = limit;
+    }
+    set withSale(bool) {
+        this._withSale = bool;
     }
     set searchTerm(term) {
         this.page = 1;

@@ -129,8 +129,10 @@ export const fetchAllProducts = async (
   limit = 4,
   sortOrder = "",
   minPrice = null,
-  maxPrice = null
+  maxPrice = null,
+  sale = null
 ) => {
+  debugger
   let url = "product/getall";
   if (categoryId) url = url + "/categoryId/" + categoryId;
   if (brandId) url = url + "/brandId/" + brandId;
@@ -150,6 +152,7 @@ export const fetchAllProducts = async (
       page,
       limit,
       sortOrder,
+      sale,
       minPrice,
       maxPrice,
     },

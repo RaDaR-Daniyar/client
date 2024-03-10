@@ -11,7 +11,7 @@ const UserCicle = styled.div`
   justify-content: left;
   width: 100%;
   height: 36px;
-  font-size: 18px;
+  font-size: 16px;
   color: #000;
   cursor: pointer;
 `;
@@ -22,8 +22,9 @@ const NavBar = observer(() => {
             <div class="hide-on-mobile">
                 <Navbar bg="white" className='d-flex justify-content-center'>
                     <Nav className="ml-auto">
-                        <NavLink to="/" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px'}}>ГЛАВНАЯ</NavLink>
-                        <NavLink to="/shop" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px'}}>КАТАЛОГ</NavLink>
+                        <NavLink to="/" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px', fontSize: '16px'}}>ГЛАВНАЯ</NavLink>
+                        <NavLink to="/shop" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px', fontSize: '16px'}}>КАТАЛОГ</NavLink>
+                        <NavLink to="/shop?sale=true" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px', fontSize: '16px'}}>СКИДКИ</NavLink>
                         <UIDropdown
                             render={(toggleShow) => <UserCicle className='link' onClick={toggleShow} style={{paddingTop: '10px', paddingBottom: '10px', paddingRight: '50px'}}>БРЕНДЫ</UserCicle>}
                         >
@@ -59,9 +60,9 @@ const NavBar = observer(() => {
                                 </Card>
                             )}
                         </UIDropdown>
-                        <NavLink to="/about" className="link" style={{paddingLeft: '50px', paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px'}}>О МАГАЗИНЕ</NavLink>
-                        <NavLink to="/delivery" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px'}}>ДОСТАВКА И ОПЛАТА</NavLink>
-                        <NavLink to="/service" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px'}}>СЕРВИС-ЦЕНТР</NavLink>
+                        <NavLink to="/about" className="link" style={{paddingLeft: '50px', paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px', fontSize: '16px'}}>О МАГАЗИНЕ</NavLink>
+                        <NavLink to="/delivery" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px', fontSize: '16px'}}>ДОСТАВКА И ОПЛАТА</NavLink>
+                        <NavLink to="/service" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px', fontSize: '16px'}}>СЕРВИС-ЦЕНТР</NavLink>
                     </Nav>
                 </Navbar>
             </div>
