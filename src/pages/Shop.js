@@ -11,7 +11,7 @@ import StrapBar from '../components/StrapBar.js';
 import PowerBar from '../components/PowerBar.js';
 import WaterBar from '../components/WaterBar.js';
 import BrendBar from '../components/BrendBar.js';
-// import SaleBar from '../components/SaleBar.js';
+import SaleBar from '../components/SaleBar.js';
 import ProductList from '../components/ProductList.js';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { AppContext } from '../components/AppContext.js';
@@ -385,7 +385,7 @@ const Shop = observer(() => {
                             <div className="mt-3" style={{marginRight: '10px'}}>{powersFetching ? <Spinner animation="border" /> : <PowerBar />}</div>
                             <div className="mt-3" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <WaterBar />}</div>
                             <div className="mt-3" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
-                            {/* <div className="mt-3" style={{ marginRight: '10px' }}><SaleBar /></div> */}
+                            <div className="mt-3" style={{ marginRight: '10px' }}><SaleBar /></div>
                             <Card className='mt-3' style={{height: '40px', marginRight: '10px'}}>
                                 <a href='/shop' style={{fontSize: '18px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
                             </Card>
