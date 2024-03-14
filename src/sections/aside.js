@@ -106,7 +106,7 @@ var Aside = () => {
                 left: "10px",
             }}>
                 <div class="hover-image-scale" style={{position: 'relative', zIndex: '100', boxShadow: '0 0 20px rgb(18, 0, 186)'}}>
-                    <a href='/shop?gender=3'><img class="hover-image-scale"  src = { men } alt = "Мужские часы" style={{width: '280px'}} /></a>
+                    <a href='/shop?gender=3'><img class="hover-image-scale"  src = { men } alt = "Мужские часы" style={{width: '255px'}} /></a>
                     <span style={{position: 'absolute', bottom: 1, right: 1, fontWeight: 'bold', color: '#fff', fontSize: '18px', fontFamily: 'Georgia'}}>МУЖСКИЕ ЧАСЫ</span>
                 </div>
                 
@@ -131,7 +131,7 @@ var Aside = () => {
                     }}
                     style={{width: "100%",
                         maxWidth: "940px",
-                        height: "80%",
+                        height: "81%",
                         margin: "0 auto",
                         position: "relative",
                         padding: "0px 0 0px",
@@ -148,7 +148,7 @@ var Aside = () => {
                                 <SwiperSlide key={ind} >
                                     <Card
                                     style={{
-                                        width: 280,
+                                        width: 255,
                                         objectFit: "contain",
                                         border: "none"
                                     }}
@@ -157,7 +157,7 @@ var Aside = () => {
                                             <Card.Img
                                                 className="mt-1"
                                                 style={{
-                                                    width: 270,
+                                                    width: 245,
                                                     objectFit: "contain",
                                                     margin: "0 auto"
                                                 }}
@@ -196,7 +196,7 @@ var Aside = () => {
                 right: "10px",
             }}>
                 <div class="hover-image-scale" style={{position: 'relative', zIndex: '100', boxShadow: '0 0 20px rgb(18, 0, 186)'}}>
-                    <a href='/shop?gender=2'><img class="hover-image-scale"  src = { women } alt = "Мужские часы" style={{width: '280px'}} /></a>
+                    <a href='/shop?gender=2'><img class="hover-image-scale"  src = { women } alt = "Мужские часы" style={{width: '255px'}} /></a>
                     <span style={{position: 'absolute', bottom: 1, right: 1, fontWeight: 'bold', color: '#fff', fontSize: '18px', fontFamily: 'Georgia'}}>ЖЕНСКИЕ ЧАСЫ</span>
                 </div>
 
@@ -221,7 +221,7 @@ var Aside = () => {
                         }}
                         style={{width: "100%",
                             maxWidth: "940px",
-                            height: "80%",
+                            height: "81%",
                             display: "flex",
                             alignItems: "center",
                             margin: "auto",
@@ -241,7 +241,7 @@ var Aside = () => {
                                 <SwiperSlide key={ind}>
                                     <Card
                                         style={{
-                                            width: 280,
+                                            width: 255,
                                             objectFit: "contain",
                                             border: "none",
                                         }}
@@ -250,7 +250,7 @@ var Aside = () => {
                                             <Card.Img
                                             className="mt-1"
                                             style={{
-                                                    width: 270,
+                                                    width: 245,
                                                     objectFit: "contain",
                                                     margin: "0 auto"
                                                 }}
