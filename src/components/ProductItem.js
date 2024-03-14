@@ -19,7 +19,7 @@ const ProductItem = ({ data }) => {
                         fontWeight: 'bold',
                         fontSize: '18px',
                         fontFamily: 'Times New Roman',
-                        zIndex: '1000'
+                        zIndex: '10'
                     }}>-{data.finId}%</div> : ''}
                     {data.image ? (
                         <Card.Img class='scale' className='mt-1' style={{width: '100%', height: '360px', marginLeft: 'auto', marginRight: 'auto', objectFit: 'contain'}} variant="top" src={process.env.REACT_APP_IMG_URL + data.image} />

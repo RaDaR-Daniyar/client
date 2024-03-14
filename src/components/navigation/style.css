@@ -1,3 +1,9 @@
+.two {
+    transition: 1s;
+   }
+   .two:hover {
+        transform: scale(1.05);
+   }
 .link {
     font-weight: bold;
     color: black;

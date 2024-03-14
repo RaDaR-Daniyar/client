@@ -20,7 +20,7 @@ const Header = observer(() => {
         <Container style={{ position: 'relative'}}>
             <MobileMenu />
             <Top />
-            <Row className="mt-4">
+            <Row className="mt-4" style={{paddingTop: '22px'}}>
                 <Nav  className="ml-auto">
                     <Col style={{textAlign: 'center'}}>
                     <NavLink to="/" className="navbar-brand">

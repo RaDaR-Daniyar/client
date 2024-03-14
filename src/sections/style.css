@@ -167,7 +167,7 @@ main {
     box-shadow: '0 0 6px 6px #1200ba'
 }
     .scalecategories:hover {
-         transform: scale(1.05);
+        transform: scale(1.05);
         box-shadow: 0 0 20px rgb(18, 0, 186);
     }
 
@@ -176,7 +176,19 @@ main {
        }
        .two:hover {
             transform: scale(1.05);
+            box-shadow: 8px 10px 5px 2px rgba(0, 0, 255, .2);
        }
+
+.hover-image-scale {
+        display: inline-block; 
+        overflow: hidden;
+      }
+      .hover-image-scale img {
+        transition: 1s;
+      }
+      .hover-image-scale img:hover {
+        transform: scale(1.2);
+      }
 .basket span{
     position: absolute;
     background-color: rgb(18, 0, 186);

@@ -24,6 +24,8 @@ import l10 from "../assets/rightLeftSlider/l10.jpg";
 import l11 from "../assets/rightLeftSlider/l11.jpg";
 import l12 from "../assets/rightLeftSlider/l12.jpg";
 import l13 from "../assets/rightLeftSlider/l13.jpg";
+import men from "../assets/rightLeftSlider/men.jpg";
+import './style.css'
 import SwiperCore, { Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState, useEffect, useRef } from "react";
@@ -101,36 +103,40 @@ var Aside = () => {
                 top: "10px",
                 bottom: "10px",
                 left: "10px",
-                border: "1px solid rgb(18, 0, 186)",
-                borderRadius: "0.25rem",
             }}>
+                <div class="hover-image-scale" style={{position: 'relative', zIndex: '100', boxShadow: '0 0 20px rgb(18, 0, 186)'}}>
+                    <a href='/shop?gender=3'><img class="hover-image-scale"  src = { men } alt = "Мужские часы" style={{width: '280px'}} /></a>
+                    <span style={{position: 'absolute', bottom: 1, right: 1, fontWeight: 'bold', color: '#fff', fontSize: '18px', fontFamily: 'Georgia'}}>МУЖСКИЕ ЧАСЫ</span>
+                </div>
+                
 
                 <Swiper
-                        direction='vertical'
-                        effect='slide'
-                        slidesPerView={6.05}
-                        spaceBetween={20}
-                        modules={[Navigation]}
-                        autoplay={{
-                            delay: 2500,
-                            disableOnInteraction: false,
-                        }}
+                    direction='vertical'
+                    effect='slide'
+                    slidesPerView={6.05}
+                    spaceBetween={130}
+                    modules={[Navigation]}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
                         loop={true}
                         navigation={{
-                            prevEL: prevL.current,
-                            nextEl: nextL.current
-                        }}
-                        onBeforeInit={(swiper) => {
-                            swiper.params.navigation.prevEl = prevL.current;
-                            swiper.params.navigation.nextEl = nextL.current;
-                        }}
-                        style={{width: "100%",
+                        prevEL: prevL.current,
+                        nextEl: nextL.current
+                    }}
+                    onBeforeInit={(swiper) => {
+                        swiper.params.navigation.prevEl = prevL.current;
+                        swiper.params.navigation.nextEl = nextL.current;
+                    }}
+                    style={{width: "100%",
                         maxWidth: "940px",
-                        height: "100%",
+                        height: "80%",
                         margin: "0 auto",
                         position: "relative",
-                            padding: "48px 0 60px"
-                        }}
+                        padding: "20px 0 60px",
+                        boxShadow: '0 0 20px rgb(18, 0, 186)'
+                    }}
 
                 >
                     <button ref={prevL} style={Object.assign({...style}, {top: 0})}>
@@ -138,11 +144,11 @@ var Aside = () => {
                     </button>
                         {photosLeft?.map((photo, ind) => {
                         return (
-                            <div style={{height: '90%'}}>
+                            <div style={{height: '100%'}}>
                                 <SwiperSlide key={ind} >
                                     <Card
                                     style={{
-                                        width: 235,
+                                        width: 280,
                                         objectFit: "contain",
                                         border: "none"
                                     }}
@@ -151,7 +157,7 @@ var Aside = () => {
                                             <Card.Img
                                                 className="mt-1"
                                                 style={{
-                                                    width: 225,
+                                                    width: 270,
                                                     objectFit: "contain",
                                                     margin: "0 auto"
                                                 }}
@@ -229,6 +235,7 @@ var Aside = () => {
                         {photosRight?.map((photo, ind) => {
                         return (
                             <div>
+                                
                                 <SwiperSlide key={ind} >
                                     <Card
                                     style={{
