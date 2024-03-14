@@ -8,6 +8,9 @@ import r7 from "../assets/rightLeftSlider/r7.jpg";
 import r8 from "../assets/rightLeftSlider/r8.jpg";
 import r9 from "../assets/rightLeftSlider/r9.jpg";
 import r10 from "../assets/rightLeftSlider/r10.jpg";
+import r11 from "../assets/rightLeftSlider/r11.jpg";
+import r12 from "../assets/rightLeftSlider/r12.jpg";
+import r13 from "../assets/rightLeftSlider/r13.jpg";
 import l1 from "../assets/rightLeftSlider/l1.jpg";
 import l2 from "../assets/rightLeftSlider/l2.jpg";
 import l3 from "../assets/rightLeftSlider/l3.jpg";
@@ -18,6 +21,9 @@ import l7 from "../assets/rightLeftSlider/l7.jpg";
 import l8 from "../assets/rightLeftSlider/l8.jpg";
 import l9 from "../assets/rightLeftSlider/l9.jpg";
 import l10 from "../assets/rightLeftSlider/l10.jpg";
+import l11 from "../assets/rightLeftSlider/l11.jpg";
+import l12 from "../assets/rightLeftSlider/l12.jpg";
+import l13 from "../assets/rightLeftSlider/l13.jpg";
 import SwiperCore, { Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState, useEffect, useRef } from "react";
@@ -32,10 +38,10 @@ var Aside = () => {
     const prevR = useRef();
     const { 0: width, 1: setWidth} = useState(window.innerWidth)
     const { 0: photosLeft, 1: setLPhotos } = useState([
-        l1, l2, l3, l4, l5, l6, l7, l8, l9, l10
+        l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13
     ])
     const { 0: photosRight, 1: setRPhotos } = useState([
-        r1, r2, r3, r4, r5, r6, r7, r8, r9, r10
+        r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13
     ])
     SwiperCore.use([Autoplay, Navigation, Pagination]);
 
@@ -102,9 +108,14 @@ var Aside = () => {
                 <Swiper
                         direction='vertical'
                         effect='slide'
-                        slidesPerView="6.05"
+                        slidesPerView={6.05}
                         spaceBetween={20}
                         modules={[Navigation]}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        loop={true}
                         navigation={{
                             prevEL: prevL.current,
                             nextEl: nextL.current
@@ -114,10 +125,10 @@ var Aside = () => {
                             swiper.params.navigation.nextEl = nextL.current;
                         }}
                         style={{width: "100%",
-                            maxWidth: "940px",
-                            height: "100%",
-                            margin: "0 auto",
-                            position: "relative",
+                        maxWidth: "940px",
+                        height: "100%",
+                        margin: "0 auto",
+                        position: "relative",
                             padding: "48px 0 60px"
                         }}
 
@@ -188,6 +199,11 @@ var Aside = () => {
                         slidesPerView="6.05"
                         spaceBetween={20}
                         modules={[Navigation]}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        loop={true}
                         navigation={{
                             prevEL: prevR.current,
                             nextEl: nextR.current
