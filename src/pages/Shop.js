@@ -101,6 +101,10 @@ const Shop = observer(() => {
     const mobileFiltersRef = useRef();
     const filterOpenButtonRef = useRef();
 
+    // THE SIZE OBSERVER
+
+    // We are not watching the "window",
+    // but the container.Due to problems with adaptivity
     const containerRef = useRef();
 
     const {0: width, 1: setWidth} = useState()
@@ -224,6 +228,7 @@ const Shop = observer(() => {
         }
     }, [location.search]);
 
+    // CHANGE PARAMS
     useEffect(() => {
         setProductsFetching(true);
         fetchAllProducts(
@@ -239,7 +244,7 @@ const Shop = observer(() => {
             catalog.power,
             catalog.water,
             catalog.brend,
-            1,
+            1, // page (if change this params ==> show first page with this params)
             catalog.limit,
             sortOrder,
             catalog.minPrice,
@@ -256,6 +261,7 @@ const Shop = observer(() => {
                 catalog.products = filtered;
             })
             .finally(() => setProductsFetching(false));
+            // on first page
             catalog.page = 1;
 
             navigate({
@@ -268,19 +274,20 @@ const Shop = observer(() => {
             catalog.brand,
             catalog.mehanizm,
             catalog.gender,
-            catalog.shape,
-            catalog.material,
-            catalog.glass,
-            catalog.strap,
-            catalog.power,
-            catalog.water,
-            catalog.brend,
-            catalog.minPrice,
-            catalog.maxPrice,
-            sortOrder,
-            maxPrice,
-            catalog.withSale,
+        catalog.shape,
+        catalog.material,
+        catalog.glass,
+        catalog.strap,
+        catalog.power,
+        catalog.water,
+        catalog.brend,
+        catalog.minPrice,
+        catalog.maxPrice,
+        sortOrder,
+        maxPrice,
+        catalog.withSale,
     ]);
+    // CHANGE PAGE
     useEffect(() => {
 
         if (width > 767) {
@@ -328,6 +335,8 @@ const Shop = observer(() => {
         catalog.page,
     ])
 
+    // MOBILE FILTERS
+    // close the filters if you click not on them
     const closeFilters = (event) => {
 
         var path = event.composedPath() || event.path;
@@ -336,11 +345,13 @@ const Shop = observer(() => {
             setIsOpenFilters(false)
         }
     }
+    // the click observer
     useEffect(() => {
         document.body.addEventListener('click', closeFilters)
 
         return () => document.body.removeEventListener('click', closeFilters)
     }, [])
+    // blocking page scrolling
     useEffect(() => {
         if (isOpenFilters) {
             document.body.style.overflow = 'hidden';
