@@ -25,6 +25,7 @@ import l11 from "../assets/rightLeftSlider/l11.jpg";
 import l12 from "../assets/rightLeftSlider/l12.jpg";
 import l13 from "../assets/rightLeftSlider/l13.jpg";
 import men from "../assets/rightLeftSlider/men.jpg";
+import women from "../assets/rightLeftSlider/women.jpg";
 import './style.css'
 import SwiperCore, { Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -109,12 +110,11 @@ var Aside = () => {
                     <span style={{position: 'absolute', bottom: 1, right: 1, fontWeight: 'bold', color: '#fff', fontSize: '18px', fontFamily: 'Georgia'}}>МУЖСКИЕ ЧАСЫ</span>
                 </div>
                 
-
                 <Swiper
                     direction='vertical'
                     effect='slide'
                     slidesPerView={6.05}
-                    spaceBetween={130}
+                    spaceBetween={120}
                     modules={[Navigation]}
                     autoplay={{
                         delay: 2500,
@@ -134,7 +134,7 @@ var Aside = () => {
                         height: "80%",
                         margin: "0 auto",
                         position: "relative",
-                        padding: "20px 0 60px",
+                        padding: "0px 0 0px",
                         boxShadow: '0 0 20px rgb(18, 0, 186)'
                     }}
 
@@ -194,16 +194,17 @@ var Aside = () => {
                 top: "10px",
                 bottom: "10px",
                 right: "10px",
-                border: "1px solid rgb(18, 0, 186)",
-                borderRadius: "0.25rem",
             }}>
-
+                <div class="hover-image-scale" style={{position: 'relative', zIndex: '100', boxShadow: '0 0 20px rgb(18, 0, 186)'}}>
+                    <a href='/shop?gender=2'><img class="hover-image-scale"  src = { women } alt = "Мужские часы" style={{width: '280px'}} /></a>
+                    <span style={{position: 'absolute', bottom: 1, right: 1, fontWeight: 'bold', color: '#fff', fontSize: '18px', fontFamily: 'Georgia'}}>ЖЕНСКИЕ ЧАСЫ</span>
+                </div>
 
                 <Swiper
                         direction='vertical'
                         effect='slide'
-                        slidesPerView="6.05"
-                        spaceBetween={20}
+                        slidesPerView={6.05}
+                        spaceBetween={120}
                         modules={[Navigation]}
                         autoplay={{
                             delay: 2500,
@@ -220,12 +221,13 @@ var Aside = () => {
                         }}
                         style={{width: "100%",
                             maxWidth: "940px",
-                            height: "100%",
+                            height: "80%",
                             display: "flex",
                             alignItems: "center",
                             margin: "auto",
                             position: "relative",
-                            padding: "48px 0 60px"
+                            padding: "0px 0 0px",
+                            boxShadow: '0 0 20px rgb(18, 0, 186)'
                         }}
 
                 >
@@ -236,20 +238,19 @@ var Aside = () => {
                         return (
                             <div>
                                 
-                                <SwiperSlide key={ind} >
+                                <SwiperSlide key={ind}>
                                     <Card
-                                    style={{
-                                        width: 235,
-                                        height: 125,
-                                        objectFit: "contain",
-                                        border: "none",
-                                    }}
+                                        style={{
+                                            width: 280,
+                                            objectFit: "contain",
+                                            border: "none",
+                                        }}
                                     >
                                         {photo ? (
                                             <Card.Img
                                             className="mt-1"
                                             style={{
-                                                    width: 225,
+                                                    width: 270,
                                                     objectFit: "contain",
                                                     margin: "0 auto"
                                                 }}

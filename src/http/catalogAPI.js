@@ -132,21 +132,7 @@ export const fetchAllProducts = async (
   maxPrice = null,
   sale = null
 ) => {
-  debugger
-  let url = "product/getall";
-  if (categoryId) url = url + "/categoryId/" + categoryId;
-  if (brandId) url = url + "/brandId/" + brandId;
-  if (mehanizmId) url = url + "/mehanizmId/" + mehanizmId;
-  if (genderId) url = url + "/genderId/" + genderId;
-  if (shapeId) url = url + "/shapeId/" + shapeId;
-  if (materialId) url = url + "/materialId/" + materialId;
-  if (glassId) url = url + "/glassId/" + glassId;
-  if (strapId) url = url + "/strapId/" + strapId;
-  if (powerId) url = url + "/powerId/" + powerId;
-  if (waterId) url = url + "/waterId/" + waterId;
-  if (brendId) url = url + "/brendId/" + brendId;
-
-  const { data } = await guestInstance.get(url, {
+  const { data } = await guestInstance.get("product/getall", {
     params: {
       searchTerm,
       page,
@@ -155,6 +141,17 @@ export const fetchAllProducts = async (
       sale,
       minPrice,
       maxPrice,
+      categoryId,
+      brandId,
+      mehanizmId,
+      genderId,
+      shapeId,
+      materialId,
+      glassId,
+      strapId,
+      powerId,
+      waterId,
+      brendId
     },
   });
   return data;
