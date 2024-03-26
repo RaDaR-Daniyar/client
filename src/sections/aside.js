@@ -31,6 +31,7 @@ import SwiperCore, { Autoplay, Navigation, Pagination, Scrollbar } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState, useEffect, useRef } from "react";
 import { Card, } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 
 
@@ -41,10 +42,34 @@ var Aside = () => {
     const prevR = useRef();
     const { 0: width, 1: setWidth} = useState(window.innerWidth)
     const { 0: photosLeft, 1: setLPhotos } = useState([
-        l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13
+        [l1, '/product/9'],
+        [l2, '/product/25'],
+        [l3, '/product/25'],
+        [l4, '/product/25'],
+        [l5, '/product/25'],
+        [l6, '/product/25'],
+        [l7, '/product/25'],
+        [l8, '/product/25'],
+        [l9, '/product/25'],
+        [l10, '/product/25'],
+        [l11, '/product/25'],
+        [l12, '/product/25'],
+        [l13, '/product/25']
     ])
     const { 0: photosRight, 1: setRPhotos } = useState([
-        r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13
+        [r1, '/product/25'],
+        [r2, '/product/25'],
+        [r3, '/product/25'],
+        [r4, '/product/25'],
+        [r5, '/product/25'],
+        [r6, '/product/25'],
+        [r7, '/product/25'],
+        [r8, '/product/25'],
+        [r9, '/product/25'],
+        [r10, '/product/25'],
+        [r11, '/product/25'],
+        [r12, '/product/25'],
+        [r13, '/product/25']
     ])
     SwiperCore.use([Autoplay, Navigation, Pagination]);
 
@@ -106,10 +131,10 @@ var Aside = () => {
                 left: "10px",
             }}>
                 <div class="hover-image-scale" style={{position: 'relative', zIndex: '100', boxShadow: '0 0 20px rgb(18, 0, 186)'}}>
-                    <a href='/shop?gender=3'><img class="hover-image-scale"  src = { men } alt = "Мужские часы" style={{width: '255px'}} /></a>
+                    <a href='/shop?gender=3'><img class="scalecategories"  src = { men } alt = "Мужские часы" style={{width: '255px'}} /></a>
                     <span style={{position: 'absolute', bottom: 1, right: 1, fontWeight: 'bold', color: '#fff', fontSize: '18px', fontFamily: 'Georgia'}}>МУЖСКИЕ ЧАСЫ</span>
                 </div>
-                
+
                 <Swiper
                     direction='vertical'
                     effect='slide'
@@ -142,7 +167,7 @@ var Aside = () => {
                     <button ref={prevL} style={Object.assign({...style}, {top: 0})}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" style={{ transform: 'rotate(-90deg)', fill: '#1200ba', width: '20px'}}><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
                     </button>
-                        {photosLeft?.map((photo, ind) => {
+                        {photosLeft?.map((data, ind) => {
                         return (
                             <div style={{height: '100%'}}>
                                 <SwiperSlide key={ind} >
@@ -150,19 +175,22 @@ var Aside = () => {
                                     style={{
                                         width: 255,
                                         objectFit: "contain",
-                                        border: "none"
+                                        border: "none",
+                                        paddingLeft: "5px",
                                     }}
                                     >
-                                        {photo ? (
-                                            <Card.Img
-                                                className="mt-1"
-                                                style={{
-                                                    width: 245,
-                                                    objectFit: "contain",
-                                                    margin: "0 auto"
-                                                }}
-                                                src={photo}
-                                            />
+                                        {data[0] ? (
+                                            <NavLink to={data[1]} class="image-scale">
+                                                <Card.Img
+                                                    className="mt-1"
+                                                    style={{
+                                                        width: 245,
+                                                        objectFit: "contain",
+                                                        margin: "0 auto"
+                                                    }}
+                                                    src={data[0]}
+                                                />
+                                            </NavLink>
                                             ) : <></>
                                         }
 
@@ -196,7 +224,7 @@ var Aside = () => {
                 right: "10px",
             }}>
                 <div class="hover-image-scale" style={{position: 'relative', zIndex: '100', boxShadow: '0 0 20px rgb(18, 0, 186)'}}>
-                    <a href='/shop?gender=2'><img class="hover-image-scale"  src = { women } alt = "Мужские часы" style={{width: '255px'}} /></a>
+                    <a href='/shop?gender=2'><img class="scalecategories"  src = { women } alt = "Женские часы" style={{width: '255px'}} /></a>
                     <span style={{position: 'absolute', bottom: 1, right: 1, fontWeight: 'bold', color: '#fff', fontSize: '18px', fontFamily: 'Georgia'}}>ЖЕНСКИЕ ЧАСЫ</span>
                 </div>
 
@@ -234,28 +262,31 @@ var Aside = () => {
                     <button ref={prevR} style={Object.assign({...style}, {top: 0})}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" style={{ transform: 'rotate(-90deg)', fill: '#1200ba', width: '20px'}}><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
                     </button>
-                        {photosRight?.map((photo, ind) => {
+                        {photosRight?.map((data, ind) => {
                         return (
                             <div>
-                                
+
                                 <SwiperSlide key={ind}>
                                     <Card
                                         style={{
                                             width: 255,
                                             objectFit: "contain",
                                             border: "none",
+                                            paddingLeft: "5px",
                                         }}
                                     >
-                                        {photo ? (
-                                            <Card.Img
-                                            className="mt-1"
-                                            style={{
-                                                    width: 245,
-                                                    objectFit: "contain",
-                                                    margin: "0 auto"
-                                                }}
-                                                src={photo}
-                                            />
+                                        {data[0] ? (
+                                            <NavLink to={data[1]} class="image-scale">
+                                                <Card.Img
+                                                    className="mt-1"
+                                                    style={{
+                                                        width: 245,
+                                                        objectFit: "contain",
+                                                        margin: "0 auto",
+                                                    }}
+                                                    src={data[0]}
+                                                />
+                                            </NavLink>
                                             ) : <></>
                                         }
 

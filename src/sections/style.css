@@ -167,7 +167,7 @@ main {
     box-shadow: '0 0 6px 6px #1200ba'
 }
     .scalecategories:hover {
-        transform: scale(1.05);
+         transform: scale(1.05);
         box-shadow: 0 0 20px rgb(18, 0, 186);
     }
 
@@ -176,19 +176,7 @@ main {
        }
        .two:hover {
             transform: scale(1.05);
-            box-shadow: 8px 10px 5px 2px rgba(0, 0, 255, .2);
        }
-
-.hover-image-scale {
-        display: inline-block; 
-        overflow: hidden;
-      }
-      .hover-image-scale img {
-        transition: 1s;
-      }
-      .hover-image-scale img:hover {
-        transform: scale(1.2);
-      }
 .basket span{
     position: absolute;
     background-color: rgb(18, 0, 186);
@@ -250,6 +238,36 @@ select:active, select:focus, select:hover {
     font-family: 'Book Antiqua';
     color: #1200ba;
 }
+.accordion-list{
+    animation-name: AccordionsAnimation;
+    animation-duration: .3s;
+    display: none;
+}
+.acoordion-list-off{
+    animation: AccordionsAnimation .45s infinite;
+    animation-direction: reverse;
+}
+@keyframes AccordionsAnimation{
+        from {
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            margin-bottom: -11%;
+        }
+        to {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            margin-bottom: 0;
+        }
+}
+.image-scale {
+    display: inline-block; 
+    overflow: hidden; /* Скрываем всё за контуром */
+  }
+  .image-scale img {
+    transition: 1s; /* Время эффекта */
+    display: block; 
+  }
+  .image-scale img:hover {
+    transform: scale(1.2); /* Увеличиваем масштаб */
+  }
 @media(max-width: 1200px){
     .recomendation-swiper .card{
         width: 264px !important;

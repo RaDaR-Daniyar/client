@@ -5,46 +5,100 @@ import facebook from '../assets/facebook.png'
 import instagram from '../assets/instagram.png'
 import whatsapp from '../assets/whatsapp.png'
 import telegram from '../assets/telegram.png'
+import { useState } from 'react'
 
 const Footer = () => {
+    // open accordions
+    var { 0: activeAc, 1: setActiveAc } = useState([])
+
+    var setAcordion = (ind) => {
+        setActiveAc((actives => {
+            if (actives.includes(ind)) {
+                setTimeout(() => {
+                    setActiveAc(actives.filter((i) => i != ind))
+                }, 300);
+                return [...actives, ind*100]
+            } else {
+                return [...actives, ind]
+            }
+        }))
+    }
+
+
     return (
         <Container className='mt-4' style={{marginBottom: 30}}>
             <Card style={{borderColor: '#1200ba'}}>
-                <Row>
-                    <Col md={4} style={{marginRight: 160, marginLeft: 10, marginTop: 20}}>
+                <Row style={{flexWrap: 'wrap'}}>
+                    <Col md={4} style={{ marginLeft: 10, marginTop: 20}}>
                         <img  src = { logo } alt = "Купить аксессуары в Алматы" style={{width: 170}}/><br /><br />
                         <p style={{textAlign: "justify", fontSize: 16, width: '95%'}}>Брендовые аксессуары — это стильные и полезные мелочи, которые дополняют Ваш образ. У нас Вы найдете подходящие аксессуары для любого случая. Если пользоваться этими штрихами умело и со вкусом, Вы легко поднимете свой стиль на новую высоту.</p>
                     </Col>
-                    <Col md={4} style={{marginBottom: 20, marginTop: 20, marginLeft: 10}}>
-                        <div style={{width: '48%', float: 'left'}}>
-                        <h4 style={{color: "#1200ba", marginBottom: 20}}>Навигация</h4>
-                        <a href='/' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Главная</a><br />
-                        <a href='/shop' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Каталог</a><br />
-                        <a href='/shop/?gender=3' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Мужские часы</a><br />
-                        <a href='/shop/?gender=2' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Женские часы</a><br />
-                        <a href='/shop?brend=1' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Ручки</a><br />
-                        <a href='/shop?brand=15' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Ножи</a>
-                        </div>
-                        <div style={{width: '48%', float: 'left'}}>
-                        <h4 style={{color: "#1200ba", marginBottom: 20}}>Информация</h4>
-                        <a href='/about' style={{textDecoration: "none", fontSize: 14, color: "black"}}>О магазине</a><br />
-                        <a href='/delivery' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Доставка и оплата</a><br />
-                        <a href='/service' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Сервис-центр</a><br />
-                        </div>
+                    <Col md={2} style={{marginTop: 20, marginLeft: 10, minWidth: '160px'}}>
+                        <h4 style={{ color: "#1200ba", marginBottom: 10 }} onClick={() => setAcordion(1)}>Навигация</h4>
+                        <ul style={Object.assign({ listStyle: 'none', paddingLeft: 0, marginBottom: 0 }, (activeAc.includes(1) || window.innerWidth > 767) ? { display: 'block' } : {})}
+                            className={'accordion-list' + ((activeAc.includes(100) && window.innerWidth <= 767) ? ' acoordion-list-off' : '')}
+                        >
+                            <li>
+                                <a href='/' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Главная</a>
+                            </li>
+                            <li>
+                                <a href='/shop' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Каталог</a>
+                            </li>
+                            <li>
+                                <a href='/shop/?gender=3' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Мужские часы</a>
+                            </li>
+                            <li>
+                                <a href='/shop/?gender=2' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Женские часы</a>
+                            </li>
+                            <li>
+                                <a href='/shop?brend=1' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Ручки</a>
+                            </li>
+                            <li>
+                                <a href='/shop?brand=15' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Ножи</a>
+                            </li>
+                        </ul>
                     </Col>
-                    <Col md={2} style={{marginLeft: 10}}>
-                        <h4 style={{color: "#1200ba", marginBottom: 20, marginTop: 20}}>Контакты</h4>
-                        <a href='tel:+77003069000' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Телефон: +77003069000</a><br />
-                        <a href="mailto:radar-daniyar@mail.ru" style={{textDecoration: "none", fontSize: 14, color: "black"}}>E-mail: radar-daniyar@mail.ru</a><br />
-                        <div className='mt-3'>
-                            <a href='https://www.instagram.com/radar.daniyar/' target='_blank'><img  src = { instagram } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
-                            <a href='https://web.facebook.com/profile.php?id=100093576204176' target='_blank'><img  src = { facebook } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
-                            <a href='//wa.me/77003069000' target='_blank' rel="noopener"><img  src = { whatsapp } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
-                            <a href='//t.me/RaDaR1204' target='_blank' rel="noopener"><img  src = { telegram } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
-                        </div>
-                        <div className='mt-1'>
-                            <a href='/' style={{textDecoration: "none", fontSize: 14, color: "black", fontWeight: "bold", whiteSpace: 'nowrap'}}>© 2023. Все права защищены</a>
-                        </div>
+                    <Col md={2} style={{marginTop: 20, marginLeft: 10, minWidth: '175px'}} onClick={() => setAcordion(2)}>
+                        <h4 style={{ color: "#1200ba", marginBottom: 10 }}>Информация</h4>
+                        <ul style={Object.assign({ listStyle: 'none', paddingLeft: 0, marginBottom: 0 }, (activeAc.includes(2) || window.innerWidth > 767) ? { display: 'block' } : {})}
+                            className={'accordion-list' + ((activeAc.includes(200) && window.innerWidth <= 767) ? ' acoordion-list-off' : '')}
+                        >
+                            <li>
+                                <a href='/about' style={{textDecoration: "none", fontSize: 14, color: "black"}}>О магазине</a>
+                            </li>
+                            <li>
+                                <a href='/delivery' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Доставка и оплата</a>
+                            </li>
+                            <li>
+                                <a href='/service' style={{textDecoration: "none", fontSize: 14, color: "black"}}>Сервис-центр</a>
+                            </li>
+                        </ul>
+                    </Col>
+                    <Col md={2} style={{marginLeft: 10, minWidth: '200px'}}>
+                        <h4 style={{ color: "#1200ba", marginBottom: 10, marginTop: 20 }} onClick={() => setAcordion(3)}>Контакты</h4>
+                        <ul style={Object.assign({ listStyle: 'none', paddingLeft: 0, marginBottom: 0 }, (activeAc.includes(3) || window.innerWidth > 767) ? { display: 'block' } : {})}
+                            className={'accordion-list' + ((activeAc.includes(300) && window.innerWidth <= 767) ? ' acoordion-list-off' : '')}
+                        >
+                            <li>
+                                <a href='tel:+77003069000' style={{ textDecoration: "none", fontSize: 14, color: "black" }}>Телефон: +77003069000</a>
+                            </li>
+                            <li>
+                                <a href="mailto:radar-daniyar@mail.ru" style={{textDecoration: "none", fontSize: 14, color: "black"}}>E-mail: radar-daniyar@mail.ru</a>
+                            </li>
+                            <li>
+                                <div className='mt-3'>
+                                    <a href='https://www.instagram.com/radar.daniyar/' target='_blank'><img  src = { instagram } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
+                                    <a href='https://web.facebook.com/profile.php?id=100093576204176' target='_blank'><img  src = { facebook } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
+                                    <a href='//wa.me/77003069000' target='_blank' rel="noopener"><img  src = { whatsapp } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
+                                    <a href='//t.me/RaDaR1204' target='_blank' rel="noopener"><img  src = { telegram } alt = "Купить аксессуары в Алматы" style={{marginRight: 10}} /></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div className='mt-1'>
+                                    <a href='/' style={{textDecoration: "none", fontSize: 14, color: "black", fontWeight: "bold", whiteSpace: 'nowrap'}}>© 2023. Все права защищены</a>
+                                </div>
+                            </li>
+                        </ul>
                     </Col>
                 </Row>
             </Card>
