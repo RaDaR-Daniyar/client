@@ -42,7 +42,7 @@ var Aside = () => {
     const prevR = useRef();
     const { 0: width, 1: setWidth} = useState(window.innerWidth)
     const { 0: photosLeft, 1: setLPhotos } = useState([
-        [l1, '/product/9'],
+        [l1, '/product/2366'],
         [l2, '/product/25'],
         [l3, '/product/25'],
         [l4, '/product/25'],

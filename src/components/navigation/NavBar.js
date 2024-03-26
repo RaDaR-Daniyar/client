@@ -33,7 +33,7 @@ const NavBar = observer(() => {
                                 КАТАЛОГ
                         </NavLink>
                         <UIDropdown
-                            render={(toggleShow) => <UserCicle className='link' onClick={toggleShow} style={{paddingTop: '10px', paddingBottom: '10px', marginLeft: '20px', paddingRight: '50px', fontSize: '17px'}}>БРЕНДЫ</UserCicle>}
+                            render={(toggleShow) => <UserCicle className='link' onClick={toggleShow} style={{paddingTop: '10px', paddingBottom: '10px', paddingRight: '50px', fontSize: '17px'}}>БРЕНДЫ</UserCicle>}
                         >
                             {(toggleShow) => (
                                 <Card style={{marginTop: '14px', width: '160px'}}>
@@ -49,16 +49,6 @@ const NavBar = observer(() => {
                                         <NavLink style={{paddingLeft: '10px', fontSize: '16px'}} to="/shop?brand=16" className="link" target='_parent'>WATERMAN</NavLink>
                                         <NavLink style={{paddingLeft: '10px', fontSize: '16px'}} to="/shop?brand=18" className="link" target='_parent'>LAMY</NavLink>
                                         <NavLink style={{paddingLeft: '10px', fontSize: '16px'}} to="/shop?brand=15" className="link" target='_parent'>VICTORINOX</NavLink>
-                                    </ListGroup>
-                                </Card>
-                            )}
-                        </UIDropdown>
-                        <UIDropdown
-                            render={(toggleShow) => <UserCicle className='link' onClick={toggleShow} style={{paddingTop: '10px', paddingBottom: '10px', fontSize: '17px'}}>КОМИССИОНКА</UserCicle>}
-                        >
-                            {(toggleShow) => (
-                                <Card style={{marginTop: '14px', width: '160px'}}>
-                                    <ListGroup style={{width:'130px', background: "white"}}>
                                         <NavLink style={{paddingLeft: '10px', fontSize: '16px'}} to="/shop?brand=22" className="link" target='_parent'>CERTINA</NavLink>
                                         <NavLink style={{paddingLeft: '10px', fontSize: '16px'}} to="/shop?brand=20" className="link" target='_parent'>TISSOT</NavLink>
                                         <NavLink style={{paddingLeft: '10px', fontSize: '16px'}} to="/shop?brand=21" className="link" target='_parent'>HAMILTON</NavLink>
@@ -67,7 +57,8 @@ const NavBar = observer(() => {
                                 </Card>
                             )}
                         </UIDropdown>
-                        <NavLink to="/shop?sale=true" className="link" style={{paddingLeft: '50px',paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px', fontSize: '17px'}}>СКИДКИ</NavLink>
+                        
+                        <NavLink to="/shop?sale=true" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px', fontSize: '17px'}}>СКИДКИ</NavLink>
                         <NavLink to="/shop?gender=3" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px', fontSize: '17px'}}>МУЖСКИЕ ЧАСЫ</NavLink>
                         <NavLink to="/shop?gender=2" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px', fontSize: '17px'}}>ЖЕНСКИЕ ЧАСЫ</NavLink>
                         <NavLink to="/shop?brend=1" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px', fontSize: '17px'}}>РУЧКИ</NavLink>

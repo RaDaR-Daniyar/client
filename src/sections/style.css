@@ -259,7 +259,7 @@ select:active, select:focus, select:hover {
 }
 .image-scale {
     display: inline-block; 
-    overflow: hidden; /* Скрываем всё за контуром */
+    overflow: hidden;
   }
   .image-scale img {
     transition: 1s; /* Время эффекта */
