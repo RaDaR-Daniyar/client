@@ -170,7 +170,7 @@ var Aside = () => {
                         {photosLeft?.map((data, ind) => {
                         return (
                             <div style={{height: '100%'}}>
-                                <SwiperSlide key={ind} >
+                                <SwiperSlide key={ind}>
                                     <Card
                                     style={{
                                         width: 255,

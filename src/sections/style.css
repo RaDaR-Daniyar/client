@@ -257,17 +257,24 @@ select:active, select:focus, select:hover {
             margin-bottom: 0;
         }
 }
-.image-scale {
-    display: inline-block; 
-    overflow: hidden;
-  }
-  .image-scale img {
-    transition: 1s; /* Время эффекта */
-    display: block; 
-  }
-  .image-scale img:hover {
-    transform: scale(1.2); /* Увеличиваем масштаб */
-  }
+.image-scale{
+    -webkit-transition: 3s;
+    -moz-transition: 3s;
+    -ms-transition: 3s;
+    -o-transition: 3s;
+    transition: 3s;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+.image-scale:hover{
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
 @media(max-width: 1200px){
     .recomendation-swiper .card{
         width: 264px !important;
