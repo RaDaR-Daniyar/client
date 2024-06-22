@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#root{
+    overflow-y: hidden;
+}
+.menu {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 60px;
+    left: 0;
+    z-index: 100;
+    transform: translateX(-100%);
+
+}
+
+.menuActive {
+    transform: translateX(0);
+}
+
+.blur {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+.menu__content {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.menu__header {
+    font-size: 2rem;
+    color: #1200ba;
+    border-bottom: 1px solid #1200ba;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+
+ur li a {
+    color: #1200ba;
+    text-decoration: none;
+    font-size: 1rem;
+
+
+}
+
+ur li {
+    display: flex;
+    margin: 10px 0px;
+}
+
+ur {
+    display: flex;
+    flex-direction: column;
+}
+
+
+nav {
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+}
+
+main {
+    padding: 50px;
+}
+
+.burger-btn {
+    width: 30px;
+    height: 20px;
+    margin-left: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.burger-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 30px;
+    background-color: #1200ba;
+    height: 2px;
+}
+
+.burger-btn span {
+    position: absolute;
+    top: 9px;
+    width: 30px;
+    background-color: #1200ba;
+    height: 2px;
+}
+
+.burger-btn:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    background-color: #1200ba;
+    height: 2px;
+}
+
+.hide-on-mobile { display: inline; }
+@media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 950px){ .hide-on-mobile { display: none; }}
+
+.show-on-mobile { display: none; }
+@media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 950px){ .show-on-mobile { display: inline; }}
+
+.scale {
+    transition: 1s;
+   }
+   .scale:hover {
+        transform: scale(1.12);
+   }
+
+.scalemobile {
+    width:100%;
+    line-height:70px;
+    text-align:center;
+    border:1px solid #1200ba;
+    border-radius: 12px;
+    transition: all 200ms ease-out;
+    transition: 1s;
+    box-shadow: '0 0 6px 6px #1200ba'
+}
+
+.scalecat {
+    width:100%;
+    line-height:70px;
+    text-align:center;
+    border-radius: 15px;
+    transition: all 200ms ease-out;
+    transition: 1s;
+    box-shadow: '0 0 6px 6px #1200ba'
+}
+    .scalecat:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgb(18, 0, 186);
+    }
+
+.scalecategories {
+    width:100%;
+    line-height:70px;
+    text-align:center;
+    border:2px solid #fff;
+    border-radius: 4px;
+    transition: all 200ms ease-out;
+    transition: 1s;
+    box-shadow: '0 0 6px 6px #1200ba'
+}
+    .scalecategories:hover {
+         transform: scale(1.05);
+        box-shadow: 0 0 20px rgb(18, 0, 186);
+    }
+
+.two {
+        transition: 1s;
+       }
+       .two:hover {
+            transform: scale(1.05);
+       }
+.basket span{
+    position: absolute;
+    background-color: rgb(18, 0, 186);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    top: -6px;
+    align-items: center;
+    text-align: 0;
+    right: -6px;
+    color: white;
+}
+input {
+    outline: none;
+    border: 1px solid rgb(206 212 218);
+}
+input:active, input:focus, input:hover {
+    outline: #5144c7;
+    border: 1px solid #1200ba;
+    box-shadow: 0 0 4px 4px rgb(131, 172, 241);
+}
+input[type=text]{
+    padding-left: 10px;
+    color: black;
+}
+button {
+    outline: none;
+    border: 1px solid rgb(206 212 218);
+    border-radius: 5px;
+}
+button:active, button:focus, button:hover {
+    outline: #5144c7;
+    border: 1px solid #1200ba;
+    box-shadow: 0 0 4px 4px rgb(131, 172, 241);
+}
+select {
+    outline: none;
+    border: 1px solid rgb(206 212 218);
+}
+select:active, select:focus, select:hover {
+    outline: #5144c7;
+    border: 1px solid #1200ba;
+    box-shadow: 0 0 4px 4px rgb(131, 172, 241);
+}
+
+.recomendation-swiper .swiper-button-next::after{
+    font-size: 30px;
+    color: #1200ba;
+}
+.recomendation-swiper .swiper-button-prev::after{
+    font-size: 30px;
+    color: #1200ba;
+}
+.recomendation-swiper .card a{
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Book Antiqua';
+    color: #1200ba;
+}
+.accordion-list{
+    animation-name: AccordionsAnimation;
+    animation-duration: .3s;
+    display: none;
+}
+.acoordion-list-off{
+    animation: AccordionsAnimation .45s infinite;
+    animation-direction: reverse;
+}
+@keyframes AccordionsAnimation{
+        from {
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            margin-bottom: -11%;
+        }
+        to {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            margin-bottom: 0;
+        }
+}
+.image-scale{
+    -webkit-transition: 3s;
+    -moz-transition: 3s;
+    -ms-transition: 3s;
+    -o-transition: 3s;
+    transition: 3s;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+.image-scale:hover{
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+@media(max-width: 1200px){
+    .recomendation-swiper .card{
+        width: 264px !important;
+        text-decoration: none;
+    }
+    .recomendation-swiper .card-img-top{
+        width: 254px !important;
+    }
+
+}
+@media(max-width: 992px){
+    .recomendation-swiper .card{
+        width: 208px !important;
+    }
+    .recomendation-swiper .card-img-top{
+        width: 198px !important;
+    }
+}
+
+@media(max-width: 768px){
+    .recomendation-swiper .swiper-button-next,
+    .recomendation-swiper .swiper-button-prev{
+        display: none;
+    }
+    .recomendation-swiper .card{
+        width: 240px !important;
+    }
+    .recomendation-swiper .card-img-top{
+        width: 227px !important;
+    }
+}
+
+@media(max-width: 524px){
+    .recomendation-swiper .card{
+        margin: 0 auto;
+    }
+    .recomendation-swiper{
+        margin-bottom: 10px;
+    }
+}
