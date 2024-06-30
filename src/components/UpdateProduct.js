@@ -7,9 +7,9 @@ import uuid from 'react-uuid'
 import UpdateProperties from './UpdateProperties.js'
 import { createProperty, updateProperty, deleteProperty } from '../http/catalogAPI.js'
 
-const defaultValue = {name: '', price: '', category: '', brand: '', mehanizm: '', gender: '', shape: '', material: '', glass: '', strap: '', power: '', water: '', brend: '', sale: ''}
+const defaultValue = {name: '', price: '', category: '', brand: '', mehanizm: '', gender: '', shape: '', material: '', glass: '', strap: '', power: '', water: '', brend: '', sale: '', kaspi: ''}
 const defaultValid = {name: null, price: null, category: null, brand: null, mehanizm: null, gender: null, shape: null,
-    material: null, glass: null, strap: null, power: null, water: null, brend: null
+    material: null, glass: null, strap: null, power: null, water: null, brend: null, kaspi: null
 }
 
 const isValid = (value) => {
@@ -30,9 +30,9 @@ const isValid = (value) => {
         if (key === 'water') result.water = pattern.test(value.water)
         if (key === 'brend') result.brend = pattern.test(value.brend)
         if (key === 'sale') result.sale = (pattern.test(value.sale) && 0 <= value.sale && value.sale <= 100) || value.sale === '0';
-
+        if (key === 'kaspi') result.kaspi = value.kaspi.trim() !== ''
     }
-    return result
+    return result;
 }
 
 const updateProperties = async (properties, productId) => {
@@ -92,13 +92,12 @@ const UpdateProduct = (props) => {
     const [brends, setBrends] = useState(null)
     const [image, setImage] = useState(null)
     const [properties, setProperties] = useState([])
-    console.log(value)
+    
     useEffect(() => {
         if(id) {
             fetchOneProduct(id)
                 .then(
                     data => {
-
                         const prod = {
                             name: data.name,
                             price: data.price?.toString(),
@@ -113,7 +112,8 @@ const UpdateProduct = (props) => {
                             power: data.powerId?.toString(),
                             water: data.waterId?.toString(),
                             brend: data.brendId?.toString(),
-                            sale: data.finId?.toString()
+                            sale: data.finId?.toString(),
+                            kaspi: data.silka.toString()
                         }
                         setValue(prod)
                         setValid(isValid(prod))
@@ -171,7 +171,7 @@ const UpdateProduct = (props) => {
                 )
         }
     }, [id])
-    console.log(value)
+
     const handleInputChange = (event) => {
         const data = {...value, [event.target.name]: event.target.value}
         setValue(data)
@@ -181,17 +181,17 @@ const UpdateProduct = (props) => {
     const handleImageChange = (event) => {
         setImage(event.target.files[0])
     }
-
+    
     const handleSubmit = async (event) => {
         event.preventDefault()
-
         const correct = isValid(value)
         setValid(correct)
-
+        
         if (correct.name && correct.price && correct.brand) {
             const data = new FormData();
             data.append('name', value.name.trim())
             data.append('price', value.price.trim())
+            data.append('kaspi', value.kaspi.trim());
 
             if (correct.brand) {
                 data.append('brandId', value.brand);
@@ -243,8 +243,6 @@ const UpdateProduct = (props) => {
             if (correct.brend) {
                 data.append('brendId', value.brend);
             }
-            debugger
-
             if (correct.sale) {
                 data.append('finId', value.sale);
             }
@@ -293,6 +291,7 @@ const UpdateProduct = (props) => {
                         if (data.waterId) prod.water = data.waterId.toString();
                         if (data.materialId) prod.material = data.materialId.toString();
                         if (data.finId) prod.sale = data.finId.toString();
+                        if (data.kaspi) prod.kaspi = data.silka.toString();
                         setValue(prod)
                         setValid(isValid(prod))
                         setProperties(data.props.map(item => {
@@ -303,7 +302,7 @@ const UpdateProduct = (props) => {
                     }
                 )
                 .catch(
-                    error => alert(error.response.data.message)
+                    error => {debugger; alert(error.response.data.message)}
                 )
         }
     }
@@ -494,6 +493,16 @@ const UpdateProduct = (props) => {
                                 onChange={e => handleImageChange(e)}
                                 placeholder="Фото товара..."
                             />
+                        </Col>
+                    </Row>
+                    <Row className="mb-3">
+                        <Col xs={12}>
+                            <Form.Control
+                                name="kaspi"
+                                value={value.kaspi}
+                                onChange={e => handleInputChange(e)}
+                                placeholder='Ссылка на kaspi'
+                            />                            
                         </Col>
                     </Row>
                     <UpdateProperties properties={properties} setProperties={setProperties} />

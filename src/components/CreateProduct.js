@@ -3,8 +3,8 @@ import { createProduct, fetchBrands, fetchMehanizms, fetchGenders, fetchShapes, 
 import { useState, useEffect } from 'react'
 import CreateProperties from './CreateProperties.js'
 
-const defaultValue = {name: '', price: '', brand: '', mehanizm: '', gender: '', shape: '', material: '', glass: '', strap: '', power: '', water: '', brend: '', sale: ''}
-const defaultValid = {name: null, price: null, brand: null, mehanizm: null, gender: null, shape: null, material: null, glass: null, strap: null, power: null, water: null, brend: null, sale: null}
+const defaultValue = {name: '', price: '', brand: '', mehanizm: '', gender: '', shape: '', material: '', glass: '', strap: '', power: '', water: '', brend: '', sale: '', kaspi: ''}
+const defaultValid = {name: null, price: null, brand: null, mehanizm: null, gender: null, shape: null, material: null, glass: null, strap: null, power: null, water: null, brend: null, sale: null, kaspi: null}
 
 const isValid = (value) => {
     const result = {}
@@ -23,6 +23,7 @@ const isValid = (value) => {
         if (key === 'water') result.water = pattern.test(value.water)
         if (key === 'brend') result.brend = pattern.test(value.brend)
         if (key === 'sale') result.sale = pattern.test(value.sale) && 0 <= value.sale && value.sale <= 100;
+        if (key === 'kaspi') result.kaspi = result.kaspi = value.kaspi.trim() !== ''
     }
     return result
 }
@@ -44,6 +45,7 @@ const CreateProduct = (props) => {
     const [powers, setPowers] = useState(null)
     const [waters, setWaters] = useState(null)
     const [brends, setBrends] = useState(null)
+    
     useEffect(() => {
         fetchBrands()
             .then(
@@ -106,42 +108,20 @@ const CreateProduct = (props) => {
             const data = new FormData()
             data.append('name', value.name.trim())
             data.append('price', value.price.trim())
-            if (correct.brand) {
-                data.append('brandId', value.brand);
-            };
-            if (correct.mehanizm){
-                data.append('mehanizmId', value.mehanizm);
-            };
-            if (correct.gender) {
-                data.append('genderId', value.gender);
-            };
-            if (correct.shape) {
-                data.append('shapeId', value.shape);
-            }
-            if (correct.material) {
-                data.append('materialId', value.material);
-            };
-            if (correct.glass) {
-                data.append('glassId', value.glass);
-            };
-            if (correct.strap) {
-                debugger
-                data.append('strapId', value.strap);
-            }
-            if (correct.power) {
-                data.append('powerId', value.power);
-            };
-            if (correct.water) {
-                data.append('waterId', value.water);
-            }
-            if (correct.brend) {
-                data.append('brendId', value.brend);
-            };
-            if (correct.sale) {
-                debugger
-                data.append('finId', value.sale);
-            }
-            if (image) data.append('image', image, image.name)
+            if (correct.brand)    data.append('brandId', value.brand);
+            if (correct.mehanizm) data.append('mehanizmId', value.mehanizm);
+            if (correct.gender)   data.append('genderId', value.gender);
+            if (correct.shape)    data.append('shapeId', value.shape);
+            if (correct.material) data.append('materialId', value.material);
+            if (correct.glass)    data.append('glassId', value.glass);
+            if (correct.strap)    data.append('strapId', value.strap);
+            if (correct.power)    data.append('powerId', value.power);
+            if (correct.water)    data.append('waterId', value.water);
+            if (correct.brend)    data.append('brendId', value.brend);
+            if (correct.sale)     data.append('finId', value.sale);
+            if (correct.kaspi)    data.append('kaspi', value.kaspi);
+            if (image)            data.append('image', image, image.name)
+
             if (properties.length) {
                 const props = properties.filter(
                     prop => prop.name.trim() !== '' && prop.value.trim() !== ''
@@ -356,6 +336,16 @@ const CreateProduct = (props) => {
                                 onChange={e => handleImageChange(e)}
                                 placeholder="Фото товара..."
                             />
+                        </Col>
+                    </Row>
+                    <Row className="mb-3">
+                        <Col xs={12}>
+                            <Form.Control
+                                name="kaspi"
+                                value={value.kaspi}
+                                onChange={e => handleInputChange(e)}
+                                placeholder='Ссылка на kaspi'
+                            />                            
                         </Col>
                     </Row>
                     <CreateProperties properties={properties} setProperties={setProperties} />

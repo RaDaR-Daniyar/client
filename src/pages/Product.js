@@ -71,7 +71,7 @@ const Product = () => {
   }
 
   const propsToDisplay = product.props.map((obj) => ({ label: obj.name, value: obj.value }));
-  console.log(propsToDisplay)
+
   const propertiesToDisplay = [
     { label: "Бренд", value: product.brand?.name },
     { label: "Тип механизма", value: product.mehanizm?.name },
@@ -138,9 +138,12 @@ const Product = () => {
                     <br />
                         <img src={box} alt="map" style={{ width: "18px" }} /> Бесплатная доставка
                     </p>
-                    <Button onClick={() => handleClick(product.id)}>
+                    <Button style={{marginRight:"10px", marginTop:"5px"}} onClick={() => handleClick(product.id)}>
                         Добавить в корзину
                     </Button>
+                    {product.silka? <a className="btn" style={{backgroundColor:"red", color:"white", marginTop:'5px'}} href={product.silka}>
+                        Купить на Kaspi
+                    </a>:<></>}
                     <div style={{ marginTop: 40 }}>
                         {propertiesToDisplay.map((property) => renderProperty(property.label, property.value) )}
                     </div>
