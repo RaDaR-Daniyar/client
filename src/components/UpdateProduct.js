@@ -113,7 +113,7 @@ const UpdateProduct = (props) => {
                             water: data.waterId?.toString(),
                             brend: data.brendId?.toString(),
                             sale: data.finId?.toString(),
-                            kaspi: data.silka.toString()
+                            kaspi: data.silka?.toString()
                         }
                         setValue(prod)
                         setValid(isValid(prod))
