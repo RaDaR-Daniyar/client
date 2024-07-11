@@ -63,6 +63,19 @@ const NavBar = observer(() => {
                         <NavLink to="/shop?gender=2" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px', fontSize: '17px'}}>ЖЕНСКИЕ ЧАСЫ</NavLink>
                         <NavLink to="/shop?brend=1" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px', fontSize: '17px'}}>РУЧКИ</NavLink>
                         <NavLink to="/shop?brand=15" className="link" style={{paddingRight: '50px', paddingTop: '10px', paddingBottom: '10px', fontSize: '17px'}}>VICTORINOX</NavLink>
+                        <UIDropdown
+                            render={(toggleShow) => <UserCicle className='link' onClick={toggleShow} style={{paddingTop: '10px', paddingBottom: '10px', paddingRight: '50px', fontSize: '17px'}}>ИНТЕРЬЕР</UserCicle>}
+                        >
+                            {(toggleShow) => (
+                                <Card style={{marginTop: '14px', width: '190px'}}>
+                                    <ListGroup style={{width:'180px', background: "white"}}>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '16px'}} to="/shop?brand=66" className="link" target='_parent'>НАПОЛЬНЕ ЧАСЫ</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '16px'}} to="/shop?brand=65" className="link" target='_parent'>НАСТЕННЫЕ ЧАСЫ</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '16px'}} to="/shop?brand=68" className="link" target='_parent'>СТАТУЭТКИ</NavLink>
+                                    </ListGroup>
+                                </Card>
+                            )}
+                        </UIDropdown>
                     </Nav>
                 </Navbar>
             </div>

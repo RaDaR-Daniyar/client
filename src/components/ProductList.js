@@ -24,7 +24,6 @@ const ProductList = observer(() => {
         window.addEventListener("resize", resizeWindow);
         return () => window.removeEventListener("resize", resizeWindow);
     });
-    //
 
     const handleFirstPage = () => {
         // change page
