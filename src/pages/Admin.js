@@ -35,7 +35,7 @@ const Admin = () => {
                 <li><Link to="/admin/straps">Материал браслета/ремешка</Link></li>
                 <li><Link to="/admin/powers">Запас хода</Link></li>
                 <li><Link to="/admin/waters">Водонепроницаемость</Link></li>
-                <li><Link to="/admin/brends">Тип ручек и ножей</Link></li>
+                <li><Link to="/admin/brends">Тип товаров</Link></li>
                 <li><Link to="/admin/catalogs">Товары каталога</Link></li>
             </ul>
             <Button onClick={handleLogout}>Выйти</Button>

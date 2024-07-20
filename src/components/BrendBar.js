@@ -37,7 +37,7 @@ const BrendBar = observer(() => {
         <Form.Select onChange={event => {
             handleClick(Number(event.target.value))
         }}>
-            <option>Типы ручек или ножей</option>
+            <option>Тип товаров</option>
             {catalog.brends.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}
         </Form.Select>
     )

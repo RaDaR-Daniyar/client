@@ -1,32 +1,14 @@
 import React from 'react';
 import { Carousel, Col, Container, Row } from 'react-bootstrap';
-import ckslide from "../assets/ck-slide.jpg";
-import ck from "../assets/ck.jpg";
-import ck2 from "../assets/ck-logo.png"
-import tissotslide from "../assets/tissot-slide.jpg";
-import tissot from "../assets/tissot.jpg";
-import tissot2 from "../assets/tissot-logo.jpg"
-import certinaslide from "../assets/certina-slide.jpg";
-import certina from "../assets/certina.jpg";
-import certina2 from "../assets/certina-logo.jpg"
-import orientslide  from "../assets/orient-slide.jpg";
-import orient  from "../assets/orient.jpg";
-import orient2 from "../assets/orient-logo.png"
-import dieselslide from "../assets/diesel-slide.jpg";
-import diesel from "../assets/diesel.jpg";
-import diesel2 from "../assets/diesel-logo.jpeg"
-import casioslide from "../assets/casio-slide.jpg";
-import casio from "../assets/casio.jpg";
-import casio2 from "../assets/casio-logo.png"
-import victorinoxslide from "../assets/victorinox-slide.jpg";
-import victorinox from "../assets/victorinox.jpg";
-import victorinox2 from "../assets/victorinox-logo.png"
-import parkerslide from "../assets/parker-slide.jpg";
-import parker from "../assets/parker.jpg";
-import parker2 from "../assets/parker-logo.png"
-import watermanslide from "../assets/waterman-slide.jpg";
-import waterman from "../assets/waterman.jpg";
-import waterman2 from "../assets/waterman-logo.png"
+import women from "../assets/slide/1.png";
+import men from "../assets/slide/2.png"
+import pen from "../assets/slide/3.png";
+import knife from "../assets/slide/4.png";
+import pol from "../assets/slide/5.png"
+import globo from "../assets/slide/6.png";
+import figura from "../assets/slide/7.png";
+import kaspi from "../assets/slide/8.png"
+import kos  from "../assets/slide/9.png";
 import go from "../assets/go2.png";
 
 export default function CarouselBox() {
@@ -35,66 +17,48 @@ export default function CarouselBox() {
             <div class='hide-on-mobile'>
                 <Carousel className='b-1'>
                     <Carousel.Item>
-                        <img className="b-block w-100" src={ certinaslide } alt="Купить Certina в Алматы"/>
+                        <a href='/shop?gender=2'><img className="b-block w-100" src={ women } alt="Купить мужские часы в Алматы"/></a>
                         <Carousel.Caption className='hide-on-mobile'>
-                            <h3 style={{color: "white"}}>Certina</h3>
-                            <p style={{color: "white"}}>Швейцарское качество и настоящий спортивный дух - с 1888 года</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img className="b-block w-100" src={ tissotslide } alt="Купить Tissot в Алматы"/>
+                        <a href='/shop?gender=3'><img className="b-block w-100" src={ men } alt="Купить женские часы в Алматы"/></a>
                         <Carousel.Caption className='hide-on-mobile'>
-                            <h3 style={{color: "white"}}>Tissot</h3>
-                            <p style={{color: "white"}}>«Новаторство - наша традиция»</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img className="b-block w-100" src={ ckslide } alt="Купить Calvin Klein в Алматы"/>
+                        <a href='/shop?brend=1'><img className="b-block w-100" src={ pen } alt="Купить перьевые ручки в Алматы"/></a>
                         <Carousel.Caption className='hide-on-mobile'>
-                            <h3 style={{color: "black", textAlign: 'right'}}>Calvin Klein</h3>
-                            <p style={{color: "black", textAlign: 'right'}}>Чистота, элегантность и сексуальность — вот основа и фирменный стиль.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img className="b-block w-100" src={ orientslide } alt="Купить Orient в Алматы" />
+                        <a href='/shop?brand=15'><img className="b-block w-100" src={ knife } alt="Купить армейские ножи в Алматы" /></a>
                         <Carousel.Caption className='hide-on-mobile'>
-                            <h3 style={{textAlign: 'right'}}>Orient</h3>
-                            <p style={{textAlign: 'right'}}>Высокое качество, стильный дизайн, популярный во всем мире.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img className="b-block w-100" src={ dieselslide } alt="Купить Diesel в Алматы" />
+                        <a href='/shop?gender=9'><img className="b-block w-100" src={ pol } alt="Купить напольные часы в Алматы" /></a>
                         <Carousel.Caption>
-                            <h3>Diesel</h3>
-                            <p>Бренд ломающий все стереотипы в головах. Буть смелым.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img className="b-block w-100" src={ casioslide } alt="Купить Casio в Алматы"/>
+                        <a href='/shop?brend=70'><img className="b-block w-100" src={ globo } alt="Купить интерьерные глобусы в Алматы"/></a>
                         <Carousel.Caption className='hide-on-mobile'>
-                            <h3 style={{color: "white"}}>Casio</h3>
-                            <p style={{color: "white"}}>Культурный феномен часового мира!</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img className="b-block w-100" src={ victorinoxslide } alt="Купить Victorinox в Алматы" />
+                        <a href='/shop?brend=68'><img className="b-block w-100" src={ figura } alt="Купить статуэтки и фигурки в Алматы" /></a>
                         <Carousel.Caption className='hide-on-mobile'>
-                            <h3 style={{color: "black"}}>Victorinox</h3>
-                            <p style={{color: "black"}}>Классически универсальное швейцарское армейское наследие</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img className="b-block w-100" src={ parkerslide } alt="Купить Parker в Алматы" />
+                        <a href='https://kaspi.kz/shop/c/wrist%20watches/?q=%3Acategory%3AWrist%20watches%3AallMerchants%3AGifttime%3AavailableInZones%3AMagnum_ZONE1&sort=relevance&sc=' target='_blank'><img className="b-block w-100" src={ kaspi } alt="Купить Kaspi магазин в Алматы" /></a>
                         <Carousel.Caption className='hide-on-mobile'>
-                            <h3>Parker</h3>
-                            <p>Яркий представитель легендарного бренда</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img className="b-block w-100" src={ watermanslide } alt="Купить Waterman в Алматы" />
+                        <a href='/shop?brand=22'><img className="b-block w-100" src={ kos } alt="Купить швейцарские комиссионые часы в Алматы" /></a>
                         <Carousel.Caption>
-                            <h3>Waterman</h3>
-                            <p>Разработан, чтобы украсить Ваше воображение.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
@@ -104,16 +68,16 @@ export default function CarouselBox() {
                     <Carousel.Item>
                         <Row>
                             <Col md={6}>
-                                <a href='/shop?brand=4'><img src={ ck } alt="Оригинальная продукция" style={{width: '98%', marginBottom: '3%'}}/></a>
+                                <img src={ women } alt="Оригинальная продукция" style={{width: '98%', marginBottom: '3%'}}/>
                             </Col>
                             <Col md={6}>
-                                <img src={ ck2 } alt="Оригинальная продукция" style={{width: '300px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
                                 <p style={{textAlign: 'center', marginLeft: '20px', marginRight: '20px', marginBottom: '1px'}}>
-                                    В 1997 году, дизайнерский мир знаменитого американского экспериментатора Calvin Klien пополнился именным часовым брендом, а самый мощный швейцарский концерн 
-                                    Swatch Group наконец-то стал устойчивой пирамидой, представленной тремя самодостаточными марками часов.
+                                    Наручные женские часы – это стильный аксессуар, который может дополнить любой модный лук. Сейчас для представительниц 
+                                    слабого пола есть огромный выбор часов, которые можно сочетать с разными стилями и которые могут украсить образ для любого случая.
                                 </p>
-                                <a href='/calvin_klein'>
-                                    <img class='scalecat' src={ go } alt="Купить наручные часы Calvin Klein в Алматы" 
+                                <br></br>
+                                <a href='/shop?gender=2'>
+                                    <img class='scalecat' src={ go } alt="Купить женские наручные часы в Алматы" 
                                         style={{width: '10rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} 
                                     />
                                 </a>
@@ -124,16 +88,15 @@ export default function CarouselBox() {
                     <Carousel.Item>
                         <Row>
                             <Col md={6}>
-                                <a href='/shop?brand=20'><img src={ tissot } alt="Купить наручные часы Tissot в Алматы" style={{width: '98%', marginBottom: '3%'}}/></a>
+                                <img src={ men } alt="Купить мужские наручные часы в Алматы" style={{width: '98%', marginBottom: '3%'}}/>
                             </Col>
                             <Col md={6}>
-                                <img src={ tissot2 } alt="Купить наручные часы Tissot в Алматы" style={{width: '210px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
                                 <p style={{textAlign: 'center', marginLeft: '20px', marginRight: '20px', marginBottom: '24px'}}>
-                                    Марка Tissot была основана в 1853 году Шарлем-Фелисьеном Тиссот и его сыном Шарлем-Эмилем. На протяжении многих лет часы Tissot представляют 
-                                    интерес для самого широкого круга любителей качественных часов.
+                                    Мужские наручные часы в современном мире, это не просто аксессуар, который отображает время, а изделие, подчеркивающее 
+                                    статус и стиль их владельца. Некоторые модели мужских часов обладают рахнообразными дополнительными функциями.
                                 </p>
-                                <a href='/tissot'>
-                                    <img class='scalecat' src={ go } alt="Купить наручные часы Tissot в Алматы" 
+                                <a href='/shop?gender=3'>
+                                    <img class='scalecat' src={ go } alt="Купить наручные часы в Алматы" 
                                         style={{width: '10rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} 
                                     />
                                 </a>
@@ -144,14 +107,14 @@ export default function CarouselBox() {
                     <Carousel.Item>
                         <Row>
                             <Col md={6}>
-                                <a href='/shop?brand=22'><img src={ certina } alt="Купить наручные часы Certina в Алматы" style={{width: '98%', marginBottom: '3%'}}/></a>
+                                <img src={ pen } alt="Купить перьевые ручки в Алматы" style={{width: '98%', marginBottom: '3%'}}/>
                             </Col>
                             <Col md={6}>
-                                <img src={ certina2 } alt="Купить наручные часы Certina в Алматы" style={{width: '210px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
                                 <p style={{textAlign: 'center', marginLeft: '20px', marginRight: '20px', marginBottom: '53px'}}>
-                                    История марки началась в 1888 году, когда братья Адольф и Альфред Курт основали в Гренхене небольшую фабрику по производству деталей и часовых механизмов. 
+                                    Сегодня мало кто осмелиться утверждать, что перьевые ручки представляют собой исключительно канцелярскую принадлежность. 
+                                    Перьевая ручка - это важный атрибут имиджа, и только потом собственно ручка. 
                                 </p>
-                                <a href='/certina'>
+                                <a href='/shop?brend=1'>
                                     <img class='scalecat' src={ go } alt="Купить наручные часы Certina в Алматы" 
                                         style={{width: '10rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} 
                                     />
@@ -163,75 +126,72 @@ export default function CarouselBox() {
                     <Carousel.Item>
                         <Row>
                             <Col md={6}>
-                                <a href='/shop?brand=9'><img src={ orient } alt="Купить наручные часы Orient в Алматы" style={{width: '98%', marginBottom: '3%'}}/></a>
+                                <img src={ knife } alt="Купить армейские ножи в Алматы" style={{width: '98%', marginBottom: '3%'}}/>
                             </Col>
                             <Col md={6}>
-                                <img src={ orient2 } alt="Купить наручные часы Orient в Алматы" style={{width: '210px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
                                 <p style={{textAlign: 'center', marginLeft: '20px', marginRight: '20px', marginBottom: '53px'}}>
-                                    Всемирно известные японские часы Orient выпускает фирма-производитель Orient Watch Co Ltd., основанная еще в 1950 году в Токио. Ранее она носила название 
-                                    Тэта Equipment Co. 
-                                </p>
-                                <a href='/orient'>
-                                    <img class='scalecat' src={ go } alt="Купить наручные часы Orient в Алматы" 
-                                        style={{width: '10rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} 
-                                    />
-                                </a>
-                                <p style={{visibility: 'hidden'}}>___</p>
-                            </Col>
-                        </Row>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <Row>
-                            <Col md={6}>
-                                <a href='/shop?brand=5'><img src={ diesel } alt="Купить наручные часы Diesel в Алматы" style={{width: '98%', marginBottom: '3%'}}/></a>
-                            </Col>
-                            <Col md={6}>
-                                <img src={ diesel2 } alt="Купить наручные часы Diesel в Алматы" style={{width: '210px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
-                                <p style={{textAlign: 'center', marginLeft: '20px', marginRight: '20px', marginBottom: '37px'}}>
-                                    Итальянский бренд Diesel создаёт авангардные fashion-часы с выраженным футуристичным акцентом в дизайне. Нестандартная величина корпуса и броские, провокационные 
-                                    элементы циферблата делают часы бренда ярчайшей деталью имиджа.
-                                </p>
-                                <a href='/diesel'>
-                                    <img class='scalecat' src={ go } alt="Купить наручные часы Diesel в Алматы" 
-                                        style={{width: '10rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} 
-                                    />
-                                </a>
-                                <p style={{visibility: 'hidden'}}>___</p>
-                            </Col>
-                        </Row>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <Row>
-                            <Col md={6}>
-                                <a href='/shop?brand=5'><img src={ casio } alt="Купить наручные часы Casio в Алматы" style={{width: '98%', marginBottom: '3%'}}/></a>
-                            </Col>
-                            <Col md={6}>
-                                <img src={ casio2 } alt="Купить наручные часы Casio в Алматы" style={{width: '210px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
-                                <p style={{textAlign: 'center', marginLeft: '20px', marginRight: '20px', marginBottom: '84px'}}>
-                                    Casio – один из ведущих японских и мировых производителей кварцевых часов. Делает акцент, преимущественно, на аксессуарах 
-                                    для спорта и других видов активного времяпровождения.
-                                </p>
-                                <a href='/diesel'>
-                                    <img class='scalecat' src={ go } alt="Купить наручные часы Casio в Алматы" 
-                                        style={{width: '10rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} 
-                                    />
-                                </a>
-                                <p style={{visibility: 'hidden'}}>___</p>
-                            </Col>
-                        </Row>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <Row>
-                            <Col md={6}>
-                                <a href='/shop?brand=15'><img src={ victorinox } alt="Купить ножи Victorinox в Алматы" style={{width: '98%', marginBottom: '3%'}}/></a>
-                            </Col>
-                            <Col md={6}>
-                                <img src={ victorinox2 } alt="Купить ножи Victorinox в Алматы" style={{width: '210px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
-                                <p style={{textAlign: 'center', marginLeft: '20px', marginRight: '20px', marginBottom: '7px'}}>
                                     Компания Victorinox занимается производством и продажей уникальной высококачественной продукции для различных сфер жизни. В ассортимент входят 
-                                    швейцарские армейские ножи, кухонные ножи и столовые приборы, часы, туристическое снаряжение и парфюмерия.
+                                    швейцарские армейские ножи, кухонные ножи и столовые приборы, часы.
                                 </p>
-                                <a href='/victorinox'>
+                                <a href='/shop?brand=15'>
+                                    <img class='scalecat' src={ go } alt="Купить армейские ножи в Алматы" 
+                                        style={{width: '10rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} 
+                                    />
+                                </a>
+                                <p style={{visibility: 'hidden'}}>___</p>
+                            </Col>
+                        </Row>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <Row>
+                            <Col md={6}>
+                                <img src={ pol } alt="Купить напольные часы в Алматы" style={{width: '98%', marginBottom: '3%'}}/>
+                            </Col>
+                            <Col md={6}>
+                                <p style={{textAlign: 'center', marginLeft: '20px', marginRight: '20px', marginBottom: '37px'}}>
+                                    Напольные часы появились в 17 веке и сочетали в себе настенные и башенные часы, поскольку их корпус был выполнен в виде 
+                                    высокого шкафчика, который утолщался кверху – там находился циферблат, а весь механизм и самое главное маятник были закрыты стенками.
+                                </p>
+                                <a href='/shop?gender=9'>
+                                    <img class='scalecat' src={ go } alt="Купить напольные часы в Алматы" 
+                                        style={{width: '10rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} 
+                                    />
+                                </a>
+                                <p style={{visibility: 'hidden'}}>___</p>
+                            </Col>
+                        </Row>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <Row>
+                            <Col md={6}>
+                                <img src={ globo } alt="Купить интерьерные глобусы в Алматы" style={{width: '98%', marginBottom: '3%'}}/>
+                            </Col>
+                            <Col md={6}>
+                                <p style={{textAlign: 'center', marginLeft: '20px', marginRight: '20px', marginBottom: '84px'}}>
+                                    Настольный бар-глобус – это уютное хранилище для различных напитков в виде уменьшенной модели Земли, которую можно разместить на столе. 
+                                    Красивое изделие со своим «внутренним миром».
+                                </p>
+                                <a href='/shop?brend=70'>
+                                    <img class='scalecat' src={ go } alt="Купить интерьерные глобусы в Алматы" 
+                                        style={{width: '10rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} 
+                                    />
+                                </a>
+                                <p style={{visibility: 'hidden'}}>___</p>
+                            </Col>
+                        </Row>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <Row>
+                            <Col md={6}>
+                                <img src={ figura } alt="Купить ножи Victorinox в Алматы" style={{width: '98%', marginBottom: '3%'}}/>
+                            </Col>
+                            <Col md={6}>
+                                <p style={{textAlign: 'center', marginLeft: '20px', marginRight: '20px', marginBottom: '7px'}}>
+                                    Дизайн вашего дома – это отражение индивидуальности внутреннего мира его хозяина. Сделать его поистине уникальным помогут статуэтки 
+                                    для интерьера, многообразие которых настолько велико, что позволит украсить пространство с неподражаемым изыском.
+                                </p>
+                                <br></br><p></p>
+                                <a href='/shop?brend=68'>
                                     <img class='scalecat' src={ go } alt="Купить ножи Victorinox в Алматы" 
                                         style={{width: '10rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} 
                                     />
@@ -243,15 +203,15 @@ export default function CarouselBox() {
                     <Carousel.Item>
                         <Row>
                             <Col md={6}>
-                                <a href='/shop?brand=17'><img src={ parker } alt="Купить перьевые ручки Parker в Алматы" style={{width: '98%', marginBottom: '3%'}}/></a>
+                                <img src={ kaspi } alt="Купить перьевые ручки Parker в Алматы" style={{width: '98%', marginBottom: '3%'}}/>
                             </Col>
                             <Col md={6}>
-                                <img src={ parker2 } alt="Купить перьевые ручки Parker в Алматы" style={{width: '210px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
                                 <p style={{textAlign: 'center', marginLeft: '20px', marginRight: '20px', marginBottom: '45px'}}>
-                                    С 1888 года «PARKER» поддерживает свою репутацию пионера в создании совершенных ручек – как по технологии изготовления, так и по конструктивному решению. 
-                                    Сохраняя дух стремления к созданию более надежных перьевых ручек
+                                    Магазин на Kaspi.kz — это уникальный сервис, с помощью которого покупатели приобретают их по лучшим ценам.
+                                    В Нашем Магазине на Kaspi.kz представлен широкий ассортимент товаров: для дома, наруных часов, спорта и туризма.
                                 </p>
-                                <a href='/parker'>
+                                <br></br>
+                                <a href='https://kaspi.kz/shop/c/wrist%20watches/?q=%3Acategory%3AWrist%20watches%3AallMerchants%3AGifttime%3AavailableInZones%3AMagnum_ZONE1&sort=relevance&sc=' target='_blank'>
                                     <img class='scalecat' src={ go } alt="Купить перьевые ручки Parker в Алматы" 
                                         style={{width: '10rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} 
                                     />
@@ -263,16 +223,16 @@ export default function CarouselBox() {
                     <Carousel.Item>
                         <Row>
                             <Col md={6}>
-                                <a href='/shop?brand=17'><img src={ waterman } alt="Купить перьевые ручки Waterman в Алматы" style={{width: '98%', marginBottom: '3%'}}/></a>
+                                <img src={ kos } alt="Купить швейцарские комиссионые часы в Алматы" style={{width: '98%', marginBottom: '3%'}}/>
                             </Col>
                             <Col md={6}>
-                                <img src={ waterman2 } alt="Купить перьевые ручки Waterman в Алматы" style={{width: '200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
+                                <br></br>
                                 <p style={{textAlign: 'center', marginLeft: '20px', marginRight: '20px', marginBottom: '45px'}}>
-                                    Умело сделанная во Франции, каждая ручка Waterman вдохновенно вторит гению основателя Waterman, Льюиса Эдсона, изобретателя первой надежной авторучки в 1883. Перьевые 
-                                    ручки Waterman продолжают вызывать интерес у состоятельных людей.
+                                    В Нашем комиссионом магазине на представлен широкий ассортимент наручных швейцарских часов таких брендов: Certina, Tissot, Hamilton, Invicta.
                                 </p>
-                                <a href='/waterman'>
-                                    <img class='scalecat' src={ go } alt="Купить перьевые ручки часы Waterman в Алматы" 
+                                <br></br><br></br>
+                                <a href='/shop?brand=22'>
+                                    <img class='scalecat' src={ go } alt="Купить швейцарские комиссионые часы в Алматы" 
                                         style={{width: '10rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} 
                                     />
                                 </a>
