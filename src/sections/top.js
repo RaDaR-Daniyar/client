@@ -61,6 +61,22 @@ const Top = () => {
                             )}
                         </UIDropdown>
                     </div>
+                    <div style={{zIndex: 100}}>
+                        <UIDropdown
+                            render={(toggleShow) => <UserCicle className='link' onClick={toggleShow} style={{paddingTop: '10px', paddingBottom: '10px', fontSize: '0.8em', paddingLeft: '2em'}}>ИНТЕРЬЕР</UserCicle>}
+                        >
+                            {(toggleShow) => (
+                                <Card style={{marginTop: '14px', width: '190px'}}>
+                                    <ListGroup style={{width:'130px', background: "white"}}>
+                                        <Link style={{paddingLeft: '2px', fontSize: '0.8em'}} to="/figura" className="link" target='_parent'>СТАТУЭТКИ</Link>
+                                        <Link style={{paddingLeft: '2px', fontSize: '0.8em'}} to="/pol" className="link" target='_parent'>НАПОЛЬНЫЕ ЧАСЫ</Link>
+                                        <Link style={{paddingLeft: '2px', fontSize: '0.8em'}} to="/stena" className="link" target='_parent'>НАСТЕННЫЕ ЧАСЫ</Link>
+                                        <Link style={{paddingLeft: '2px', fontSize: '0.8em'}} to="/globus" className="link" target='_parent'>ИНТЕРЬЕРНЫЕ ГЛОБУСЫ</Link>
+                                    </ListGroup>
+                                </Card>
+                            )}
+                        </UIDropdown>
+                    </div>
                     <Link to="/about" className="link" style={{paddingLeft: '2em', paddingRight: '2em', paddingTop: '10px', paddingBottom: '10px', fontSize: '0.8em'}}>О МАГАЗИНЕ</Link>
                     <Link to="/delivery" className="link" style={{paddingRight: '2em', paddingTop: '10px', paddingBottom: '10px', fontSize: '0.8em'}}>ДОСТАВКА И ОПЛАТА</Link>
                     <Link to="/service" className="link" style={{paddingRight: '2em', paddingTop: '10px', paddingBottom: '10px', fontSize: '0.8em'}}>СЕРВИС-ЦЕНТР</Link>

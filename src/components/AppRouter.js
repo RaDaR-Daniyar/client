@@ -14,7 +14,7 @@ import NotFound from '../pages/NotFound.js'
 import ak from '../pages/ak.js'
 import ck from '../pages/ck.js'
 import lamy from '../pages/lamy.js'
-import citizen from '../pages/citizen.js'
+import citizen from '../pages/citizen.js' 
 import diesel from '../pages/diesel.js'
 import orient from '../pages/orient.js'
 import swatch from '../pages/swatch.js'
@@ -26,6 +26,10 @@ import tissot from '../pages/tissot.js'
 import hamilton from '../pages/hamilton.js'
 import invicta from '../pages/invicta.js'
 import casio from '../pages/casio.js'
+import figura from '../pages/figura.js'
+import pol from '../pages/pol.js'
+import stena from '../pages/stena.js'
+import globus from '../pages/globus.js'
 import User from '../pages/User.js'
 import UserOrders from '../pages/UserOrders.js'
 import UserOrder from '../pages/UserOrder.js'
@@ -68,6 +72,10 @@ const publicRoutes = [
     {path: '/hamilton', Component: hamilton},
     {path: '/invicta', Component: invicta},
     {path: '/casio', Component: casio},
+    {path: '/figura', Component: figura},
+    {path: '/pol', Component: pol},
+    {path: '/stena', Component: stena},
+    {path: '/globus', Component: globus},
     {path: '/product/:id', Component: Product},
     {path: '/basket', Component: Basket},
     {path: '/checkout', Component: Checkout},

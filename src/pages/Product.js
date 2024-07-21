@@ -86,7 +86,7 @@ const Product = () => {
     ...propsToDisplay
   ];
 
-  const titleNameList = ['Victorinox', 'Parker', 'Waterman', 'Lamy'];
+  const titleNameList = ['Victorinox', 'Parker', 'Waterman', 'Lamy', 'Jufeng', 'Triumph', 'Lefard', 'Guillermo Forchino', 'Veronese', 'Arora Design'];
   const brendName = product.brand.name;
 
   return (
