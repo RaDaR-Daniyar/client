@@ -71,9 +71,9 @@ const NavBar = observer(() => {
                                     <ListGroup style={{width:'180px', background: "white"}}>
                                         <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?gender=9" className="link" target='_parent'>НАПОЛЬНЕ ЧАСЫ</NavLink>
                                         <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?gender=10" className="link" target='_parent'>НАСТЕННЫЕ ЧАСЫ</NavLink>
-                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?brand=11" className="link" target='_parent'>НАСТОЛЬНЫЕ ЧАСЫ</NavLink>
-                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?gender=9" className="link" target='_parent'>СТАТУЭТКИ</NavLink>
-                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?brand=11" className="link" target='_parent'>ИНТЕРЬЕРНЫЕ ГЛОБУСЫ</NavLink>
+                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?gender=11" className="link" target='_parent'>НАСТОЛЬНЫЕ ЧАСЫ</NavLink>
+                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?brend=68" className="link" target='_parent'>СТАТУЭТКИ</NavLink>
+                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?brend=70" className="link" target='_parent'>ИНТЕРЬЕРНЫЕ ГЛОБУСЫ</NavLink>
                                     </ListGroup>
                                 </Card>
                             )}
