@@ -45,7 +45,7 @@ const Citizen = () => {
                     </Col>
                 </Row>
                 <a href='/shop?brand=3'>
-                    <img class='scalecat' src={ go } alt="Купить наручные часы Anne Kleinx в Алматы" 
+                    <img class='scalecat' src={ go } alt="Купить наручные часы Citizen в Алматы" 
                         style={{width: '12em', display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: '20px' }} 
                     />
                 </a>

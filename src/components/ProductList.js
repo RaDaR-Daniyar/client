@@ -119,7 +119,7 @@ const ProductList = observer(() => {
                     часы в Алматы, купить наручные часы, наручные часы, часы, часы Anne Klein в Алматы, часы Calvin Klein в Алматы, часы Orinet в Алматы,
                     часы Citizen в Алматы, часы Diesel в Алматы, часы Swatch в Алматы, купить мужские часы, купить женские часы" />
             </Helmet>
-            <Row className="mb-3">
+            <Row className="mb-1">
                 {catalog.products.length ? (
                     catalog.products.map((item) => (
                         <ProductItem key={`${item.id}_${catalog.page}`} data={item} />

@@ -15,7 +15,7 @@ const SearchField = ({ onSearch }) => {
     };
 
     return (
-        <Form onSubmit={handleSubmit} className="d-flex justify-content-between mt-3">
+        <Form onSubmit={handleSubmit} className="d-flex justify-content-between mt-1">
         <input
             class="input"
             type="text"

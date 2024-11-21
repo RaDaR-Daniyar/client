@@ -71,7 +71,7 @@ const Top = () => {
                                         <Link style={{paddingLeft: '2px', fontSize: '0.8em'}} to="/figura" className="link" target='_parent'>СТАТУЭТКИ</Link>
                                         <Link style={{paddingLeft: '2px', fontSize: '0.8em'}} to="/pol" className="link" target='_parent'>НАПОЛЬНЫЕ ЧАСЫ</Link>
                                         <Link style={{paddingLeft: '2px', fontSize: '0.8em'}} to="/stena" className="link" target='_parent'>НАСТЕННЫЕ ЧАСЫ</Link>
-                                        <Link style={{paddingLeft: '2px', fontSize: '0.8em'}} to="/globus" className="link" target='_parent'>ИНТЕРЬЕРНЫЕ ГЛОБУСЫ</Link>
+                                        <Link style={{paddingLeft: '2px', fontSize: '0.8em'}} to="/globus" className="link" target='_parent'>ГЛОБУС-БАРЫ</Link>
                                     </ListGroup>
                                 </Card>
                             )}

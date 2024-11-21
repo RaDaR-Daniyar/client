@@ -18,32 +18,46 @@ const Header = observer(() => {
 
     return (
         <Container style={{ position: 'relative'}}>
-            <MobileMenu />
-            <Top />
-            <Row className="mt-4" style={{paddingTop: '22px'}}>
-                <Nav  className="ml-auto">
-                    <Col style={{textAlign: 'center'}}>
-                    <NavLink to="/" className="navbar-brand">
-                        <img  src = { logo } alt = "Купить аксессуары в Алматы" />
-                    </NavLink>
-                    </Col>
-                    {user.isAuth ? (
-                        <Link to="/user" className="nav-link" style={{color: 'black',  padding: '0.5rem 0.2rem' }}><img  src = { login } alt = "Войти" style={{marginTop: -5}} /></Link>
-                    ) : (
-                        <>
-                            <Link to="/login" className="nav-link" style={{color: 'black',  padding: '0.5rem 0.2rem'}}><img  src = { login } alt = "Войти" style={{marginTop: -5}} /></Link>
-                        </>
-                    )} {user.isAdmin && (
-                        <Link to="/admin" className="nav-link" style={{color: 'black',  padding: '0.5rem 0.2rem'}}><img  src = { panel } alt = "Панель управления" style={{marginTop: -5}} /></Link>
-                    )}
-                    <Link to="/basket" className="nav-link basket" style={{color: 'black',  padding: '0.5rem 0.2rem', position: 'relative'}}>
-                        <img  src = { cart } alt = "Корзина" style={{marginTop: -5}} />
-                        {!!basket.count && <span>{basket.count}</span>}
-                    </Link>
-                </Nav>
-            </Row>
-            <NavBar className='mt-4' />
+            <div className='hide-on-mobile'>
+                <Row style={{paddingTop: '22px'}}>
+                    <Nav>
+                        <Col style={{textAlign: 'left'}}>
+                            <NavLink to="https://aksessuary.kz" className="navbar-brand">
+                                <a style={{color: 'white'}}>_<img  src = { logo } alt = "Купить аксессуары в Алматы" width={'200rem'} /></a>
+                            </NavLink>
+                        </Col>
+                        {user.isAuth ? (
+                            <Link to="/user" className="nav-link" style={{color: 'black',  padding: '0.5rem 0.2rem' }}><img  src = { login } alt = "Войти" style={{marginTop: -5}} /></Link>
+                        ) : (
+                            <>
+                                <Link to="/login" className="nav-link" style={{color: 'black',  padding: '0.5rem 0.2rem'}}><img  src = { login } alt = "Войти" style={{marginTop: -5}} /></Link>
+                            </>
+                        )} {user.isAdmin && (
+                            <Link to="/admin" className="nav-link" style={{color: 'black',  padding: '0.5rem 0.2rem'}}><img  src = { panel } alt = "Панель управления" style={{marginTop: -5}} /></Link>
+                        )}
+                        <Link to="/basket" className="nav-link basket" style={{color: 'black',  padding: '0.5rem 0.2rem', position: 'relative'}}>
+                            <img  src = { cart } alt = "Корзина" style={{marginTop: -5}} />
+                            {!!basket.count && <span>{basket.count}</span>}
+                        </Link>
+                    </Nav>
+                </Row>
+                <NavBar />
+            </div>
+            <div className='show-on-mobile'>
+                <Row className="mt-4" style={{paddingTop: '0px'}}>
+                    <Nav>
+                        <Col>
+                            <NavLink to="/">
+                                <p style={{color: 'white'}}>__<img  src = { logo } alt = "Купить аксессуары в Алматы" width={'200rem'}/></p>
+                            </NavLink>
+                        </Col>
+                        <MobileMenu />
+                    </Nav>
+                </Row>
+                <NavBar />
+            </div>
         </Container>
+        
     )
 })
 

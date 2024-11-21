@@ -19,10 +19,10 @@ const UserCicle = styled.div`
 
 const NavBar = observer(() => {
     return (
-        <Card className="mb-4" style={{marginTop: 10, borderColor: '#1200ba'}}>
+        <Card className="mb-1" style={{borderColor: '#1200ba'}}>
             <div class="hide-on-mobile">
-                <Navbar bg="white" className='d-flex justify-content-center'>
-                    <Nav className="ml-auto">
+                <Navbar bg="white" className='d-flex justify-content-center' style={{height: '30px', marginTop: '5px'}}>
+                    <Nav>
                         <NavLink to="/shop" className="link" style={{
                                 paddingRight: '2.5em', 
                                 paddingTop: '10px', 
@@ -73,7 +73,7 @@ const NavBar = observer(() => {
                                         <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?gender=10" className="link" target='_parent'>НАСТЕННЫЕ ЧАСЫ</NavLink>
                                         <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?gender=11" className="link" target='_parent'>НАСТОЛЬНЫЕ ЧАСЫ</NavLink>
                                         <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?brend=68" className="link" target='_parent'>СТАТУЭТКИ</NavLink>
-                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?brend=70" className="link" target='_parent'>ИНТЕРЬЕРНЫЕ ГЛОБУСЫ</NavLink>
+                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?brend=70" className="link" target='_parent'>ГЛОБУСЫ-БАРЫ</NavLink>
                                     </ListGroup>
                                 </Card>
                             )}

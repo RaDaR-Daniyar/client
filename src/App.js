@@ -42,7 +42,6 @@ const App = observer(() => {
             <Header />
             <Aside />
             <AppRouter />
-            <Footer />
         </BrowserRouter>
     )
 })
