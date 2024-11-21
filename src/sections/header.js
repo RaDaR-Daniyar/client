@@ -19,11 +19,11 @@ const Header = observer(() => {
     return (
         <Container style={{ position: 'relative'}}>
             <div className='hide-on-mobile'>
-                <Row style={{paddingTop: '22px'}}>
+                <Row style={{paddingTop: '10px'}}>
                     <Nav>
                         <Col style={{textAlign: 'left'}}>
                             <NavLink to="https://aksessuary.kz" className="navbar-brand">
-                                <a style={{color: 'white'}}>_<img  src = { logo } alt = "Купить аксессуары в Алматы" width={'200rem'} /></a>
+                                <a style={{color: 'white'}}>__<img  src = { logo } alt = "Купить аксессуары в Алматы" width={'200rem'} /></a>
                             </NavLink>
                         </Col>
                         {user.isAuth ? (
@@ -47,7 +47,7 @@ const Header = observer(() => {
                 <Row className="mt-4" style={{paddingTop: '0px'}}>
                     <Nav>
                         <Col>
-                            <NavLink to="/">
+                            <NavLink to="https://aksessuary.kz">
                                 <p style={{color: 'white'}}>__<img  src = { logo } alt = "Купить аксессуары в Алматы" width={'200rem'}/></p>
                             </NavLink>
                         </Col>

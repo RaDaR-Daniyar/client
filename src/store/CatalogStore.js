@@ -27,7 +27,7 @@ class CatalogStore {
     _withSale = null;
     _page = 1;
     _count = 0;
-    _limit = 16;
+    _limit = 8;
     _searchTerm = "";
 	_minPrice = 0;
 	_maxPrice = 999999999999999;

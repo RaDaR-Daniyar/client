@@ -16,7 +16,7 @@ const MobileMenu = () => {
                     <span />
                 </div>
             </nav>
-            <Menu active={menuActive} setActive={setMenuActive} header={"Меню"} items={items} />
+            <Menu active={menuActive} setActive={setMenuActive} header={""} items={items} />
         </div>
     )
 }

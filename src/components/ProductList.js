@@ -144,7 +144,9 @@ const ProductList = observer(() => {
                             height: '37px',
                             padding: ' 0 20px',
                             borderRadius: '5px',
-                            marginBottom: '15px'
+                            marginBottom: '55px',
+                            borderColor: '#1200ba',
+                            backgroundColor: 'white'
                         }}
                         onClick={handleNextPage}
                     >

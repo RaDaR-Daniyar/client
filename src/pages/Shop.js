@@ -418,9 +418,11 @@ const Shop = observer(() => {
                         <div className='mr-3'>
                         <button
                             style={{
-                                width: '200px',
+                                width: '170px',
                                 height: '37px',
-                                borderRadius: '5px'
+                                borderRadius: '5px',
+                                borderColor: '#1200ba',
+                                backgroundColor: 'white'
                             }}
                             onClick={() => {setIsOpenFilters(true)}}
                             ref={filterOpenButtonRef}
@@ -429,7 +431,7 @@ const Shop = observer(() => {
                         </button>
                         </div>
 
-                        <div style={{marginTop: '-1rem', marginRight: '-60px', marginLeft:"5px"}}>
+                        <div style={{marginTop: '-0.22rem', marginRight: '-60px', marginLeft:"11x"}}>
                             <ProductsSort status='withoutName' setSortOrder={setSortOrder}/>
                         </div>
                     </Col>
@@ -489,17 +491,17 @@ const Shop = observer(() => {
                                 >+</button>
                                 <div style={{marginRight: '10px'}}>{maxPrice ? <PriceSlider maxPrice={maxPrice} /> : null}</div>
                                 <div style={{marginRight: '10px'}}>{brandsFetching ? <Spinner animation="border" /> : <BrandBar />}</div>
-                                <div className="mt-3" style={{marginRight: '10px'}}>{mehanizmsFetching ? <Spinner animation="border" /> : <MehanizmBar />}</div>
-                                <div className="mt-3" style={{marginRight: '10px'}}>{gendersFetching ? <Spinner animation="border" /> : <GenderBar />}</div>
-                                <div className="mt-3" style={{marginRight: '10px'}}>{shapesFetching ? <Spinner animation="border" /> : <ShapeBar />}</div>
-                                <div className="mt-3" style={{marginRight: '10px'}}>{materialsFetching ? <Spinner animation="border" /> : <MaterialBar />}</div>
-                                <div className="mt-3" style={{marginRight: '10px'}}>{glassesFetching ? <Spinner animation="border" /> : <GlassBar />}</div>
-                                <div className="mt-3" style={{marginRight: '10px'}}>{strapsFetching ? <Spinner animation="border" /> : <StrapBar />}</div>
-                                <div className="mt-3" style={{marginRight: '10px'}}>{powersFetching ? <Spinner animation="border" /> : <PowerBar />}</div>
-                                <div className="mt-3" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <WaterBar />}</div>
-                                <div className="mt-3" style={{ marginRight: '10px' }}>{brendsFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
+                                <div className="mt-1" style={{marginRight: '10px'}}>{mehanizmsFetching ? <Spinner animation="border" /> : <MehanizmBar />}</div>
+                                <div className="mt-1" style={{marginRight: '10px'}}>{gendersFetching ? <Spinner animation="border" /> : <GenderBar />}</div>
+                                <div className="mt-1" style={{marginRight: '10px'}}>{shapesFetching ? <Spinner animation="border" /> : <ShapeBar />}</div>
+                                <div className="mt-1" style={{marginRight: '10px'}}>{materialsFetching ? <Spinner animation="border" /> : <MaterialBar />}</div>
+                                <div className="mt-1" style={{marginRight: '10px'}}>{glassesFetching ? <Spinner animation="border" /> : <GlassBar />}</div>
+                                <div className="mt-1" style={{marginRight: '10px'}}>{strapsFetching ? <Spinner animation="border" /> : <StrapBar />}</div>
+                                <div className="mt-1" style={{marginRight: '10px'}}>{powersFetching ? <Spinner animation="border" /> : <PowerBar />}</div>
+                                <div className="mt-1" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <WaterBar />}</div>
+                                <div className="mt-1" style={{ marginRight: '10px' }}>{brendsFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
                                 {/* <div className="mt-3" style={{ marginRight: '10px' }}><SaleBar /></div> */}
-                                <Card className='mt-3' style={{height: '40px', marginRight: '10px'}}>
+                                <Card className='mt-1' style={{height: '40px', marginRight: '10px'}}>
                                     <a href='/shop' style={{fontSize: '18px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
                                 </Card>
                         </div>

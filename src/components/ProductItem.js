@@ -6,7 +6,7 @@ const ProductItem = ({ data }) => {
     return (
         <Col xl={3} lg={4} sm={3} style={{marginBottom: 10}} >
             <Link to={`/product/${data.id}`} style={{ textDecoration: 'none' }}>
-                <Card style={{width: '100%', height: '370px', objectFit: 'contain', cursor: 'pointer', position: 'relative'}}>
+                <Card style={{width: '100%', height: '340px', objectFit: 'contain', cursor: 'pointer', position: 'relative'}}>
                     {data.finId ? <div style={{
                         right: '5px',
                         padding: '0px 7px',
@@ -21,7 +21,7 @@ const ProductItem = ({ data }) => {
                         zIndex: '10'
                     }}>-{data.finId}%</div> : ''}
                     {data.image ? (
-                        <Card.Img class='scale' style={{width: '100%', height: '300px', marginLeft: 'auto', marginRight: 'auto', objectFit: 'contain'}} variant="top" src={process.env.REACT_APP_IMG_URL + data.image} />
+                        <Card.Img class='scale' style={{width: '100%', height: '270px', marginLeft: 'auto', marginRight: 'auto', objectFit: 'contain'}} variant="top" src={process.env.REACT_APP_IMG_URL + data.image} />
                     ) : (
                         <Card.Img class='scale' variant="top" src={process.env.REACT_APP_IMG_URL + data.image} />
                     )}

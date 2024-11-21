@@ -7,7 +7,7 @@ const ProductsSort = ({ setSortOrder, status }) => {
           {!status && <p style={{marginTop: '4px', marginLeft: '15px'}}>Сортировать:</p>}
           <select
                 onChange={(e) => setSortOrder(e.target.value)}
-                style={{ width: "70%", height: 37, flexDirection: 'center' , borderRadius: '5px' }}
+                style={{ width: "70%", height: 37, flexDirection: 'center' , borderRadius: '5px', marginLeft: '15px', borderColor: '#1200ba' }}
             >
             <option value="">По умолчанию</option>
             <option value="less">По возрастанию цены</option>
