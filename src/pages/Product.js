@@ -98,15 +98,15 @@ const Product = () => {
                     : <title>Купить {product.gender.name || ''} {product.name} в Алматы</title>
             }
         </Helmet>
-        <Card className="mt-4" style={{ padding: "2%", borderColor: '#1200ba' }}>
+        <Card className="mt-1" style={{ padding: "1%", borderColor: '#1200ba' }}>
             <Row>
                 <Col lg={6} style={{marginRight: '30px'}}>
                     <div class='hide-on-mobile'>
                         {product.image ? (
                         <Image
-                            height={640}
+                            height={540}
                             src={process.env.REACT_APP_IMG_URL + product.image}
-                            style={{ marginTop: 23, display: 'block', margin: 'auto', paddingTop: '5%' }}
+                            style={{ display: 'block', margin: 'auto' }}
                         />
                         ) : (
                         <Image width={300} src="http://via.placeholder.com/300" />
@@ -116,43 +116,43 @@ const Product = () => {
                         {product.image ? (
                             <Image width={'250rem'}
                             src={process.env.REACT_APP_IMG_URL + product.image}
-                            style={{ marginTop: 23, display: 'block', margin: 'auto', paddingTop: '5%' }}
+                            style={{ marginTop: 10, display: 'block', margin: 'auto', paddingTop: '5%' }}
                         />
                         ) : (
                             <Image width={350} src="http://via.placeholder.com/300" />
                         )}
                     </div>
                 </Col>
-                <Col lg={5} style={{ textAlign: "left", marginTop: 20 }}>
-                      <h3>{product.name} {product.finId ? <span style={{ border: '2px solid #0d6efd', marginLeft: '15px', borderRadius: '6px', fontSize: '24px', }}> -{product.finId}%</span>:''}</h3>
+                <Col lg={5} style={{ textAlign: "left"}}>
+                      <h3 style={{fontFamily: 'Book Antiqua', fontSize: '24px', fontWeight: 'bold', color: '#1200ba'}}>{product.name} {product.finId ? <span> -{product.finId}%</span>:''}</h3>
 
-                      <h3>{product.price} тг.
+                      <h3 style={{fontFamily: 'Book Antiqua', fontSize: '24px', fontWeight: 'bold', color: '#1200ba'}}>{product.price} тг.
                           {product.finId ?
                               <>
                                   <span style={{fontSize: '20px', textDecoration: 'line-through', margin: '0 10px', color:'rgba(0, 0, 0, 0.176)'}}>{Math.ceil(product.price * 100 / (100 - product.finId))} тг.</span>
                               </> : ''
                           }
                       </h3>
-                    <p>
+                    <a>
                         <img src={planet} alt="map" style={{ width: "18px" }} />{" "} Международная гарантия
                     <br />
                         <img src={box} alt="map" style={{ width: "18px" }} /> Бесплатная доставка
-                    </p>
-                    <Button style={{marginRight:"10px", marginTop:"5px"}} onClick={() => handleClick(product.id)}>
+                    </a><br />
+                    <Button style={{marginRight:"10px", marginTop: '10px'}} onClick={() => handleClick(product.id)}>
                         Добавить в корзину
                     </Button>
-                    {product.silka? <a className="btn" style={{backgroundColor:"red", color:"white", marginTop:'5px'}} href={product.silka}>
+                    {product.silka? <a className="btn" style={{backgroundColor:"red", color:"white", marginTop:'10px'}} href={product.silka}>
                         Купить на Kaspi
                     </a>:<></>}
-                    <div style={{ marginTop: 40 }}>
+                    <div style={{ marginTop: 10, fontFamily: 'Book Antiqua' }}>
                         {propertiesToDisplay.map((property) => renderProperty(property.label, property.value) )}
                     </div>
                 </Col>
             </Row>
         </Card>
-        <Card className="mt-4" style={{ padding: "1%", borderColor: '#1200ba' }}>
+        <Card className="mt-1" style={{ padding: "1%", borderColor: '#1200ba' }}>
             <div>
-                <h4 className="mb-4">Сопутствующие товары:</h4>
+                
                 <Swiper
                     spaceBetween={20}
                     slidesPerView={1}
@@ -196,7 +196,7 @@ const Product = () => {
                                 <Card
                                 style={{
                                     width: 204,
-                                    height: 250,
+                                    height: 220,
                                     objectFit: "contain",
                                     cursor: "pointer",
                                 }}
@@ -207,7 +207,7 @@ const Product = () => {
                                             className="mt-1"
                                             style={{
                                             width: 198,
-                                            height: 240,
+                                            height: 210,
                                             marginLeft: 3,
                                             objectFit: "contain",
                                             }}
