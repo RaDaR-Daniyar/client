@@ -22,7 +22,7 @@ const Header = observer(() => {
                 <Row style={{paddingTop: '10px'}}>
                     <Nav>
                         <Col style={{textAlign: 'left'}}>
-                            <NavLink to="https://aksessuary.kz" className="navbar-brand">
+                            <NavLink to="/" className="navbar-brand" target='_parent'>
                                 <a style={{color: 'white'}}>__<img  src = { logo } alt = "Купить аксессуары в Алматы" width={'200rem'} /></a>
                             </NavLink>
                         </Col>
@@ -47,7 +47,7 @@ const Header = observer(() => {
                 <Row className="mt-4" style={{paddingTop: '0px'}}>
                     <Nav>
                         <Col>
-                            <NavLink to="https://aksessuary.kz">
+                            <NavLink to="/" target='_parent'>
                                 <p style={{color: 'white'}}>__<img  src = { logo } alt = "Купить аксессуары в Алматы" width={'200rem'}/></p>
                             </NavLink>
                         </Col>

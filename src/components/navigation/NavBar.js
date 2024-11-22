@@ -38,21 +38,21 @@ const NavBar = observer(() => {
                             {(toggleShow) => (
                                 <Card style={{marginTop: '14px', width: '160px'}}>
                                     <ListGroup style={{width:'130px', background: "white"}}>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=2" className="link" target='_parent'>ANNE KLEIN</NavLink>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=4" className="link" target='_parent'>CALVIN KLEIN</NavLink>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=11" className="link" target='_parent'>SWATCH</NavLink>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=19" className="link" target='_parent'>CASIO</NavLink>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=3" className="link" target='_parent'>CITIZEN</NavLink>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=9" className="link" target='_parent'>ORIENT</NavLink>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=5" className="link" target='_parent'>DIESEL</NavLink>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=17" className="link" target='_parent'>PARKER</NavLink>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=16" className="link" target='_parent'>WATERMAN</NavLink>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=18" className="link" target='_parent'>LAMY</NavLink>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=15" className="link" target='_parent'>VICTORINOX</NavLink>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=22" className="link" target='_parent'>CERTINA</NavLink>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=20" className="link" target='_parent'>TISSOT</NavLink>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=21" className="link" target='_parent'>HAMILTON</NavLink>
-                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=23" className="link" target='_parent'>INVICTA</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=2" className="link">ANNE KLEIN</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=4" className="link">CALVIN KLEIN</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=11" className="link">SWATCH</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=19" className="link">CASIO</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=3" className="link">CITIZEN</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=9" className="link">ORIENT</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=5" className="link">DIESEL</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=17" className="link">PARKER</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=16" className="link">WATERMAN</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=18" className="link">LAMY</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=15" className="link">VICTORINOX</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=22" className="link">CERTINA</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=20" className="link">TISSOT</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=21" className="link">HAMILTON</NavLink>
+                                        <NavLink style={{paddingLeft: '10px', fontSize: '1em'}} to="/shop?brand=23" className="link">INVICTA</NavLink>
                                     </ListGroup>
                                 </Card>
                             )}
@@ -69,11 +69,11 @@ const NavBar = observer(() => {
                             {(toggleShow) => (
                                 <Card style={{marginTop: '14px', width: '190px'}}>
                                     <ListGroup style={{width:'180px', background: "white"}}>
-                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?gender=9" className="link" target='_parent'>НАПОЛЬНЕ ЧАСЫ</NavLink>
-                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?gender=10" className="link" target='_parent'>НАСТЕННЫЕ ЧАСЫ</NavLink>
-                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?gender=11" className="link" target='_parent'>НАСТОЛЬНЫЕ ЧАСЫ</NavLink>
-                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?brend=68" className="link" target='_parent'>СТАТУЭТКИ</NavLink>
-                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?brend=70" className="link" target='_parent'>ГЛОБУСЫ-БАРЫ</NavLink>
+                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?gender=9" className="link">НАПОЛЬНЕ ЧАСЫ</NavLink>
+                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?gender=10" className="link">НАСТЕННЫЕ ЧАСЫ</NavLink>
+                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?gender=11" className="link">НАСТОЛЬНЫЕ ЧАСЫ</NavLink>
+                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?brend=68" className="link">СТАТУЭТКИ</NavLink>
+                                        <NavLink style={{paddingLeft: '1px', fontSize: '1em'}} to="/shop?brend=70" className="link">ГЛОБУСЫ-БАРЫ</NavLink>
                                     </ListGroup>
                                 </Card>
                             )}
