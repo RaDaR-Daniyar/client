@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const ProductItem = ({ data }) => {
     return (
         <Col xl={3} lg={4} sm={3} style={{marginBottom: 10}} >
-            <Link to={`/shop.html/product/${data.id}`} style={{ textDecoration: 'none' }}>
+            <Link to={`/product/${data.id}`} style={{ textDecoration: 'none' }}>
                 <Card style={{width: '100%', height: '340px', objectFit: 'contain', cursor: 'pointer', position: 'relative'}}>
                     {data.finId ? <div style={{
                         right: '5px',
