@@ -101,10 +101,6 @@ const Shop = observer(() => {
     const mobileFiltersRef = useRef();
     const filterOpenButtonRef = useRef();
 
-    // THE SIZE OBSERVER
-
-    // We are not watching the "window",
-    // but the container.Due to problems with adaptivity
     const containerRef = useRef();
 
     const {0: width, 1: setWidth} = useState()
@@ -119,10 +115,7 @@ const Shop = observer(() => {
         window.addEventListener("resize", resizeWindow);
         return () => window.removeEventListener("resize", resizeWindow);
     });
-
-    // STATUS OF OPENING AND CLOSING FILTERS IN THE MOBILE VERSION
     const { 0: isOpenFilters, 1: setIsOpenFilters } = useState(false);
-    //
 
     useEffect(() => {
         async function getPrices() {
@@ -228,7 +221,6 @@ const Shop = observer(() => {
         }
     }, [location.search]);
 
-    // CHANGE PARAMS
     useEffect(() => {
         setProductsFetching(true);
         fetchAllProducts(
@@ -244,7 +236,7 @@ const Shop = observer(() => {
             catalog.power,
             catalog.water,
             catalog.brend,
-            1, // page (if change this params ==> show first page with this params)
+            1,
             catalog.limit,
             sortOrder,
             catalog.minPrice,
@@ -261,11 +253,10 @@ const Shop = observer(() => {
                 catalog.products = filtered;
             })
             .finally(() => setProductsFetching(false));
-            // on first page
             catalog.page = 1;
 
             navigate({
-                pathname: "/shop",
+                pathname: "/shop.html",
                 search: "?" + createSearchParams(searchParams),
             });
         }, [
@@ -287,7 +278,7 @@ const Shop = observer(() => {
         maxPrice,
         catalog.withSale,
     ]);
-    // CHANGE PAGE
+
     useEffect(() => {
 
         if (width > 767) {
@@ -335,8 +326,6 @@ const Shop = observer(() => {
         catalog.page,
     ])
 
-    // MOBILE FILTERS
-    // close the filters if you click not on them
     const closeFilters = (event) => {
 
         var path = event.composedPath() || event.path;
@@ -345,13 +334,13 @@ const Shop = observer(() => {
             setIsOpenFilters(false)
         }
     }
-    // the click observer
+
     useEffect(() => {
         document.body.addEventListener('click', closeFilters)
 
         return () => document.body.removeEventListener('click', closeFilters)
     }, [])
-    // blocking page scrolling
+
     useEffect(() => {
         if (isOpenFilters) {
             document.body.style.overflow = 'hidden';
@@ -403,7 +392,7 @@ const Shop = observer(() => {
                             <div className="mt-1" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
                             <div className="mt-1" style={{ marginRight: '10px' }}><SaleBar /></div>
                             <Card className='mt-1' style={{height: '40px', marginRight: '10px'}}>
-                                <a href='/shop' style={{fontSize: '14px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
+                                <a href='/shop.html' style={{fontSize: '14px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
                             </Card>
                         </Col>
                     }
@@ -502,7 +491,7 @@ const Shop = observer(() => {
                                 <div className="mt-1" style={{ marginRight: '10px' }}>{brendsFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
                                 {/* <div className="mt-3" style={{ marginRight: '10px' }}><SaleBar /></div> */}
                                 <Card className='mt-1' style={{height: '40px', marginRight: '10px'}}>
-                                    <a href='/shop' style={{fontSize: '18px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
+                                    <a href='/shop.html' style={{fontSize: '18px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
                                 </Card>
                         </div>
                         </div>

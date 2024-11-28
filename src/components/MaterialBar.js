@@ -28,7 +28,7 @@ const MaterialBar = observer(() => {
         if (catalog.brend) params.brend = catalog.brend
         if (catalog.page > 1) params.page = catalog.page
         navigate({
-            pathname: '/shop',
+            pathname: '/shop.html',
             search: '?' + createSearchParams(params),
         })
     }

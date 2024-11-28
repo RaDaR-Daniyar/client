@@ -127,7 +127,7 @@ var Aside = () => {
                 left: "10px",
             }}>
                 <div class="hover-image-scale" style={{position: 'relative', zIndex: '100', boxShadow: '0 0 20px rgb(18, 0, 186)'}}>
-                    <a href='/shop?gender=3'><img class="scalecategories"  src = { men } alt = "Мужские часы" style={{width: '255px'}} /></a>
+                    <a href='/shop.html?gender=3'><img class="scalecategories"  src = { men } alt = "Мужские часы" style={{width: '255px'}} /></a>
                     <span style={{position: 'absolute', bottom: 1, right: 1, fontWeight: 'bold', color: '#fff', fontSize: '18px', fontFamily: 'Georgia'}}>МУЖСКИЕ ЧАСЫ</span>
                 </div>
 
@@ -230,7 +230,7 @@ var Aside = () => {
                 right: "10px",
             }}>
                 <div class="hover-image-scale" style={{position: 'relative', zIndex: '100', boxShadow: '0 0 20px rgb(18, 0, 186)'}}>
-                    <a href='/shop?gender=2'><img class="scalecategories"  src = { women } alt = "Женские часы" style={{width: '255px'}} /></a>
+                    <a href='/shop.html?gender=2'><img class="scalecategories"  src = { women } alt = "Женские часы" style={{width: '255px'}} /></a>
                     <span style={{position: 'absolute', bottom: 1, right: 1, fontWeight: 'bold', color: '#fff', fontSize: '18px', fontFamily: 'Georgia'}}>ЖЕНСКИЕ ЧАСЫ</span>
                 </div>
 

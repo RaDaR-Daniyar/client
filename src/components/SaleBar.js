@@ -33,7 +33,7 @@ const SaleBar = observer(() => {
         if (catalog.page > 1) params.page = catalog.page
         if (catalog.sale) params.sale = true
         navigate({
-            pathname: '/shop',
+            pathname: '/shop.html',
             search: '?' + createSearchParams(params),
         });
 

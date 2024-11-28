@@ -20,7 +20,7 @@ const CategoryBar = observer(() => {
         if (catalog.mehanizm) params.mehanizm = catalog.mehanizm
         if (catalog.page > 1) params.page = catalog.page
         navigate({
-            pathname: '/shop',
+            pathname: '/shop.html',
             search: '?' + createSearchParams(params),
         })
     }
