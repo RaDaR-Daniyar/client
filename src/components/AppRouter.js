@@ -37,7 +37,7 @@ const publicRoutes = [
     {path: '/login', Component: Login},
     {path: '/signup', Component: Signup},
    
-    {path: '/shop.html/product/:id', Component: Product},
+    {path: '/product/:id', Component: Product},
     {path: '/basket', Component: Basket},
     {path: '/checkout', Component: Checkout},
 
