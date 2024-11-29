@@ -201,7 +201,7 @@ const Product = () => {
                                     cursor: "pointer",
                                 }}
                                 >
-                                    <Link to={`/product.html/${product.id}`}>
+                                    <Link to={`/shop.html/product/${product.id}`}>
                                         {product.image ? (
                                         <Card.Img
                                             className="mt-1"
