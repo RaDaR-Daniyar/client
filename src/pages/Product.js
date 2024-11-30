@@ -35,6 +35,8 @@ const Product = () => {
             || product.brand.name === "Waterman"
             || product.brand.name === "Parker"
             || product.brand.name === "Lamy"
+            || product.brand.name === "Jufeng"
+            || product.brand.name === "Guillermo Forchino"
         ) {
             fetchBrendProducts(id)
                 .then((data => setSameCollectionProducts(data)))
@@ -112,9 +114,9 @@ const Product = () => {
                         <Image width={300} src="http://via.placeholder.com/300" />
                         )}
                     </div>
-                    <div class='show-on-mobile' style={{height: '2500rem'}}>
+                    <div class='show-on-mobile'>
                         {product.image ? (
-                            <Image width={'250rem'}
+                            <Image width={'200rem'}
                             src={process.env.REACT_APP_IMG_URL + product.image}
                             style={{ marginTop: 10, display: 'block', margin: 'auto', paddingTop: '5%' }}
                         />
