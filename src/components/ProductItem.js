@@ -1,6 +1,7 @@
 import { Card, Col } from 'react-bootstrap'
 import './navigation/style.css'
 import { Link } from 'react-router-dom'
+<link href="https://fonts.googleapis.com/css?family=Book+Antiqua:300|Roboto" rel="stylesheet"></link>
 
 const ProductItem = ({ data }) => {
     return (
@@ -17,7 +18,7 @@ const ProductItem = ({ data }) => {
                         background: '#fff',
                         fontWeight: 'bold',
                         fontSize: '14px',
-                        fontFamily: 'Times New Roman',
+                        fontFamily: 'Book Antiqua',
                         zIndex: '10'
                     }}>-{data.finId}%</div> : ''}
                     {data.image ? (
