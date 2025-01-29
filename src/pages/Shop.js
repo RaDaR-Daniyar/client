@@ -424,11 +424,11 @@ const Shop = observer(() => {
                             <Col style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} md={3} className='mt-1'>
                                 <a href='/shop.html?brand=17'style={{marginRight: '0.2em'}}><img  src = { parker } alt = "Купить ручки parker в Алматы" height={'25em'}/></a>
                                 <a href='/shop.html?brand=16'style={{marginRight: '0.2em'}}><img  src = { waterman } alt = "Купить ручки waterman в Алматы" height={'25em'}/></a>
-                                <a href='/shop.html?brand=19'><img  src = { lamy } alt = "Купить ручки lamy в Алматы" height={'25em'}/></a>
+                                <a href='/shop.html?brand=18'><img  src = { lamy } alt = "Купить ручки lamy в Алматы" height={'25em'}/></a>
                             </Col>
-                            <Col style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} md={3} className='mt-1'>
-                                <a href='/shop.html?brand=17'style={{marginRight: '0.2em'}}><img  src = { victorinox } alt = "Купитьножи victorinox в Алматы" height={'25em'}/></a>
-                                <a href='/shop.html?brand=19'><img  src = { skidka } alt = "Купить ручки lamy в Алматы" height={'25em'}/></a>
+                            <Col style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '3px'}} md={3} className='mt-1'>
+                                <a href='/shop.html?brand=15'style={{marginRight: '0.2em'}}><img  src = { victorinox } alt = "Купитьножи victorinox в Алматы" height={'25em'}/></a>
+                                <a href='/shop.html?sale=true'><img  src = { skidka } alt = "Купить аксессуары со скидкой в Алматы" height={'25em'}/></a>
                             </Col>
                         </Row>
                     </div>
