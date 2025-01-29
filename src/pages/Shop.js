@@ -23,6 +23,18 @@ import PriceSlider from '../components/PriceSlider/PriceSlider.jsx';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
 import '../sections/style.css'
+import swatch from '../assets/button/swatch.png'
+import calvin from '../assets/button/calvin.png'
+import anne from '../assets/button/anne.png'
+import diesel from '../assets/button/diesel.png'
+import citizen from '../assets/button/citizen.png'
+import orient from '../assets/button/orient.png'
+import casio from '../assets/button/casio.png'
+import parker from '../assets/button/parker.png'
+import waterman from '../assets/button/waterman.png'
+import lamy from '../assets/button/lamy.png'
+import victorinox from '../assets/button/victorinox.png'
+import skidka from '../assets/button/skidka.png'
 
 const getSearchParams = (searchParams) => {
     let category = searchParams.get('category');
@@ -396,6 +408,30 @@ const Shop = observer(() => {
                             </Card>
                         </Col>
                     }
+                    <div class='show-on-mobile'>
+                        <Row>
+                            <Col style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} md={3}>
+                                <a href='/shop.html?brand=11'style={{marginRight: '0.2em'}}><img  src = { swatch } alt = "Купить часы swatch в Алматы" height={'25em'}/></a>
+                                <a href='/shop.html?brand=4'style={{marginRight: '0.2em'}}><img  src = { calvin } alt = "Купить часы calvin klein в Алматы" height={'25em'}/></a>
+                                <a href='/shop.html?brand=2'><img  src = { anne } alt = "Купить часы anne klein в Алматы" height={'25em'}/></a>
+                            </Col>
+                            <Col style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} md={3} className='mt-1'>
+                                <a href='/shop.html?brand=5'style={{marginRight: '0.2em'}}><img  src = { diesel } alt = "Купить часы diesel в Алматы" height={'25em'}/></a>
+                                <a href='/shop.html?brand=3'style={{marginRight: '0.2em'}}><img  src = { citizen } alt = "Купить часы citizen в Алматы" height={'25em'}/></a>
+                                <a href='/shop.html?brand=9'style={{marginRight: '0.2em'}}><img  src = { orient } alt = "Купить часы orient в Алматы" height={'25em'}/></a>
+                                <a href='/shop.html?brand=19'><img  src = { casio } alt = "Купить часы casio в Алматы" height={'25em'}/></a>
+                            </Col>
+                            <Col style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} md={3} className='mt-1'>
+                                <a href='/shop.html?brand=17'style={{marginRight: '0.2em'}}><img  src = { parker } alt = "Купить ручки parker в Алматы" height={'25em'}/></a>
+                                <a href='/shop.html?brand=16'style={{marginRight: '0.2em'}}><img  src = { waterman } alt = "Купить ручки waterman в Алматы" height={'25em'}/></a>
+                                <a href='/shop.html?brand=19'><img  src = { lamy } alt = "Купить ручки lamy в Алматы" height={'25em'}/></a>
+                            </Col>
+                            <Col style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} md={3} className='mt-1'>
+                                <a href='/shop.html?brand=17'style={{marginRight: '0.2em'}}><img  src = { victorinox } alt = "Купитьножи victorinox в Алматы" height={'25em'}/></a>
+                                <a href='/shop.html?brand=19'><img  src = { skidka } alt = "Купить ручки lamy в Алматы" height={'25em'}/></a>
+                            </Col>
+                        </Row>
+                    </div>
                     <Col md={9}>
                         <div style={{marginRight: '12px'}}>{productsFetching ? (<Spinner animation="border" />) : (<ProductList sortOrder={sortOrder} />)}</div>
                     </Col>
@@ -489,7 +525,7 @@ const Shop = observer(() => {
                                 <div className="mt-1" style={{marginRight: '10px'}}>{powersFetching ? <Spinner animation="border" /> : <PowerBar />}</div>
                                 <div className="mt-1" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <WaterBar />}</div>
                                 <div className="mt-1" style={{ marginRight: '10px' }}>{brendsFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
-                                {/* <div className="mt-3" style={{ marginRight: '10px' }}><SaleBar /></div> */}
+                                {<div className="mt-3" style={{ marginRight: '10px' }}><SaleBar /></div>}
                                 <Card className='mt-1' style={{height: '40px', marginRight: '10px'}}>
                                     <a href='/shop.html' style={{fontSize: '18px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
                                 </Card>
