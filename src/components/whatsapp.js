@@ -24,7 +24,7 @@ const Whatsapp = () => {
 			headerCaption="Online"
 			bodyBgColor="white"
 			chatPersonName="Поддержка"
-			chatMessage={<>Здравствуйте 👋 <br /><br /> Чем я согу Вам помочь?</>}
+			chatMessage={<>Здравствуйте 👋 <br /><br /> Чем я могу Вам помочь?</>}
 			footerBgColor="#1200ba"
 			placeholder="Type a message.."
 			btnBgColor="green"
