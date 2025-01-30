@@ -34,11 +34,11 @@ const BrandBar = observer(() => {
     }
 
     return (
-        <Form.Select aria-label="Label" value={catalog.brand} placeholder="Бренд" onChange={event => {
+        <Form.Select style={{fontFamily: 'BookAntiqua'}} aria-label="Label" value={catalog.brand} placeholder="Бренд" onChange={event => {
             handleClick(Number(event.target.value))
         }}>
-            <option>Бренд</option>
-            {catalog.brands.map(brand => <option selected={catalog.brand === brand.id} value={brand.id} key={brand.id}>{brand.name}</option>)}
+            <option style={{fontFamily: 'Book Antiqua'}}>Бренд</option>
+            {catalog.brands.map(brand => <option style={{fontFamily: 'Book Antiqua'}} selected={catalog.brand === brand.id} value={brand.id} key={brand.id}>{brand.name}</option>)}
         </Form.Select>
     )
 })

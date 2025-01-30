@@ -10,7 +10,7 @@ const MobileMenu = () => {
         {value:'Настольные часы', href:'/shop.html?gender=11'}, {value:'Глобус-бары', href:'/shop.html?brend=70'}, {value:'Статуэтки', href:'/shop.html?brend=68'}]
 
     return (
-        <div className="show-on-mobile">
+        <div className="show-on-mobile" style={{fontFamily: 'Book Antiqua'}}>
             <nav>
                 <div className="burger-btn" onClick={() => setMenuActive(!menuActive)}>
                     <span />

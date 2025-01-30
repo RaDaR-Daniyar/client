@@ -34,11 +34,11 @@ const MaterialBar = observer(() => {
     }
 
     return (
-        <Form.Select onChange={event => {
+        <Form.Select style={{fontFamily: 'BookAntiqua'}} onChange={event => {
             handleClick(Number(event.target.value))
         }}>
-            <option>Материал корпуса</option>
-            {catalog.materials.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}
+            <option style={{fontFamily: 'Book Antiqua'}}>Материал корпуса</option>
+            {catalog.materials.map(item => <option style={{fontFamily: 'Book Antiqua'}} key={item.id} value={item.id}>{item.name}</option>)}
         </Form.Select>
     )
 })

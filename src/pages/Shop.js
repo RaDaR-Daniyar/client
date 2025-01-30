@@ -447,7 +447,8 @@ const Shop = observer(() => {
                                 height: '37px',
                                 borderRadius: '5px',
                                 borderColor: '#1200ba',
-                                backgroundColor: 'white'
+                                backgroundColor: 'white',
+                                fontFamily: 'Book Antiqua'
                             }}
                             onClick={() => {setIsOpenFilters(true)}}
                             ref={filterOpenButtonRef}

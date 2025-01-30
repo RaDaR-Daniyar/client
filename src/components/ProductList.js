@@ -146,7 +146,8 @@ const ProductList = observer(() => {
                             borderRadius: '5px',
                             marginBottom: '55px',
                             borderColor: '#1200ba',
-                            backgroundColor: 'white'
+                            backgroundColor: 'white',
+                            fontFamily: "Book Antiqua"
                         }}
                         onClick={handleNextPage}
                     >

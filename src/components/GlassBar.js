@@ -34,11 +34,11 @@ const GlassBar = observer(() => {
     }
 
     return (
-        <Form.Select onChange={event => {
+        <Form.Select style={{fontFamily: 'BookAntiqua'}} onChange={event => {
             handleClick(Number(event.target.value))
         }}>
-            <option>Стекло</option>
-            {catalog.glasses.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}
+            <option style={{fontFamily: 'Book Antiqua'}}>Стекло</option>
+            {catalog.glasses.map(item => <option style={{fontFamily: 'Book Antiqua'}} key={item.id} value={item.id}>{item.name}</option>)}
         </Form.Select>
     )
 })
