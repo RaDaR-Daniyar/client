@@ -404,7 +404,14 @@ const Shop = observer(() => {
                             <div className="mt-1" style={{marginRight: '10px'}}>{watersFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
                             <div className="mt-1" style={{ marginRight: '10px' }}><SaleBar /></div>
                             <Card className='mt-1' style={{height: '40px', marginRight: '10px'}}>
-                                <a href='/shop.html' style={{fontSize: '14px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
+                                <a href='/shop.html' style={{
+                                    fontSize: '14px', 
+                                    color: 'black', 
+                                    textDecoration: 'none', 
+                                    marginTop: '5px', 
+                                    marginLeft: '12px', 
+                                    fontFamily: 'Book Antiqua'
+                                }}>Сбросить</a>
                             </Card>
                         </Col>
                     }
@@ -528,7 +535,14 @@ const Shop = observer(() => {
                                 <div className="mt-1" style={{ marginRight: '10px' }}>{brendsFetching ? <Spinner animation="border" /> : <BrendBar />}</div>
                                 {<div className="mt-3" style={{ marginRight: '10px' }}><SaleBar /></div>}
                                 <Card className='mt-1' style={{height: '40px', marginRight: '10px'}}>
-                                    <a href='/shop.html' style={{fontSize: '18px', color: 'black', textDecoration: 'none', marginTop: '5px', marginLeft: '12px'}}>Сбросить</a>
+                                    <a href='/shop.html' style={{
+                                        fontSize: '18px', 
+                                        color: 'black', 
+                                        textDecoration: 'none', 
+                                        marginTop: '5px', 
+                                        marginLeft: '12px', 
+                                        fontFamily: 'Book Antiqua'
+                                    }}>Сбросить</a>
                                 </Card>
                         </div>
                         </div>

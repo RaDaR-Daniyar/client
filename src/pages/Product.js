@@ -125,28 +125,42 @@ const Product = () => {
                         )}
                     </div>
                 </Col>
-                <Col lg={5} style={{ textAlign: "left"}}>
-                      <h3 style={{fontFamily: 'Book Antiqua', fontSize: '24px', fontWeight: 'bold', color: '#1200ba'}}>{product.name} {product.finId ? <span> -{product.finId}%</span>:''}</h3>
-
-                      <h3 style={{fontFamily: 'Book Antiqua', fontSize: '24px', fontWeight: 'bold', color: '#1200ba'}}>{product.price} тг.
-                          {product.finId ?
-                              <>
-                                  <span style={{fontSize: '20px', textDecoration: 'line-through', margin: '0 10px', color:'rgba(0, 0, 0, 0.176)'}}>{Math.ceil(product.price * 100 / (100 - product.finId))} тг.</span>
-                              </> : ''
-                          }
-                      </h3>
+                <Col lg={5} style={{ textAlign: "left", fontFamily: 'Book Antiqua'}}>
+                    <div class='show-on-mobile'>
+                        <h3 style={{fontFamily: 'Book Antiqua', fontSize: '24px', fontWeight: 'bold', color: '#1200ba', textAlign: 'center'}}>{product.name} {product.finId ? <span> -{product.finId}%</span>:''}</h3>
+                        <h3 style={{fontFamily: 'Book Antiqua', fontSize: '24px', fontWeight: 'bold', color: '#1200ba', textAlign: 'center'}}>{product.price} тг.
+                            {product.finId ?
+                                <>
+                                    <span style={{fontSize: '20px', textDecoration: 'line-through', margin: '0 10px', color:'rgba(0, 0, 0, 0.176)'}}>{Math.ceil(product.price * 100 / (100 - product.finId))} тг.</span>
+                                </> : ''
+                            }
+                        </h3>
+                    </div>
+                    <div class='hide-on-mobile'>
+                        <h3 style={{fontFamily: 'Book Antiqua', fontSize: '24px', fontWeight: 'bold', color: '#1200ba'}}>{product.name} {product.finId ? <span> -{product.finId}%</span>:''}</h3>
+                        <h3 style={{fontFamily: 'Book Antiqua', fontSize: '24px', fontWeight: 'bold', color: '#1200ba'}}>{product.price} тг.
+                            {product.finId ?
+                                <>
+                                    <span style={{fontSize: '20px', textDecoration: 'line-through', margin: '0 10px', color:'rgba(0, 0, 0, 0.176)'}}>{Math.ceil(product.price * 100 / (100 - product.finId))} тг.</span>
+                                </> : ''
+                            }
+                        </h3>
+                    </div>
                     <a>
-                        <img src={planet} alt="map" style={{ width: "18px" }} />{" "} Международная гарантия
+                        <img src={planet} alt="map" style={{ width: "18px"}} />{" "} Международная гарантия
                     <br />
-                        <img src={box} alt="map" style={{ width: "18px" }} /> Бесплатная доставка
+                        <img src={box} alt="map" style={{ width: "18px"}} /> Бесплатная доставка
                     </a><br />
-                    <Button style={{marginRight:"10px", marginTop: '10px'}} onClick={() => handleClick(product.id)}>
+                    <Button style={{marginRight:"12px", marginTop: '10px', fontSize: '13px', width: '12em', fontFamily: 'Book Antiqua'}} onClick={() => handleClick(product.id)}>
                         Добавить в корзину
                     </Button>
-                    {product.silka? <a className="btn" style={{backgroundColor:"red", color:"white", marginTop:'10px'}} href={product.silka}>
+                    {product.silka? <a className="btn" style={{backgroundColor:"red", color:"white", marginTop:'10px', fontSize: '13px', width: '12em', fontFamily: 'Book Antiqua'}} href={product.silka}>
                         Купить на Kaspi
                     </a>:<></>}
-                    <div style={{ marginTop: 10, fontFamily: 'Book Antiqua' }}>
+                    <div class='show-on-mobile' style={{marginTop: 10, fontFamily: 'Book Antiqua', textAlign: 'center'}}>
+                        {propertiesToDisplay.map((property) => renderProperty(property.label, property.value) )}
+                    </div>
+                    <div class='hide-on-mobile' style={{marginTop: 10, fontFamily: 'Book Antiqua'}}>
                         {propertiesToDisplay.map((property) => renderProperty(property.label, property.value) )}
                     </div>
                 </Col>
