@@ -41,7 +41,7 @@ const SaleBar = observer(() => {
 
     return (
         <Form.Label style={{display: "flex", cursor: "pointer"}}>
-            <Form.Check  style={{ marginRight: "10px", marginTop: "10px",fontFamily: 'Book Antiqua'}} onChange={event => {
+            <Form.Check  style={{ marginRight: "10px", marginTop: "10px", fontFamily: 'Book Antiqua'}} onChange={event => {
                 handleClick(event.target.checked);
             }}>
             </Form.Check>

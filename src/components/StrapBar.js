@@ -37,8 +37,8 @@ const StrapBar = observer(() => {
         <Form.Select style={{fontFamily: 'BookAntiqua'}}  onChange={event => {
             handleClick(Number(event.target.value))
         }}>
-            <option style={{fontFamily: 'Book Antiqua'}}>Матераил браслета/ремешка</option>
-            {catalog.straps.map(item => <option style={{fontFamily: 'Book Antiqua'}} key={item.id} value={item.id}>{item.name}</option>)}
+            <option>Матераил браслета/ремешка</option>
+            {catalog.straps.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}
         </Form.Select>
     )
 })

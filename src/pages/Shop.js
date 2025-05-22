@@ -392,7 +392,7 @@ const Shop = observer(() => {
                     {width > 767 &&
                         <Col md={3} className="mb-1">
                             <div className="mt-1" style={{marginRight: '10px'}}>{maxPrice ? <PriceSlider maxPrice={maxPrice} /> : null}</div>
-                            <div className="mt-1"style={{marginRight: '10px'}}>{brandsFetching ? <Spinner animation="border" /> : <BrandBar />}</div>
+                            <div className="mt-1" style={{marginRight: '10px'}}>{brandsFetching ? <Spinner animation="border" /> : <BrandBar />}</div>
                             <div className="mt-1" style={{marginRight: '10px'}}>{mehanizmsFetching ? <Spinner animation="border" /> : <MehanizmBar />}</div>
                             <div className="mt-1" style={{marginRight: '10px'}}>{gendersFetching ? <Spinner animation="border" /> : <GenderBar />}</div>
                             <div className="mt-1" style={{marginRight: '10px'}}>{shapesFetching ? <Spinner animation="border" /> : <ShapeBar />}</div>

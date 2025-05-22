@@ -37,8 +37,8 @@ const PowerBar = observer(() => {
         <Form.Select style={{fontFamily: 'BookAntiqua'}} onChange={event => {
             handleClick(Number(event.target.value))
         }}>
-            <option style={{fontFamily: 'Book Antiqua'}}>Запас хода</option>
-            {catalog.powers.map(item => <option style={{fontFamily: 'Book Antiqua'}} key={item.id} value={item.id}>{item.name}</option>)}
+            <option>Запас хода</option>
+            {catalog.powers.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}
         </Form.Select>
     )
 })
