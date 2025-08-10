@@ -20,7 +20,7 @@ const UserCicle = styled.div`
 const NavBar = observer(() => {
     return (
         <Card className="mb-1" style={{borderColor: '#1200ba'}}>
-            <div class="hide-on-mobile">
+            <div class="hide-on-mobile" style={{fontFamily: 'Book Antiqua'}}>
                 <Navbar bg="white" className='d-flex justify-content-center' style={{height: '30px', marginTop: '5px'}}>
                     <Nav>
                         <NavLink to="/shop.html" className="link" style={{

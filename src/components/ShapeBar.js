@@ -34,7 +34,7 @@ const ShapeBar = observer(() => {
     }
 
     return (
-        <Form.Select onChange={event => {
+        <Form.Select style={{fontFamily: 'BookAntiqua'}}  onChange={event => {
             handleClick(Number(event.target.value))
         }}>
             <option>Форма корпуса</option>

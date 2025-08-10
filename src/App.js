@@ -9,6 +9,7 @@ import Loader from './components/Loader.js'
 import Header from './sections/header.js'
 import Footer from './sections/footer.js'
 import Aside from './sections/aside.js'
+import Whatsapp from './components/whatsapp.js'
 
 import { fetchBasket } from './http/basketAPI.js'
 
@@ -42,6 +43,7 @@ const App = observer(() => {
             <Header />
             <Aside />
             <AppRouter />
+            <Whatsapp />
         </BrowserRouter>
     )
 })

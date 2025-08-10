@@ -16,15 +16,15 @@ const SearchField = ({ onSearch }) => {
 
     return (
         <Form onSubmit={handleSubmit} className="d-flex justify-content-between mt-1">
-        <input
-            class="input"
-            type="text"
-            value={searchInput}
-            onChange={handleInputChange}
-            placeholder="Поиск"
-            style={{ width: "83%", height: 37, borderRadius: '5px' }}
-        />
-        <button class="button" type="submit"style={{ width: "15%", height: 37, backgroundColor: '#1200ba', color: 'white', borderRadius: '5px' }}>Найти</button>
+            <input
+                class="input"
+                type="text"
+                value={searchInput}
+                onChange={handleInputChange}
+                placeholder="Поиск"
+                style={{ width: "83%", height: 37, borderRadius: '5px' }}
+            />
+            <button class="button" type="submit"style={{ width: "15%", height: 37, backgroundColor: '#1200ba', color: 'white', borderRadius: '5px' }}>Найти</button>
         </Form>
     );
 }

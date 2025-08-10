@@ -34,7 +34,7 @@ const BrandBar = observer(() => {
     }
 
     return (
-        <Form.Select aria-label="Label" value={catalog.brand} placeholder="Бренд" onChange={event => {
+        <Form.Select style={{fontFamily: 'BookAntiqua'}} aria-label="Label" value={catalog.brand} placeholder="Бренд" onChange={event => {
             handleClick(Number(event.target.value))
         }}>
             <option>Бренд</option>

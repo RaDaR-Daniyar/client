@@ -34,7 +34,7 @@ const MaterialBar = observer(() => {
     }
 
     return (
-        <Form.Select onChange={event => {
+        <Form.Select style={{fontFamily: 'BookAntiqua'}} onChange={event => {
             handleClick(Number(event.target.value))
         }}>
             <option>Материал корпуса</option>

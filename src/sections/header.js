@@ -23,7 +23,7 @@ const Header = observer(() => {
                     <Nav>
                         <Col style={{textAlign: 'left'}}>
                             <NavLink to="/" className="navbar-brand" target='_parent'>
-                                <a style={{color: 'white'}}>__<img  src = { logo } alt = "Купить аксессуары в Алматы" width={'200rem'} /></a>
+                                <a><img  src = { logo } alt = "Купить аксессуары в Алматы" width={'200rem'} /></a>
                             </NavLink>
                         </Col>
                         {user.isAuth ? (
@@ -48,10 +48,23 @@ const Header = observer(() => {
                     <Nav>
                         <Col>
                             <NavLink to="/" target='_parent'>
-                                <p style={{color: 'white'}}>__<img  src = { logo } alt = "Купить аксессуары в Алматы" width={'200rem'}/></p>
+                                <p style={{marginTop: "5px"}}><img  src = { logo } alt = "Купить аксессуары в Алматы" width={'200rem'}/></p>
                             </NavLink>
                         </Col>
-                        <MobileMenu />
+                        {user.isAuth ? (
+                            <Link to="/user" className="nav-link" style={{color: 'black',  padding: '0.5rem 0.2rem' }}><img  src = { login } alt = "Войти" style={{marginTop: -5}} /></Link>
+                        ) : (
+                            <>
+                                <Link to="/login" className="nav-link" style={{color: 'black',  padding: '0.5rem 0.2rem'}}><img  src = { login } alt = "Войти" style={{marginTop: -5}} /></Link>
+                            </>
+                        )} {user.isAdmin && (
+                            <Link to="/admin" className="nav-link" style={{color: 'black',  padding: '0.5rem 0.2rem'}}><img  src = { panel } alt = "Панель управления" style={{marginTop: -5}} /></Link>
+                        )}
+                        <Link to="/basket" className="nav-link basket" style={{color: 'black',  padding: '0.5rem 0.2rem', position: 'relative'}}>
+                            <img  src = { cart } alt = "Корзина" style={{marginTop: -5}} />
+                            {!!basket.count && <span>{basket.count}</span>}
+                        </Link>
+                        <MobileMenu style="margin-top: 10px;" />
                     </Nav>
                 </Row>
                 <NavBar />
