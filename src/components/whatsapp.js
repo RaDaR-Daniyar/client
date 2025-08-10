@@ -1,6 +1,6 @@
 import React from "react";
 import WhatsAppWidget from "react-whatsapp-chat-widget";
-import "react-whatsapp-chat-widget/index.css";
+import "./whatsapp.css";
 
 const Whatsapp = () => {
 	return (
@@ -9,7 +9,7 @@ const Whatsapp = () => {
             position="right"
 			widgetWidth="300px"
 			widgetWidthMobile="260px"
-			autoOpen={true}
+			autoOpen={false}
 			autoOpenTimer={5000}
 			messageBox={true}
 			messageBoxTxt="Добрый день!"
