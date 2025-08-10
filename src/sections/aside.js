@@ -40,34 +40,34 @@ var Aside = () => {
     const prevR = useRef();
     const { 0: width, 1: setWidth} = useState(window.innerWidth)
     const { 0: photosLeft, 1: setLPhotos } = useState([
-        [l1, '/product/2234'],
-        [l2, '/product/2318'],
-        [l3, '/product/232'],
-        [l4, '/product/94'],
-        [l5, '/product/725'],
-        [l6, '/product/12'],
-        [l7, '/product/2143'],
-        [l8, '/product/2401'],
-        [l9, '/product/2779'],
-        [l10, '/product/2328'],
-        [l11, '/product/2463'],
-        [l12, '/product/2241'],
-        [l13, '/product/2525']
+        [l1, '/shop.html/product/2234'],
+        [l2, '/shop.html/product/2318'],
+        [l3, '/shop.html/product/232'],
+        [l4, '/shop.html/product/94'],
+        [l5, '/shop.html/product/725'],
+        [l6, '/shop.html/product/12'],
+        [l7, '/shop.html/product/2143'],
+        [l8, '/shop.html/product/2401'],
+        [l9, '/shop.html/product/2779'],
+        [l10, '/shop.html/product/2328'],
+        [l11, '/shop.html/product/2463'],
+        [l12, '/shop.html/product/2241'],
+        [l13, '/shop.html/product/2525']
     ])
     const { 0: photosRight, 1: setRPhotos } = useState([
-        [r1, '/product/852'],
-        [r2, '/product/530'],
-        [r3, '/product/2496'],
-        [r4, '/product/85'],
-        [r5, '/product/2730'],
-        [r6, '/product/2370'],
-        [r7, '/product/2221'],
-        [r8, '/product/2627'],
-        [r9, '/product/1127'],
-        [r10, '/product/712'],
-        [r11, '/product/2502'],
-        [r12, '/product/2376'],
-        [r13, '/product/2269']
+        [r1, '/shop.html/product/852'],
+        [r2, '/shop.html/product/530'],
+        [r3, '/shop.html/product/2496'],
+        [r4, '/shop.html/product/85'],
+        [r5, '/shop.html/product/2730'],
+        [r6, '/shop.html/product/2370'],
+        [r7, '/shop.html/product/2221'],
+        [r8, '/shop.html/product/2627'],
+        [r9, '/shop.html/product/1127'],
+        [r10, '/shop.html/product/712'],
+        [r11, '/shop.html/product/2502'],
+        [r12, '/shop.html/product/2376'],
+        [r13, '/shop.html/product/2269']
     ])
     SwiperCore.use([Autoplay, Navigation, Pagination]);
 
